@@ -1,0 +1,10 @@
+TripPlannerApp
+    TopBar 
+    Main
+        (HomePage頁面)
+        HomePage
+
+        (Plan your journey頁面)
+        QueryTable
+        JourneyTable
+            Journey
