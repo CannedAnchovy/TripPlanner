@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import ActionSearch from 'material-ui/svg-icons/action/search';
-import '../css/SearchBar.css';
 import { lightGreen500 } from 'material-ui/styles/colors';
+import '../../css/Reader/SearchBar.css';
 
 
 const styles = {
-  searchToolUnderline:{
+  searchToolUnderline: {
     borderColor: lightGreen500,
   },
-  searchIcon:{
-  	width: 50,
-  	height: 50,
-  }
+  searchIcon: {
+    width: 50,
+    height: 50,
+  },
 };
 
 class SearchBar extends Component {
@@ -20,8 +20,8 @@ class SearchBar extends Component {
     super();
   }
   render() {
-  	return(
-  	  <div className="SearchBar">
+    return (
+      <div className="SearchBar">
         <ActionSearch
           className="searchIcon"
           style={styles.searchIcon}
