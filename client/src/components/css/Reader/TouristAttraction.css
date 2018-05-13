@@ -1,0 +1,15 @@
+.TouristAttraction{
+	width: 200px;
+}
+.touristAttractionName{
+	color: #616161;
+	width: 80%;
+	float: left;
+	font-size: 20px;
+	padding-left: 5px;
+}
+
+.favoriteAttractionIcon{
+	width: 20%;
+	float: left;
+}

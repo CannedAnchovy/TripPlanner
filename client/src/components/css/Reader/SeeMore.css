@@ -1,0 +1,15 @@
+.SeeMore{
+	width: 200px;
+	height: 50px;
+	border: #C5E1A5 5px solid;
+	border-radius: 15px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 25px;
+	color: #616161;
+}
+
+.SeeMore:hover {
+	background-color: #C5E1A5;
+	font-weight: bold;
+}

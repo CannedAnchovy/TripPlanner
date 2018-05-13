@@ -1,0 +1,16 @@
+.Hashtag{
+	width: 120px;
+	height: 50px;
+	background-color: #C5E1A5;
+	font-size: 25px;
+	line-height: 50px;
+	text-align: center;
+	color: #616161;
+	border-radius: 10px;
+	overflow: hidden;
+	text-overflow:ellipsis;	
+}
+
+.Hashtag:hover{
+	font-weight: bold;
+}
