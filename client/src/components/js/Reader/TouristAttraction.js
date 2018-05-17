@@ -17,10 +17,10 @@ const styles = {
 
 const TouristAttraction = (props) => {
   const {
-  	journalId,
+    journalId,
     touristAttraction,
   } = props;
-  const imgUrl = require(`../../img/img${journalId}_${touristAttraction.attractionId}.jpg`)
+  const imgUrl = require(`../../img/img${journalId}_${touristAttraction.attractionId}.jpg`);
   let displayFavoriteAttraction;
   if (touristAttraction.favoriteAttraction) {
     displayFavoriteAttraction =
@@ -33,21 +33,30 @@ const TouristAttraction = (props) => {
         style={styles.favoriteIcon}
       />);
   }
-  return(
-  	<div className="TouristAttraction">
-  	  <img
-  	    className="touristAttractionImg"
-  	    src={imgUrl}
-  	    alt={touristAttraction.attractionName}
-  	    width="200"
-  	    height="150"
-  	  />
-  	  <p className="touristAttractionName">{touristAttraction.attractionName}</p>
-  	  <div className="favoriteAttactionIcon">
+  return (
+    <div className="TouristAttraction">
+      <img
+        className="touristAttractionImg"
+        src={imgUrl}
+        alt={touristAttraction.attractionName}
+        width="200"
+        height="150"
+      />
+      <p className="touristAttractionName">{touristAttraction.attractionName}</p>
+      <div className="favoriteAttactionIcon">
         {displayFavoriteAttraction}
       </div>
-  	</div>
+    </div>
   );
+};
+
+TouristAttraction.propTypes = {
+  touristAttraction: PropTypes.shape({
+    attractionId: PropTypes.number.isRequired,
+    attractionName: PropTypes.string.isRequired,
+    favoriteAttraction: PropTypes.bool.isRequired,
+  }).isRequired,
+  journalId: PropTypes.number.isRequired,
 };
 
 export default TouristAttraction;

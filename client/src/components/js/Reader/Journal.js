@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 // import ActionDelete from 'material-ui/svg-icons/action/delete';
 import ImageNavigateNext from 'material-ui/svg-icons/image/navigate-next';
 import ImageNavigateBefore from 'material-ui/svg-icons/image/navigate-before';
+import { lightGreen300 } from 'material-ui/styles/colors';
 import FavoriteJournal from './FavoriteJournal';
 import Author from './Author';
 import Hashtag from './Hashtag';
 import SeeMore from './SeeMore';
 import TouristAttraction from './TouristAttraction';
-import { lightGreen300 } from 'material-ui/styles/colors';
 
 import '../../css/Reader/Journal.css';
 
 const styles = {
-  arrowStyle:{
+  arrowStyle: {
     width: 70,
     height: 70,
     color: lightGreen300,
@@ -23,33 +24,31 @@ const styles = {
 class Journal extends Component {
   constructor() {
     super();
-    /*
-    this.state = {
-      journalDisplay: true,
-      favorite: true,
-      favoriteNum: 10,
-      authorName: '台北小吃貨',
-      title: '台南美食之旅',
-      touristAttractions: [],
-      hashtags: [],
-    };
-    */
   }
-  
 
   render() {
-    const journal = this.props.journal;
+    // const { items: displayItem, listId, listName } = this.props.list;
+    const {
+      journalId,
+      journalDisplay,
+      favorite,
+      favoriteNum,
+      authorName,
+      title,
+      touristAttractions,
+      hashtags,
+    } = this.props.journal;
     return (
       <div className="Journal">
         <p className="journalTitle">
-          {journal.title}
+          {title}
         </p>
         <Author
-          authorName={journal.authorName}
+          authorName={authorName}
         />
         <FavoriteJournal
-          favorite={journal.favorite}
-          favoriteNum={journal.favoriteNum}
+          favorite={favorite}
+          favoriteNum={favoriteNum}
         />
         <div className="arrowBack">
           <ImageNavigateBefore
@@ -63,10 +62,10 @@ class Journal extends Component {
         </div>
         <div>
           <ul className="touristAttractionList">
-            {journal.touristAttractions.map((touristAttraction)=> (
+            {touristAttractions.map(touristAttraction => (
               <div className="displayTouristAttraction" key={touristAttraction.attractionId}>
                 <TouristAttraction
-                  journalId={journal.journalId}
+                  journalId={journalId}
                   touristAttraction={touristAttraction}
                 />
               </div>))}
@@ -74,7 +73,7 @@ class Journal extends Component {
         </div>
         <div>
           <ul className="hashtagList">
-            {journal.hashtags.map(hashtag => (
+            {hashtags.map(hashtag => (
               <div className="displayTag" key={hashtag.tagId}>
                 <Hashtag
                   hashtag={hashtag}
@@ -83,11 +82,24 @@ class Journal extends Component {
           </ul>
         </div>
         <div className="seeMoreButton">
-          <SeeMore/>
+          <SeeMore />
         </div>
       </div>
     );
   }
 }
+
+Journal.propTypes = {
+  journal: PropTypes.shape({
+    journalId: PropTypes.number.isRequired,
+    journalDisplay: PropTypes.bool.isRequired,
+    favorite: PropTypes.bool.isRequired,
+    favoriteNum: PropTypes.number.isRequired,
+    authorName: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    touristAttractions: PropTypes.array.isRequired,
+    hashtags: PropTypes.array.isRequired,
+  }).isRequired,
+};
 
 export default Journal;

@@ -8,7 +8,7 @@ class JournalReader extends Component {
     super();
     this.state = {
       journals: [],
-    }
+    };
   }
   componentWillMount() {
     const newTags0 = [];

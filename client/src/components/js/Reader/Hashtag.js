@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 // material ui
 import '../../css/Reader/Hashtag.css';
 
-
-
 const Hashtag = (props) => {
   const {
     hashtag,
@@ -18,7 +16,10 @@ const Hashtag = (props) => {
 };
 
 Hashtag.propTypes = {
-  tagName: PropTypes.string.isRequired,
+  hashtag: PropTypes.shape({
+    tagId: PropTypes.number.isRequired,
+    tagName: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Hashtag;
