@@ -21,14 +21,23 @@
 .arrowBack{
 	position: absolute;
 	top:30%;
-	left: 5px;
+	left: 0px;
+}
+
+.arrowBack:hover{
+	background-color: #E0E0E0;
 }
 
 .arrowNext{
 	position: absolute;
 	top:30%;
-	right: 5px;
+	right: 0px;
 }
+
+.arrowNext:hover{
+	background-color: #E0E0E0;
+}
+
 
 .touristAttractionList{
 	position: absolute;
@@ -67,3 +76,4 @@
 	right: 5%;
 	padding:5px;
 }
+

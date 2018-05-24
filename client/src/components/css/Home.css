@@ -1,0 +1,33 @@
+.Home{
+	background-image: url("../img/home.jpg");
+	background-size: cover;
+	height: 100%;
+	float: left;
+	width: 100%;
+	overflow: auto;
+}
+
+.homeBottomBar{
+	color: #FFFFFF;
+	background-color: rgba(0, 0, 0, 50%);
+	height: 100px;
+	width: 100%;
+	text-align: center;
+	line-height: 100px;
+	position: absolute;
+	bottom: 0;
+}
+
+.homeTitle{
+	text-align: center;
+	margin-top: 300px;
+	font-size: 90px;
+	color: #424242;
+}
+
+.homeSubtitle{
+	text-align: center;
+	margin-top: 150px;
+	font-size: 30px;
+	color: #FFFFFF;
+}

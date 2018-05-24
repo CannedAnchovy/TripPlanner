@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 // import ActionDelete from 'material-ui/svg-icons/action/delete';
 import ImageNavigateNext from 'material-ui/svg-icons/image/navigate-next';
 import ImageNavigateBefore from 'material-ui/svg-icons/image/navigate-before';
-import { lightGreen300 } from 'material-ui/styles/colors';
+import { lightGreen700, grey700 } from 'material-ui/styles/colors';
 import FavoriteJournal from './FavoriteJournal';
 import Author from './Author';
 import Hashtag from './Hashtag';
@@ -16,18 +16,32 @@ const styles = {
   arrowStyle: {
     width: 70,
     height: 70,
-    color: lightGreen300,
+    color: lightGreen700,
   },
+  donothingArrowStyle: {
+    width: 70,
+    height: 70,
+    color: grey700,
+  }
 };
 
 
 class Journal extends Component {
   constructor() {
     super();
+    this.state = {
+      display: {
+        left: false,
+        right: true,
+        firstDisplay: 0,
+      }
+    }
+
   }
 
   render() {
     // const { items: displayItem, listId, listName } = this.props.list;
+    // console.log(this.state.display.firstDisplay);
     const {
       journalId,
       journalDisplay,
@@ -37,7 +51,40 @@ class Journal extends Component {
       title,
       touristAttractions,
       hashtags,
+      display,
     } = this.props.journal;
+
+    let displayAttractions = [];
+    // console.log(display.firstDisplay);
+    for (let i = 0; i < 5; i += 1){
+      displayAttractions.push(touristAttractions[display.firstDisplay + i]);
+    }
+    let displayArrowBack, displayArrowNext;
+    if(display.left){
+      displayArrowBack =
+        (<ImageNavigateBefore
+          style={styles.arrowStyle}
+          onClick={(e)=>this.props.handleAttractionDispalyChange(e, journalId, 'left')}
+        />)
+    } else {
+      displayArrowBack =
+        (<ImageNavigateBefore
+          style={styles.donothingArrowStyle}
+        />)
+    }
+    if(display.right){
+      displayArrowNext =
+        (<ImageNavigateNext
+          style={styles.arrowStyle}
+          onClick={(e)=>this.props.handleAttractionDispalyChange(e, journalId, 'right')}
+        />)
+    } else {
+      displayArrowNext =
+        (<ImageNavigateNext
+          style={styles.donothingArrowStyle}
+        />)
+    }
+    // console.log(displayAttractions);
     return (
       <div className="Journal">
         <p className="journalTitle">
@@ -47,26 +94,25 @@ class Journal extends Component {
           authorName={authorName}
         />
         <FavoriteJournal
+          journalId={journalId}
           favorite={favorite}
           favoriteNum={favoriteNum}
+          handleFavoriteJournalClick = {this.props.handleFavoriteJournalClick}
         />
         <div className="arrowBack">
-          <ImageNavigateBefore
-            style={styles.arrowStyle}
-          />
+          {displayArrowBack}
         </div>
         <div className="arrowNext">
-          <ImageNavigateNext
-            style={styles.arrowStyle}
-          />
+          {displayArrowNext}
         </div>
         <div>
           <ul className="touristAttractionList">
-            {touristAttractions.map(touristAttraction => (
+            {displayAttractions.map(touristAttraction => (
               <div className="displayTouristAttraction" key={touristAttraction.attractionId}>
                 <TouristAttraction
                   journalId={journalId}
                   touristAttraction={touristAttraction}
+                  handleFavoriteTouristAttractionClick = {this.props.handleFavoriteTouristAttractionClick}
                 />
               </div>))}
           </ul>
@@ -100,6 +146,7 @@ Journal.propTypes = {
     touristAttractions: PropTypes.array.isRequired,
     hashtags: PropTypes.array.isRequired,
   }).isRequired,
+  handleFavoriteJournalClick: PropTypes.func.isRequired,
 };
 
 export default Journal;

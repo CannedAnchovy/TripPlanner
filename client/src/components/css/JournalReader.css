@@ -4,14 +4,24 @@
 	left: 30%;
 	right: 0;
 	bottom: 0;
+	overflow: auto;
 }
 
 ul.journalList{
 	display: block;
+	padding-bottom: 50px;
 }
 
 .displayJournal{
 	height: 360px;
 	display: block;
 	padding: 11px;
+}
+
+.bottomBar{
+	color: #FFFFFF;
+	background-color: #33691E;
+	height: 100px;
+	text-align: center;
+	line-height: 100px;
 }

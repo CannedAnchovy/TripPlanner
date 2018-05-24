@@ -19,6 +19,7 @@ const TouristAttraction = (props) => {
   const {
     journalId,
     touristAttraction,
+    handleFavoriteTouristAttractionClick,
   } = props;
   const imgUrl = require(`../../img/img${journalId}_${touristAttraction.attractionId}.jpg`);
   let displayFavoriteAttraction;
@@ -26,11 +27,13 @@ const TouristAttraction = (props) => {
     displayFavoriteAttraction =
       (<ActionFavorite
         style={styles.favoriteIcon}
+        onClick={(e) => { handleFavoriteTouristAttractionClick(e, journalId, touristAttraction.attractionId); }}
       />);
   } else {
     displayFavoriteAttraction =
       (<ActionFavoriteBorder
         style={styles.favoriteIcon}
+        onClick={(e) => { handleFavoriteTouristAttractionClick(e, journalId, touristAttraction.attractionId); }}
       />);
   }
   return (

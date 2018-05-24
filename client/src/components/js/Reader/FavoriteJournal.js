@@ -13,39 +13,47 @@ const styles = {
   },
 };
 
-class FavoriteJournal extends Component {
-  constructor() {
-    super();
-  }
-  render() {
-    let displayFavoriteIcon;
-    if (this.props.favorite) {
+
+const FavoriteJournal = (props) => {
+  const {
+    journalId,
+    favorite,
+    favoriteNum,
+    handleFavoriteJournalClick,
+  } = props;
+
+  let displayFavoriteIcon;
+    if (favorite) {
       displayFavoriteIcon =
         (<ActionFavorite
           style={styles.favoriteIcon}
+          onClick={(e) => { handleFavoriteJournalClick(e, journalId);}}
         />);
     } else {
       displayFavoriteIcon =
         (<ActionFavoriteBorder
           style={styles.favoriteIcon}
+          onClick={(e) => { handleFavoriteJournalClick(e, journalId);}}
         />);
     }
-    return (
-      <div className="FavoriteJournal">
-        <div className="favoriteIcon">
-          {displayFavoriteIcon}
-        </div>
-        <p className="favoriteNum">
-          {this.props.favoriteNum}
-        </p>
+
+  return (
+    <div className="FavoriteJournal">
+      <div className="favoriteIcon">
+        {displayFavoriteIcon}
       </div>
-    );
-  }
-}
+      <p className="favoriteNum">
+        {favoriteNum}
+      </p>
+    </div>
+  );
+};
 
 FavoriteJournal.propTypes = {
+  journalId: PropTypes.number.isRequired,
   favorite: PropTypes.bool.isRequired,
   favoriteNum: PropTypes.number.isRequired,
+  handleFavoriteJournalClick: PropTypes.func.isRequired,
 };
 
 export default FavoriteJournal;
