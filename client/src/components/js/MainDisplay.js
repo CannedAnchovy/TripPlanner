@@ -15,7 +15,9 @@ class MainDisplay extends Component {
   	if(this.props.display === 'home') {
   		mainDisplay =
   		(<div className="MainDisplay">
-          <Home />
+          <Home
+            handleMainDisplayChange={this.props.handleMainDisplayChange}
+          />
         </div>);
   	} else if(this.props.display === 'editor_reader') {
   		mainDisplay =

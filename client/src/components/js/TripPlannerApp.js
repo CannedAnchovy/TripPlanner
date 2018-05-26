@@ -25,6 +25,7 @@ class TripPlannerApp extends Component {
           handleMainDisplayChange={this.handleMainDisplayChange}
         />
         <MainDisplay
+          handleMainDisplayChange={this.handleMainDisplayChange}
           display={this.state.display}
         />
       </div>

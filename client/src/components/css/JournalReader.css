@@ -4,7 +4,9 @@
 	left: 30%;
 	right: 0;
 	bottom: 0;
+	min-height: calc(100%-70px);
 	overflow: auto;
+	
 }
 
 ul.journalList{
@@ -24,4 +26,12 @@ ul.journalList{
 	height: 100px;
 	text-align: center;
 	line-height: 100px;
+	position: relative;
+	margin-top: -100px;
+	clear: both;
+}
+
+.wrap{
+	min-height: 100%;
+    padding-bottom: 100px;
 }

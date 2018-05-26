@@ -2,20 +2,29 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // import img from '../../img/img0.jpg'
 // material ui
+import ToggleStarBorder from '@material-ui/icons/StarBorder';
+import ToggleStar from '@material-ui/icons/Star';
 import ActionFavorite from '@material-ui/icons/Favorite';
 import ActionFavoriteBorder from '@material-ui/icons/FavoriteBorder';
+import yellow from '@material-ui/core/colors/yellow';
 import lightGreen from '@material-ui/core/colors/lightGreen';
+import '../../css/Reader/TouristAttractionFull.css';
 import '../../css/Reader/TouristAttraction.css';
 
 const styles = {
   favoriteIcon: {
     color: lightGreen[300],
-    width: 25,
-    height: 25,
+    width: 35,
+    height: 35,
+  },
+  stars: {
+    color: yellow[700],
+    width: 35,
+    height: 35,
   },
 };
 
-const TouristAttraction = (props) => {
+const TouristAttractionFull = (props) => {
   const {
     journalId,
     touristAttraction,
@@ -36,24 +45,50 @@ const TouristAttraction = (props) => {
         onClick={(e) => { handleFavoriteTouristAttractionClick(e, journalId, touristAttraction.attractionId); }}
       />);
   }
+  let starsDisplay = []
+  for(let i=0;i<5;i++) {
+    if(i<touristAttraction.stars){
+      starsDisplay.push(
+        <ToggleStar
+          style={styles.stars}
+        />);
+    }
+    else{
+      starsDisplay.push(
+        <ToggleStarBorder
+          style={styles.stars}
+        />)
+    }
+  }
   return (
-    <div className="TouristAttraction">
+    <div className="TouristAttractionFull">
       <img
-        className="touristAttractionImg"
+        className="touristAttractionFullImg"
         src={imgUrl}
         alt={touristAttraction.attractionName}
-        width="200"
-        height="150"
+        width="320"
+        height="240"
       />
-      <p className="touristAttractionName">{touristAttraction.attractionName}</p>
-      <div className="favoriteAttactionIcon">
+      <p className="touristAttractionFullName">{touristAttraction.attractionName}</p>
+      <div className="favoriteAttactionFullIcon">
         {displayFavoriteAttraction}
+      </div>
+      <p className="touristAttractionFullTime">{`停留時間： ${touristAttraction.stayTime} 分`}</p>
+      <p className="touristAttractionFullMoney">{`平均花費： ${touristAttraction.money} 元`}</p>
+      <div>
+        <ul className="starsDisplay">
+          {starsDisplay.map(star=>(
+            <div className="star">{star}</div>))}
+        </ul>
+      </div>
+      <div className="touristAttractionFullComment">
+      <p>{touristAttraction.comment}</p>
       </div>
     </div>
   );
 };
-
-TouristAttraction.propTypes = {
+/*
+TouristAttractionFull.propTypes = {
   touristAttraction: PropTypes.shape({
     attractionId: PropTypes.number.isRequired,
     attractionName: PropTypes.string.isRequired,
@@ -61,5 +96,5 @@ TouristAttraction.propTypes = {
   }).isRequired,
   journalId: PropTypes.number.isRequired,
 };
-
-export default TouristAttraction;
+*/
+export default TouristAttractionFull;

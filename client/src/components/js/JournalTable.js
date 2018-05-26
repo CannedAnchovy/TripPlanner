@@ -9,7 +9,7 @@ class JournalTable extends Component {
       journals: [],
     };
 
-    this.handleAttractionDispalyChange = this.handleAttractionDispalyChange.bind(this);
+    this.handleAttractionDisplayChange = this.handleAttractionDisplayChange.bind(this);
     this.handleFavoriteJournalClick = this.handleFavoriteJournalClick.bind(this);
     this.handleFavoriteTouristAttractionClick = this.handleFavoriteTouristAttractionClick.bind(this);
   }
@@ -36,36 +36,64 @@ class JournalTable extends Component {
       favoriteAttraction: true,
       attractionId: 0,
       attractionName: '文章牛肉湯',
+      stayTime: 120,
+      stars: 4,
+      money: 50,
+      comment: '好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃',
     });
     newAttractions0.push({
       favoriteAttraction: true,
       attractionId: 1,
       attractionName: '泰成水果冰',
+      stayTime: 120,
+      stars: 4,
+      money: 50,
+      comment: 'Gooooood!!',
     });
     newAttractions0.push({
       favoriteAttraction: false,
       attractionId: 2,
       attractionName: '安平豆花',
+      stayTime: 120,
+      stars: 4,
+      money: 50,
+      comment: 'Gooooood!!',
     });
     newAttractions0.push({
       favoriteAttraction: false,
       attractionId: 3,
       attractionName: '純薏仁',
+      stayTime: 120,
+      stars: 4,
+      money: 50,
+      comment: 'Gooooood!!',
     });
     newAttractions0.push({
       favoriteAttraction: true,
       attractionId: 4,
       attractionName: '依蕾特布丁',
+      stayTime: 120,
+      stars: 4,
+      money: 50,
+      comment: 'Gooooood!!',
     });
     newAttractions0.push({
       favoriteAttraction: false,
       attractionId: 5,
       attractionName: '鱔魚意麵',
+      stayTime: 120,
+      stars: 4,
+      money: 50,
+      comment: 'Gooooood!!',
     });
     newAttractions0.push({
       favoriteAttraction: true,
       attractionId: 6,
       attractionName: '抹茶戚風蛋糕',
+      stayTime: 120,
+      stars: 4,
+      money: 50,
+      comment: 'Gooooood!!',
     });
     const newTags1 = [];
     newTags1.push({
@@ -85,31 +113,55 @@ class JournalTable extends Component {
       favoriteAttraction: true,
       attractionId: 0,
       attractionName: '赤崁樓',
+      stayTime: 120,
+      stars: 4,
+      money: 50,
+      comment: 'Gooooood!!',
     });
     newAttractions1.push({
       favoriteAttraction: true,
       attractionId: 1,
       attractionName: '四草隧道',
+      stayTime: 120,
+      stars: 4,
+      money: 50,
+      comment: 'Gooooood!!',
     });
     newAttractions1.push({
       favoriteAttraction: false,
       attractionId: 2,
       attractionName: '泰成水果冰',
+      stayTime: 120,
+      stars: 4,
+      money: 50,
+      comment: 'Gooooood!!',
     });
     newAttractions1.push({
       favoriteAttraction: false,
       attractionId: 3,
       attractionName: '十鼓文創園區',
+      stayTime: 120,
+      stars: 4,
+      money: 50,
+      comment: 'Gooooood!!',
     });
     newAttractions1.push({
       favoriteAttraction: true,
       attractionId: 4,
       attractionName: '成功大學',
+      stayTime: 120,
+      stars: 4,
+      money: 50,
+      comment: 'Gooooood!!',
     });
     newAttractions1.push({
       favoriteAttraction: true,
       attractionId: 5,
       attractionName: '文章牛肉湯',
+      stayTime: 120,
+      stars: 4,
+      money: 50,
+      comment: 'Gooooood!!',
     });
     const newTags2 = [];
     newTags2.push({
@@ -133,46 +185,82 @@ class JournalTable extends Component {
       favoriteAttraction: true,
       attractionId: 0,
       attractionName: '集盒貨櫃聚落',
+      stayTime: 120,
+      stars: 4,
+      money: 50,
+      comment: 'Gooooood!!',
     });
     newAttractions2.push({
       favoriteAttraction: true,
       attractionId: 1,
       attractionName: '旗津彩虹教堂',
+      stayTime: 120,
+      stars: 4,
+      money: 50,
+      comment: 'Gooooood!!',
     });
     newAttractions2.push({
       favoriteAttraction: false,
       attractionId: 2,
       attractionName: '駁二藝術特區',
+      stayTime: 120,
+      stars: 4,
+      money: 50,
+      comment: 'Gooooood!!',
     });
     newAttractions2.push({
       favoriteAttraction: false,
       attractionId: 3,
       attractionName: '美麗島車站',
+      stayTime: 120,
+      stars: 4,
+      money: 50,
+      comment: 'Gooooood!!',
     });
     newAttractions2.push({
       favoriteAttraction: true,
       attractionId: 4,
       attractionName: '東門茶樓',
+      stayTime: 120,
+      stars: 4,
+      money: 50,
+      comment: 'Gooooood!!',
     });
     newAttractions2.push({
       favoriteAttraction: true,
       attractionId: 5,
       attractionName: '西子灣',
+      stayTime: 120,
+      stars: 4,
+      money: 50,
+      comment: 'Gooooood!!',
     });
     newAttractions2.push({
       favoriteAttraction: true,
       attractionId: 6,
       attractionName: '高雄草衙道',
+      stayTime: 120,
+      stars: 4,
+      money: 50,
+      comment: 'Gooooood!!',
     });
     newAttractions2.push({
       favoriteAttraction: true,
       attractionId: 7,
       attractionName: '義大世界',
+      stayTime: 120,
+      stars: 4,
+      money: 50,
+      comment: 'Gooooood!!',
     });
     newAttractions2.push({
       favoriteAttraction: true,
       attractionId: 8,
       attractionName: '瑞峰夜市',
+      stayTime: 120,
+      stars: 4,
+      money: 50,
+      comment: 'Gooooood!!',
     });
 
     let newJournals = this.state.journals;
@@ -238,7 +326,7 @@ class JournalTable extends Component {
     });
   }
   
-  handleAttractionDispalyChange(e, id, dir){
+  handleAttractionDisplayChange(e, id, dir){
     const newJournals = this.state.journals;
     const newDisplay = this.state.journals[id].display;
     if(dir === 'left' && newDisplay.left === true) {
@@ -298,7 +386,7 @@ class JournalTable extends Component {
         journals = {journals}
         handleFavoriteJournalClick = {this.handleFavoriteJournalClick}
         handleFavoriteTouristAttractionClick = {this.handleFavoriteTouristAttractionClick}
-        handleAttractionDispalyChange = {this.handleAttractionDispalyChange}
+        handleAttractionDisplayChange = {this.handleAttractionDisplayChange}
       />
     );
   }

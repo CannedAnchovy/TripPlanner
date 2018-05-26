@@ -31,3 +31,11 @@
 	font-size: 30px;
 	color: #FFFFFF;
 }
+
+.startPlanButton{
+	position: absolute;
+	left: calc(50% - 100px);
+	top: 50px;
+	width: 200px;
+	height: 50px;
+}

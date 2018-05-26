@@ -1,5 +1,5 @@
 import React from 'react';
-import ActionAccountCircle from 'material-ui/svg-icons/action/account-circle';
+import ActionAccountCircle from '@material-ui/icons/AccountCircle';
 import '../css/Topbar.css';
 
 const styles = {

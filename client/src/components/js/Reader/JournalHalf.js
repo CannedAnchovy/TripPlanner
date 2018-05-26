@@ -10,7 +10,9 @@ import Author from './Author';
 import Hashtag from './Hashtag';
 import SeeMore from './SeeMore';
 import TouristAttraction from './TouristAttraction';
+import TouristAttractionFull from './TouristAttractionFull';
 
+import '../../css/Reader/JournalHalf.css';
 import '../../css/Reader/Journal.css';
 
 const styles = {
@@ -27,17 +29,9 @@ const styles = {
 };
 
 
-class Journal extends Component {
+class JournalHalf extends Component {
   constructor() {
     super();
-    this.state = {
-      display: {
-        left: false,
-        right: true,
-        firstDisplay: 0,
-      }
-    }
-
   }
 
   render() {
@@ -55,40 +49,10 @@ class Journal extends Component {
       display,
     } = this.props.journal;
 
-    let displayAttractions = [];
-    // console.log(display.firstDisplay);
-    for (let i = 0; i < 5; i += 1){
-      displayAttractions.push(touristAttractions[display.firstDisplay + i]);
-    }
-    let displayArrowBack, displayArrowNext;
-    if(display.left){
-      displayArrowBack =
-        (<ImageNavigateBefore
-          style={styles.arrowStyle}
-          onClick={(e)=>this.props.handleAttractionDispalyChange(e, journalId, 'left')}
-        />)
-    } else {
-      displayArrowBack =
-        (<ImageNavigateBefore
-          style={styles.donothingArrowStyle}
-        />)
-    }
-    if(display.right){
-      displayArrowNext =
-        (<ImageNavigateNext
-          style={styles.arrowStyle}
-          onClick={(e)=>this.props.handleAttractionDispalyChange(e, journalId, 'right')}
-        />)
-    } else {
-      displayArrowNext =
-        (<ImageNavigateNext
-          style={styles.donothingArrowStyle}
-        />)
-    }
     // console.log(displayAttractions);
     return (
-      <div className="Journal">
-        <p className="journalTitle">
+      <div className="JournalHalf">
+        <p className="journalTitleHalf">
           {title}
         </p>
         <Author
@@ -100,17 +64,12 @@ class Journal extends Component {
           favoriteNum={favoriteNum}
           handleFavoriteJournalClick = {this.props.handleFavoriteJournalClick}
         />
-        <div className="arrowBack">
-          {displayArrowBack}
-        </div>
-        <div className="arrowNext">
-          {displayArrowNext}
-        </div>
-        <div>
-          <ul className="touristAttractionList">
-            {displayAttractions.map(touristAttraction => (
-              <div className="displayTouristAttraction" key={touristAttraction.attractionId}>
-                <TouristAttraction
+
+        <div className="divtouristAttractionFullList">
+          <ul className="touristAttractionFullList">
+            {touristAttractions.map(touristAttraction => (
+              <div className="displayTouristAttractionFull" key={touristAttraction.attractionId}>
+                <TouristAttractionFull
                   journalId={journalId}
                   touristAttraction={touristAttraction}
                   handleFavoriteTouristAttractionClick = {this.props.handleFavoriteTouristAttractionClick}
@@ -118,28 +77,12 @@ class Journal extends Component {
               </div>))}
           </ul>
         </div>
-        <div>
-          <ul className="hashtagList">
-            {hashtags.map(hashtag => (
-              <div className="displayTag" key={hashtag.tagId}>
-                <Hashtag
-                  hashtag={hashtag}
-                />
-              </div>))}
-          </ul>
-        </div>
-        <div 
-          className="seeMoreButton"
-          onClick={(e)=>this.props.handleSeeMoreClick(e, journalId)}
-        >
-          <SeeMore />
-        </div>
       </div>
     );
   }
 }
-
-Journal.propTypes = {
+/*
+JournalHalf.propTypes = {
   journal: PropTypes.shape({
     journalId: PropTypes.number.isRequired,
     journalDisplay: PropTypes.bool.isRequired,
@@ -152,5 +95,5 @@ Journal.propTypes = {
   }).isRequired,
   handleFavoriteJournalClick: PropTypes.func.isRequired,
 };
-
-export default Journal;
+*/
+export default JournalHalf;

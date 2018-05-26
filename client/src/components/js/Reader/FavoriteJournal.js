@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ActionFavorite from 'material-ui/svg-icons/action/favorite';
-import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border';
-import { lightGreen300 } from 'material-ui/styles/colors';
+import ActionFavorite from '@material-ui/icons/Favorite';
+import ActionFavoriteBorder from '@material-ui/icons/FavoriteBorder';
+import lightGreen from '@material-ui/core/colors/lightGreen';
 import '../../css/Reader/FavoriteJournal.css';
 
 const styles = {
   favoriteIcon: {
-    color: lightGreen300,
+    color: lightGreen[300],
     width: 40,
     height: 40,
   },

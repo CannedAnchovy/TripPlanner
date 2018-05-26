@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ActionAccountCircle from 'material-ui/svg-icons/action/account-circle';
+import ActionAccountCircle from '@material-ui/icons/AccountCircle';
 import '../../css/Reader/Author.css';
 
 const styles = {
