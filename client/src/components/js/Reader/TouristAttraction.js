@@ -21,7 +21,7 @@ const TouristAttraction = (props) => {
     touristAttraction,
     handleFavoriteTouristAttractionClick,
   } = props;
-  const imgUrl = require(`../../img/img${journalId}_${touristAttraction.attractionId}.jpg`);
+  const imgUrl = require(`../../img_journal/img${journalId}_${touristAttraction.attractionId}.jpg`);
   let displayFavoriteAttraction;
   if (touristAttraction.favoriteAttraction) {
     displayFavoriteAttraction =

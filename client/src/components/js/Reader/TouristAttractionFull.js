@@ -30,7 +30,7 @@ const TouristAttractionFull = (props) => {
     touristAttraction,
     handleFavoriteTouristAttractionClick,
   } = props;
-  const imgUrl = require(`../../img/img${journalId}_${touristAttraction.attractionId}.jpg`);
+  const imgUrl = require(`../../img_journal/img${journalId}_${touristAttraction.attractionId}.jpg`);
   let displayFavoriteAttraction;
   if (touristAttraction.favoriteAttraction) {
     displayFavoriteAttraction =
@@ -45,19 +45,12 @@ const TouristAttractionFull = (props) => {
         onClick={(e) => { handleFavoriteTouristAttractionClick(e, journalId, touristAttraction.attractionId); }}
       />);
   }
-  let starsDisplay = []
-  for(let i=0;i<5;i++) {
-    if(i<touristAttraction.stars){
-      starsDisplay.push(
-        <ToggleStar
-          style={styles.stars}
-        />);
-    }
-    else{
-      starsDisplay.push(
-        <ToggleStarBorder
-          style={styles.stars}
-        />)
+  const starsDisplay = [];
+  for (let i = 0; i < 5; i += 1) {
+    if (i < touristAttraction.stars) {
+      starsDisplay.push(<ToggleStar style={styles.stars} />);
+    } else {
+      starsDisplay.push(<ToggleStarBorder style={styles.stars} />);
     }
   }
   return (
@@ -77,17 +70,17 @@ const TouristAttractionFull = (props) => {
       <p className="touristAttractionFullMoney">{`平均花費： ${touristAttraction.money} 元`}</p>
       <div>
         <ul className="starsDisplay">
-          {starsDisplay.map(star=>(
+          {starsDisplay.map(star => (
             <div className="star">{star}</div>))}
         </ul>
       </div>
       <div className="touristAttractionFullComment">
-      <p>{touristAttraction.comment}</p>
+        <p>{touristAttraction.comment}</p>
       </div>
     </div>
   );
 };
-/*
+
 TouristAttractionFull.propTypes = {
   touristAttraction: PropTypes.shape({
     attractionId: PropTypes.number.isRequired,
@@ -95,6 +88,8 @@ TouristAttractionFull.propTypes = {
     favoriteAttraction: PropTypes.bool.isRequired,
   }).isRequired,
   journalId: PropTypes.number.isRequired,
+  handleFavoriteTouristAttractionClick: PropTypes.func.isRequired,
+
 };
-*/
+
 export default TouristAttractionFull;

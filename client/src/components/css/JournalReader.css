@@ -1,12 +1,21 @@
-.JournalReader{
-	position: fixed;
-	top: 70px;
+.JournalReaderHalf{
+	position: absolute;
+	top: 0px;
 	left: 30%;
 	right: 0;
 	bottom: 0;
 	min-height: calc(100%-70px);
 	overflow: auto;
-	
+}
+
+.JournalReaderFull{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0;
+	bottom: 0;
+	min-height: calc(100%-70px);
+	overflow: auto;
 }
 
 ul.journalList{

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import ActionFavorite from '@material-ui/icons/Favorite';
 import ActionFavoriteBorder from '@material-ui/icons/FavoriteBorder';
@@ -23,19 +23,19 @@ const FavoriteJournal = (props) => {
   } = props;
 
   let displayFavoriteIcon;
-    if (favorite) {
-      displayFavoriteIcon =
-        (<ActionFavorite
-          style={styles.favoriteIcon}
-          onClick={(e) => { handleFavoriteJournalClick(e, journalId);}}
-        />);
-    } else {
-      displayFavoriteIcon =
-        (<ActionFavoriteBorder
-          style={styles.favoriteIcon}
-          onClick={(e) => { handleFavoriteJournalClick(e, journalId);}}
-        />);
-    }
+  if (favorite) {
+    displayFavoriteIcon =
+      (<ActionFavorite
+        style={styles.favoriteIcon}
+        onClick={(e) => { handleFavoriteJournalClick(e, journalId); }}
+      />);
+  } else {
+    displayFavoriteIcon =
+      (<ActionFavoriteBorder
+        style={styles.favoriteIcon}
+        onClick={(e) => { handleFavoriteJournalClick(e, journalId); }}
+      />);
+  }
 
   return (
     <div className="FavoriteJournal">

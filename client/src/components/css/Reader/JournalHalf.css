@@ -34,3 +34,12 @@ ul.TouristAttractionFullList{
 	font-weight: bold;
 	font-size: 30px;
 }
+
+.backtoJournalList{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	margin: 10px;
+	background-color: #444444;
+	color: white;
+}

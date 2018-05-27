@@ -13,7 +13,7 @@ const theme = createMuiTheme({
 
 const Home = (props) => {
   const {
-    handleMainDisplayChange,
+    handleFindJournalClick,
   } = props;
 
   return (
@@ -26,7 +26,7 @@ const Home = (props) => {
         color="primary"
         size="large"
         style={{ fontSize: 25, color: '#505050' }}
-        onClick={(e) => { handleMainDisplayChange(e, 'editor_reader'); }}
+        onClick={(e) => { handleFindJournalClick(e); }}
         className="startPlanButton">
         開始我的旅程
       </Button>

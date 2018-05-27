@@ -43,6 +43,20 @@
 	background-color: #C5E1A5;
 }
 
+.changeDisplayButton{
+	background-color: #757575;
+	color: #FFFFFF;
+	margin: 3px;
+	padding: 3px;
+	border-radius: 5px;
+}
+
+.changeMainDisplay{
+	position: absolute;
+	top: 10px;
+	left: 26.2%;
+}
+
 #homePage{
 	left: 64%;
 

@@ -3,29 +3,31 @@ import '../css/JournalReader.css';
 import SearchBar from './Reader/SearchBar';
 import Journal from './Reader/Journal';
 import JournalHalf from './Reader/JournalHalf';
+import PopularAttractionTable from './Reader/PopularAttractionTable';
 
 
 
 class JournalReader extends Component {
   constructor() {
     super();
-    this.state={
-      displayId: -1,
-    };
-    this.handleSeeMoreClick = this.handleSeeMoreClick.bind(this);
+    
   }
   
-  handleSeeMoreClick(e, journalId) {
-    this.setState({
-      displayId: journalId,
-    });
-  }
-  
+
   render() {
     let readerDisplay;
-    if(this.state.displayId === -1) {
+    
+    // console.log(this.props.displayId);
+    let displayMode;
+    if(this.props.display === 'reader'){
+      displayMode = 'JournalReaderFull';
+    } else if (this.props.display === 'editor_reader') {
+      displayMode = 'JournalReaderHalf';
+    }
+    /*
+    if(this.props.displayId === -1) {
       readerDisplay =
-      <div className="JournalReader">
+      <div className={displayMode}>
         <SearchBar />
         <div>
           <ul className="journalList">
@@ -33,10 +35,11 @@ class JournalReader extends Component {
               <div className="displayJournal" key={journal.journalId}>
                 <Journal
                   journal={journal}
+                  displayMode={this.props.display}
                   handleFavoriteJournalClick = {this.props.handleFavoriteJournalClick}
                   handleFavoriteTouristAttractionClick = {this.props.handleFavoriteTouristAttractionClick}
                   handleAttractionDisplayChange = {this.props.handleAttractionDisplayChange}
-                  handleSeeMoreClick = {this.handleSeeMoreClick}
+                  handleSeeMoreClick = {this.props.handleSeeMoreClick}
                 />
               </div>))}
           </ul>
@@ -44,11 +47,12 @@ class JournalReader extends Component {
     </div>
     } else {
       readerDisplay =
-      (<div className="JournalReader">
+      (<div className={displayMode}>
         <SearchBar />
         <div>
           <JournalHalf
-            journal={this.props.journals[this.state.displayId]}
+            journal={this.props.journals[this.props.displayId]}
+            handleFindJournalClick={this.props.handleFindJournalClick}
             handleFavoriteJournalClick = {this.props.handleFavoriteJournalClick}
             handleFavoriteTouristAttractionClick = {this.props.handleFavoriteTouristAttractionClick}            
             handleAttractionDisplayChange = {this.props.handleAttractionDisplayChange}
@@ -56,6 +60,14 @@ class JournalReader extends Component {
         </div>
       </div>);
     }
+    */
+    readerDisplay =
+      (<div className={displayMode}>
+        <SearchBar />
+        <PopularAttractionTable
+          displayMode={this.props.display}
+        />
+      </div>);
     return <div>{readerDisplay}</div>;
   }
   

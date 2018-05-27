@@ -23,29 +23,18 @@ const styles = {
     width: 70,
     height: 70,
     color: grey[700],
-  }
+  },
 };
 
 
 class Journal extends Component {
   constructor() {
     super();
-    this.state = {
-      display: {
-        left: false,
-        right: true,
-        firstDisplay: 0,
-      }
-    }
-
   }
 
   render() {
-    // const { items: displayItem, listId, listName } = this.props.list;
-    // console.log(this.state.display.firstDisplay);
     const {
       journalId,
-      journalDisplay,
       favorite,
       favoriteNum,
       authorName,
@@ -55,37 +44,46 @@ class Journal extends Component {
       display,
     } = this.props.journal;
 
-    let displayAttractions = [];
-    // console.log(display.firstDisplay);
-    for (let i = 0; i < 5; i += 1){
+    let displayAttractionNum;
+    if (this.props.displayMode === 'editor_reader') {
+      displayAttractionNum = 5;
+    } else if (this.props.displayMode === 'reader') {
+      displayAttractionNum = 7;
+    }
+    if (touristAttractions.length < displayAttractionNum) {
+      displayAttractionNum = touristAttractions.length;
+    }
+    const displayAttractions = [];
+    for (let i = 0; i < displayAttractionNum; i += 1) {
       displayAttractions.push(touristAttractions[display.firstDisplay + i]);
     }
-    let displayArrowBack, displayArrowNext;
-    if(display.left){
+    let displayArrowBack;
+    let displayArrowNext;
+    if (display.left) {
       displayArrowBack =
         (<ImageNavigateBefore
           style={styles.arrowStyle}
-          onClick={(e)=>this.props.handleAttractionDispalyChange(e, journalId, 'left')}
-        />)
+          onClick={e => this.props.handleAttractionDisplayChange(e, journalId, 'left')}
+        />);
     } else {
       displayArrowBack =
         (<ImageNavigateBefore
           style={styles.donothingArrowStyle}
-        />)
+        />);
     }
-    if(display.right){
+    if (display.right) {
       displayArrowNext =
         (<ImageNavigateNext
           style={styles.arrowStyle}
-          onClick={(e)=>this.props.handleAttractionDispalyChange(e, journalId, 'right')}
-        />)
+          onClick={e => this.props.handleAttractionDisplayChange(e, journalId, 'right')}
+        />);
     } else {
       displayArrowNext =
         (<ImageNavigateNext
           style={styles.donothingArrowStyle}
-        />)
+        />);
     }
-    // console.log(displayAttractions);
+
     return (
       <div className="Journal">
         <p className="journalTitle">
@@ -98,7 +96,7 @@ class Journal extends Component {
           journalId={journalId}
           favorite={favorite}
           favoriteNum={favoriteNum}
-          handleFavoriteJournalClick = {this.props.handleFavoriteJournalClick}
+          handleFavoriteJournalClick={this.props.handleFavoriteJournalClick}
         />
         <div className="arrowBack">
           {displayArrowBack}
@@ -113,7 +111,7 @@ class Journal extends Component {
                 <TouristAttraction
                   journalId={journalId}
                   touristAttraction={touristAttraction}
-                  handleFavoriteTouristAttractionClick = {this.props.handleFavoriteTouristAttractionClick}
+                  handleFavoriteTouristAttractionClick={this.props.handleFavoriteTouristAttractionClick}
                 />
               </div>))}
           </ul>
@@ -128,9 +126,9 @@ class Journal extends Component {
               </div>))}
           </ul>
         </div>
-        <div 
+        <div
           className="seeMoreButton"
-          onClick={(e)=>this.props.handleSeeMoreClick(e, journalId)}
+          onClick={e => this.props.handleSeeMoreClick(e, journalId)}
         >
           <SeeMore />
         </div>
@@ -149,8 +147,16 @@ Journal.propTypes = {
     title: PropTypes.string.isRequired,
     touristAttractions: PropTypes.array.isRequired,
     hashtags: PropTypes.array.isRequired,
+    display: PropTypes.shape({
+      left: PropTypes.bool.isRequired,
+      right: PropTypes.bool.isRequired,
+      firstDisplay: PropTypes.number.isRequired,
+    }),
   }).isRequired,
   handleFavoriteJournalClick: PropTypes.func.isRequired,
+  handleAttractionDisplayChange: PropTypes.func.isRequired,
+  handleFavoriteTouristAttractionClick: PropTypes.func.isRequired,
+  handleSeeMoreClick: PropTypes.func.isRequired,
 };
 
 export default Journal;

@@ -7,8 +7,14 @@ class JournalEditor extends Component {
     super();
   }
   render() {
+    let displayMode;
+    if (this.props.display === 'editor_reader') {
+      displayMode = 'JournalEditorHalf';
+    } else if (this.props.display === 'editor') {
+      displayMode = 'JournalEditorFull';
+    }
     return (
-      <div className="JournalEditor">
+      <div className={displayMode}>
         <p>Editor</p>
       </div>
     );
