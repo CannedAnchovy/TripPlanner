@@ -1,11 +1,11 @@
-module.exports = {
+export default {
     "extends": "airbnb",
     "plugins": [
-	"react",
-	"jsx-a11y",
-	"import"
+        "react",
+        "jsx-a11y",
+        "import"
     ],
     "rules": {
-	"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     },
 };
