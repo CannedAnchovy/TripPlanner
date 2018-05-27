@@ -5,10 +5,9 @@
   "dependencies": {
     "@material-ui/core": "^1.0.0",
     "@material-ui/icons": "^1.0.0",
-    "material-ui": "^1.0.0-beta.47",
     "prop-types": "^15.6.1",
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
     "react-scripts": "1.1.4"
   },
   "scripts": {
@@ -20,8 +19,8 @@
   },
   "devDependencies": {
     "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.8.1"
+    "eslint-plugin-react": "^7.8.2"
   }
 }
