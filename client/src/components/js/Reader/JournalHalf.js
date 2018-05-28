@@ -50,9 +50,11 @@ class JournalHalf extends Component {
         <p className="journalTitleHalf">
           {title}
         </p>
-        <Author
-          authorName={authorName}
-        />
+        <div className="journalAuthor">
+          <Author
+            authorName={authorName}
+          />
+        </div>
         <FavoriteJournal
           journalId={journalId}
           favorite={favorite}

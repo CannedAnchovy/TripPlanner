@@ -1,0 +1,32 @@
+.Comment{
+	position: absolute;
+	background-color: #EEEEEE;
+	height: 120px;
+	left: 0;
+	right: 5%;
+	overflow: auto;
+	border-radius: 10px;
+}
+
+.commentAuthor{
+	position: absolute;
+	left: 1%;
+	top: 10px;
+}
+
+.commentContent{
+	position: absolute;
+	width: 90%;
+	min-height: 55px;
+	left: 6%;
+	top: 55px;
+	margin-bottom: 10px;
+}
+
+.commentSays{
+	position: absolute;
+	left: 25%;
+	top: 15px;
+	font-size: 20px;
+	color: #616161;
+}

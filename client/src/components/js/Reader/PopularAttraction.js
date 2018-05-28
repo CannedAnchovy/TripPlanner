@@ -5,6 +5,7 @@ import ToggleStar from '@material-ui/icons/Star';
 import yellow from '@material-ui/core/colors/yellow';
 import ActionAccountCircle from '@material-ui/icons/AccountCircle';
 import '../../css/Reader/PopularAttraction.css';
+import Comment from './Comment';
 
 const styles = {
   stars: {
@@ -34,6 +35,18 @@ class PopularAttraction extends Component {
         starsDisplay.push(<ToggleStarBorder style={styles.stars} />);
       }
     }
+
+    const commentDisplay = [];
+    commentDisplay.push(
+      <Comment
+        authorName="還是當肥宅好了"
+        content="安平古堡是台南府城最重要的古蹟之一，歷史悠久橫跨了荷蘭.明朝.清朝.日治時代，旅多遊客只知道安平古堡是以前的荷蘭城，周氏蝦捲，安平老街。"
+      />);
+    commentDisplay.push(
+      <Comment
+        authorName="還是當肥宅好了"
+        content="安平古堡是台南府城最重要的古蹟之一，歷史悠久橫跨了荷蘭.明朝.清朝.日治時代，旅多遊客只知道安平古堡是以前的荷蘭城，周氏蝦捲，安平老街。"
+      />);
     return (
       <div className="PopularAttraction">
         <p className="placeName">
@@ -63,6 +76,12 @@ class PopularAttraction extends Component {
           width="720"
           height="540"
         />
+        <div>
+          <ul className="allComments">
+            {commentDisplay.map(comment => (
+              <div className="comment">{comment}</div>))}
+          </ul>
+        </div>
       </div>
       
     );

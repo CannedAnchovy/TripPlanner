@@ -77,3 +77,8 @@
 	padding:5px;
 }
 
+.journalAuthor{
+	position: absolute;
+	left: 60%;
+	top: 15px;
+}
