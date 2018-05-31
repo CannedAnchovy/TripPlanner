@@ -4,7 +4,7 @@ import TooltipIconButton from './TooltipIconButton';
 import Add from '@material-ui/icons/Add';
 import Edit from '@material-ui/icons/Edit';
 import Delete from '@material-ui/icons/Delete';
-import Save from '@material-ui/icons/Save';
+import ChildCare from '@material-ui/icons/ChildCare';
 import CloudDownload from '@material-ui/icons/CloudDownload';
 import Share from '@material-ui/icons/Share';
 import '../../css/Editor/ControlButtomBar.css';
@@ -70,12 +70,12 @@ class ControlButtomBar extends Component {
         <div className="button-container save">
           <TooltipIconButton 
             id="tooltipIconButton-saveTrip" 
-            title="儲存變更"
+            title="結束旅行，撰寫遊記！"
             placement="top"
             onClick={() => this.handleClick("saveTrip")}
             style={styles.button}
           >
-            <Save className="grey-button" style={styles.icon} />
+            <ChildCare className="grey-button" style={styles.icon} />
           </TooltipIconButton>
         </div>
         <div className="button-container download">

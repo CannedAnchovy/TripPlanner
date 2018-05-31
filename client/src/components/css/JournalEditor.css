@@ -4,6 +4,7 @@
 	height: 100%;
 	float: left;
 	background-color: #EEEEEE;
+	z-index: -1;
 }
 
 .JournalEditorFull{

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ControlTopBar from './Editor/ControlTopBar';
+import EventList from './Editor/EventList';
 import ControlButtomBar from './Editor/ControlButtomBar';
 import '../css/JournalEditor.css';
 
@@ -121,6 +122,7 @@ class JournalEditor extends Component {
     return (
       <div className="JournalEditorHalf">
         <ControlTopBar />
+        <EventList />
         <ControlButtomBar />
       </div>
     )
