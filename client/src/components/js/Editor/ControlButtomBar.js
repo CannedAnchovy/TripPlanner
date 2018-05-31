@@ -17,7 +17,6 @@ const styles = {
   icon: {
     width: 50,
     height: 50,
-    color: "#00000"
   }
 }
 
@@ -43,7 +42,7 @@ class ControlButtomBar extends Component {
             onClick={() => this.handleClick("addTrip")}
             style={styles.button}
           >
-            <Add style={styles.icon} />
+            <Add className="grey-button" style={styles.icon} />
           </TooltipIconButton>
         </div>
         <div className="button-container edit">
@@ -54,7 +53,7 @@ class ControlButtomBar extends Component {
             onClick={() => this.handleClick("editTrip")}
             style={styles.button}
           >
-            <Edit style={styles.icon} />
+            <Edit className="grey-button" style={styles.icon} />
           </TooltipIconButton>
         </div>
         <div className="button-container delete">
@@ -65,7 +64,7 @@ class ControlButtomBar extends Component {
             onClick={() => this.handleClick("deleteTrip")}
             style={styles.button}
           >
-            <Delete style={styles.icon} />
+            <Delete className="grey-button" style={styles.icon} />
           </TooltipIconButton>
         </div>
         <div className="button-container save">
@@ -76,7 +75,7 @@ class ControlButtomBar extends Component {
             onClick={() => this.handleClick("saveTrip")}
             style={styles.button}
           >
-            <Save style={styles.icon} />
+            <Save className="grey-button" style={styles.icon} />
           </TooltipIconButton>
         </div>
         <div className="button-container download">
@@ -87,7 +86,7 @@ class ControlButtomBar extends Component {
             onClick={() => this.handleClick("downloadTrip")}
             style={styles.button}
           >
-            <CloudDownload style={styles.icon} />
+            <CloudDownload className="grey-button" style={styles.icon} />
           </TooltipIconButton>
         </div>
         <div className="button-container share">
@@ -98,7 +97,7 @@ class ControlButtomBar extends Component {
             onClick={() => this.handleClick("shareTrip")}
             style={styles.button}
           >
-            <Share style={styles.icon} />
+            <Share className="grey-button" style={styles.icon} />
           </TooltipIconButton>
         </div>
       </div>

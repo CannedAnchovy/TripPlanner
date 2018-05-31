@@ -1,0 +1,13 @@
+.controlTopBar {
+    position: relative;
+    width: 100%;
+    height: 8%;
+}
+
+.attractionList-button-container {
+    position: absolute;
+    display: inline-block;
+    width: 15%;
+    left: 85%;
+    top: 15%;
+}

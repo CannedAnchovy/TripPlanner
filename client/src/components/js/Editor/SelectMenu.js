@@ -14,7 +14,7 @@ const styles = {
     height: 45
   },
   menuItem: {
-    fontSize: "2em",
+    fontSize: "1.5em",
   }
 }
 
@@ -63,18 +63,17 @@ class SelectMenu extends Component {
   }
 
   render() {
-    console.log(this.state);
-    console.log(this.props);
+    const { menuItems, menuWidth, defaultText, className } = this.props;
 
     return (
-      <div className="selectMenu-container" ref={this.container}>
-        <div className="selectMenu" ref={this.selectMenu}>
-          <div className="text-container">
-            <div className="text common-grey">{this.state.value}</div>
+      <div className={`selectMenu-container ${className}-selectMenu-container`} ref={this.container}>
+        <div className={`selectMenu ${className}-selectMenu`} ref={this.selectMenu}>
+          <div className={`text-container ${className}-text-container`}>
+            <div className={`text ${className}-text common-grey`}>{this.state.value}</div>
           </div>
-          <div className="button-container">
+          <div className={`button-container ${className}-button-container`}>
             <IconButton 
-              className="button"
+              className={`button ${className}-button`}
               onClick={this.handleOpen}
               disableRipple={true}
             >
@@ -116,7 +115,8 @@ class SelectMenu extends Component {
 SelectMenu.propTypes = {
   menuItems: PropTypes.arrayOf(String).isRequired,
   menuWidth: PropTypes.string.isRequired,
-  defaultText: PropTypes.string.isRequired
+  defaultText: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired
 };
 
 export default SelectMenu;
