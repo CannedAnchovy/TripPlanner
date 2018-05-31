@@ -7,6 +7,16 @@ class PictureList extends Component {
   constructor() {
     super();
   }
+/*
+  componentWillMount() {
+    document.addEventListener("keydown", this.props.handleChangeAttractionDisplay);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.props.handleChangeAttractionDisplay);
+  }
+*/
+
   render() {
     const place = this.props.place;
     let position;
@@ -23,17 +33,24 @@ class PictureList extends Component {
         focus.push('pictureNotFocus');
       }
     }
-    console.log(focus);
+    const imgDisplay = [];
+    for (let i = 0; i < 8; i += 1){
+      imgDisplay.push(place.popularAttractions[this.props.firstDisplay+i]);
+    }
+    console.log(this.props.focus);
     return (
-      <div>
+      <div
+        onKeyPress={e => {this.props.handleChangeAttractionDisplay(e, 4); }}
+      >
         <ul className="PictureList">
-            {place.popularAttractions.map(Attraction => (
+            {imgDisplay.map(Attraction => (
               <div className="PictureListDisplay" key={Attraction.attractionId}>
                 <img
                   className={focus[Attraction.attractionId]}
                   src={require(`../../img_attraction/img${place.placeId}_${Attraction.attractionId}.jpg`)}
                   width="120"
                   height="90"
+                  onClick={e => {this.props.handleChangeAttractionDisplay(e, Attraction.attractionId); }}
                 />
               </div>))}
           </ul>

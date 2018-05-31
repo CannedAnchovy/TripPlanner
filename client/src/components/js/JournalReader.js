@@ -61,6 +61,7 @@ class JournalReader extends Component {
       </div>);
     }
     */
+    
     readerDisplay =
       (<div className={displayMode}>
         <SearchBar />
@@ -68,6 +69,7 @@ class JournalReader extends Component {
           displayMode={this.props.display}
         />
       </div>);
+    
     return <div>{readerDisplay}</div>;
   }
   

@@ -89,9 +89,11 @@ class Journal extends Component {
         <p className="journalTitle">
           {title}
         </p>
-        <Author
-          authorName={authorName}
-        />
+        <div className="journalAuthor">
+          <Author
+            authorName={authorName}
+          />
+        </div>
         <FavoriteJournal
           journalId={journalId}
           favorite={favorite}
