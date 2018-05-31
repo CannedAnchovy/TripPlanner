@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Topbar from './Topbar';
 import MainDisplay from './MainDisplay';
+import '../css/Common.css';
 
 
 class TripPlannerApp extends Component {

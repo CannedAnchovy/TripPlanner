@@ -1,9 +1,8 @@
 .JournalEditorHalf{
-	position: fixed;
-	top: 70px;
-	left: 0;
-	right: 70%;
-	bottom: 0;
+	position: relative;
+	width: 30%;
+	height: 100%;
+	float: left;
 	background-color: #EEEEEE;
 }
 

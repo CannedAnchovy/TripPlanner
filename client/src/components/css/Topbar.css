@@ -22,7 +22,7 @@
 	left: 20px;
 	float: left;
 	color: #757575;
-	font-weight: normal;
+	font-weight: 200;
 }
 
 .topButton{
@@ -33,7 +33,7 @@
 	font-size: 25px;
 	top: 15px;
 	text-align: center;
-	font-weight: bold;
+	font-weight: 400;
 	top: 0;
 	color: #757575;
 	line-height: 70px;
