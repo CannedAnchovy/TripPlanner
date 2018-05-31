@@ -11,7 +11,7 @@ import '../../css/Editor/SelectMenu.css'
 const styles = {
   expandIcon: {
   	width: 45,
-  	height: 45
+    height: 45
   },
   menuItem: {
     fontSize: "2em",
@@ -31,7 +31,7 @@ class SelectMenu extends Component {
       open: false,
       value: ""
     }
-    
+
     this.selectMenu = React.createRef();
     this.container = React.createRef();
 

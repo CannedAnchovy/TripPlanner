@@ -4,11 +4,11 @@ import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 
 const TooltipIconButton = (props) => {
-  const { id, title, children, handleClick } = props;
+  const { id, title, placement, style, onClick, children } = props;
 
   return (
-    <Tooltip id={id} title={title}>
-      <IconButton onClick={handleClick}>
+    <Tooltip id={id} title={title} placement={placement}>
+      <IconButton style={style} onClick={onClick}>
         {children}
       </IconButton>
     </Tooltip>
@@ -18,6 +18,10 @@ const TooltipIconButton = (props) => {
 TooltipIconButton.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  placement: PropTypes.string.isRequired,
+  style: PropTypes.object,
   children: PropTypes.node.isRequired,
-  handleClick: PropTypes.func.isRequired,
+  onClick : PropTypes.func.isRequired,
 }
+
+export default TooltipIconButton;

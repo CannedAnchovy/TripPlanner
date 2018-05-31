@@ -119,7 +119,7 @@ class JournalEditor extends Component {
         </div>
       )*/
     return (
-      <div>
+      <div className="JournalEditorHalf">
         <ControlButtomBar />
       </div>
     )

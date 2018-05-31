@@ -1,0 +1,39 @@
+.controlButtomBar {
+    position: absolute;
+    top: 92%;
+    width: 100%;
+    height: 8%;
+}
+
+.button-container {
+    position: absolute;
+    width: 12%;
+    height: 100%;
+    margin: 0 1% 0 1%;
+    display: inline-block;
+}
+
+
+.add {
+    left: 1%;
+}
+
+.edit {
+    left: 12%;
+}
+
+.delete {
+    left: 24%;
+}
+
+.save {
+    left: 59%;
+}
+
+.download {
+    left: 72%;
+}
+
+.share {
+    left: 84%;
+}
