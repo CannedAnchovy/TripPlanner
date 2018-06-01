@@ -4,6 +4,8 @@ import TooltipIconButton from './TooltipIconButton';
 import Add from '@material-ui/icons/Add';
 import Edit from '@material-ui/icons/Edit';
 import Delete from '@material-ui/icons/Delete';
+import FlightLand from '@material-ui/icons/FlightLand';
+import CheckCircle from '@material-ui/icons/CheckCircle';
 import ChildCare from '@material-ui/icons/ChildCare';
 import CloudDownload from '@material-ui/icons/CloudDownload';
 import Share from '@material-ui/icons/Share';
@@ -17,10 +19,18 @@ const styles = {
   icon: {
     width: 50,
     height: 50,
+  },
+  saveButton: {
+    width: 80,
+    height: 80,
+  },
+  saveIcon: {
+    width: 70,
+    height: 70,
   }
 }
 
-class ControlButtomBar extends Component {
+class ControlBottomBar extends Component {
   constructor() {
     super();
     this.state = {
@@ -70,12 +80,23 @@ class ControlButtomBar extends Component {
         <div className="button-container save">
           <TooltipIconButton 
             id="tooltipIconButton-saveTrip" 
-            title="結束旅行，撰寫遊記！"
+            title="儲存變更！"
             placement="top"
             onClick={() => this.handleClick("saveTrip")}
+            style={styles.saveButton}
+          >
+            <CheckCircle className="dark-green-button" style={styles.saveIcon} />
+          </TooltipIconButton>
+        </div>
+        <div className="button-container finish">
+          <TooltipIconButton 
+            id="tooltipIconButton-finishTrip" 
+            title="結束旅行，撰寫遊記！"
+            placement="top"
+            onClick={() => this.handleClick("finishTrip")}
             style={styles.button}
           >
-            <ChildCare className="grey-button" style={styles.icon} />
+            <FlightLand className="grey-button" style={styles.icon} />
           </TooltipIconButton>
         </div>
         <div className="button-container download">
@@ -105,4 +126,4 @@ class ControlButtomBar extends Component {
   }
 }
 
-export default ControlButtomBar;
+export default ControlBottomBar;

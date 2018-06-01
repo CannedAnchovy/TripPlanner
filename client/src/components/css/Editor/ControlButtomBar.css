@@ -18,21 +18,26 @@
 }
 
 .edit {
-    left: 12%;
+    left: 13%;
 }
 
 .delete {
-    left: 24%;
+    left: 25%;
 }
 
 .save {
-    left: 57%;
+    left: 41%;
+    top: -8%;
+}
+
+.finish {
+    left: 60%;
 }
 
 .download {
-    left: 71%;
+    left: 74%;
 }
 
 .share {
-    left: 84%;
+    left: 86%;
 }

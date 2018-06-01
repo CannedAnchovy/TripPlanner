@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ControlTopBar from './Editor/ControlTopBar';
 import EventList from './Editor/EventList';
-import ControlButtomBar from './Editor/ControlButtomBar';
+import ControlBottomBar from './Editor/ControlBottomBar';
 import '../css/JournalEditor.css';
 
 // create test data
@@ -123,7 +123,7 @@ class JournalEditor extends Component {
       <div className="JournalEditorHalf">
         <ControlTopBar />
         <EventList />
-        <ControlButtomBar />
+        <ControlBottomBar />
       </div>
     )
   }

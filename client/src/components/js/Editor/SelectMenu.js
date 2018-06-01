@@ -20,8 +20,8 @@ const styles = {
 
 const ExpandIcon = (props) => {
   if(props.expanded)
-    return <ExpandLessIcon className="dark-green" style={styles.expandIcon} />;
-  return <ExpandMoreIcon className="dark-green" style={styles.expandIcon} />;
+    return <ExpandLessIcon className="dark-green-button" style={styles.expandIcon} />;
+  return <ExpandMoreIcon className="dark-green-button" style={styles.expandIcon} />;
 }
 
 class SelectMenu extends Component {
@@ -101,6 +101,7 @@ class SelectMenu extends Component {
                 selected={item === this.state.value}
                 onClick={() => this.handleClose(item)}
                 style={styles.menuItem}
+                key={item}
               >
                 {item}
               </MenuItem>
@@ -114,7 +115,7 @@ class SelectMenu extends Component {
 
 SelectMenu.propTypes = {
   menuItems: PropTypes.arrayOf(String).isRequired,
-  menuWidth: PropTypes.string.isRequired,
+  menuWidth: PropTypes.number.isRequired,
   defaultText: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired
 };

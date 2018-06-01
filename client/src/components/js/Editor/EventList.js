@@ -11,46 +11,39 @@ const EventList = (props) => {
         id={1}
         time="08:00"
         place="日月潭"
+        notes={new Array(5).fill("css好難人生好難")}
       />
       <EventItem
         id={2}
         time="12:35"
         place="日月潭"
+        notes={[]}
       />
       <EventItem
         id={3}
         time="23:00"
         place="日月潭"
+        notes={[]}
+        disableBar={false}
       />
       <EventItem
-        id={4}
+        id={1}
         time="08:00"
         place="日月潭"
+        notes={new Array(5).fill("css好難人生好難")}
       />
       <EventItem
-        id={5}
+        id={2}
         time="12:35"
         place="日月潭"
+        notes={[]}
       />
       <EventItem
-        id={6}
+        id={3}
         time="23:00"
         place="日月潭"
-      />
-      <EventItem
-        id={7}
-        time="08:00"
-        place="日月潭"
-      />
-      <EventItem
-        id={8}
-        time="12:35"
-        place="日月潭"
-      />
-      <EventItem
-        id={9}
-        time="23:00"
-        place="日月潭"
+        notes={[]}
+        disableBar={true}
       />
     </div>
   );

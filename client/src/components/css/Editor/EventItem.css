@@ -1,7 +1,11 @@
+.eventItem-container {
+    position: relative;
+    width: 100%;
+}
+
 .eventItem {
     position: relative;
     width: 100%;
-    height: 15%;
 }
 
 .time-container {
@@ -59,8 +63,8 @@ input[type="time"]::-webkit-inner-spin-button {
 
 .noteButton-container {
     position: absolute;
-    width: 15%;
-    top: 23%;
+    width: 10%;
+    top: 25%;
     left: 87%;
 }
 
@@ -68,7 +72,7 @@ input[type="time"]::-webkit-inner-spin-button {
     position: absolute;
     width: 1%;
     height: 100%;
-    top: -30%;
+    top: 30%;
     left: 30.75%;
     border-left:  4px #8a8a8a solid;
     z-index: -1;
@@ -76,4 +80,20 @@ input[type="time"]::-webkit-inner-spin-button {
 
 .nothing {
     display: none;
+}
+
+.note {
+    position: relative;
+    width: 100%;
+    overflow: scroll;
+}
+
+.note-ul-container {
+    position: absolute;
+    width: 55%;
+    height: 100%;
+    left: 40%;
+    font-size: 1.1em;
+    font-weight: 100;
+    color: #9b9b9b;
 }

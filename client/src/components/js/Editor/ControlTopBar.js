@@ -36,7 +36,7 @@ const ControlTopBar = (props) => {
         <TooltipIconButton 
           id="tooltipIconButton-attractionList" 
           title="景點清單"
-          placement="buttom"
+          placement="bottom"
           onClick={() => console.log("addTrip")}
           style={styles.button}
         >
