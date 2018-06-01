@@ -74,6 +74,7 @@ class JournalHalf extends Component {
                   journalId={journalId}
                   touristAttraction={touristAttraction}
                   handleFavoriteTouristAttractionClick={this.props.handleFavoriteTouristAttractionClick}
+                  handleAttractionClick={this.props.handleAttractionClick}
                 />
               </div>))}
           </ul>

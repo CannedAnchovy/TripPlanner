@@ -63,7 +63,7 @@ class Journal extends Component {
       displayArrowBack =
         (<ImageNavigateBefore
           style={styles.arrowStyle}
-          onClick={e => this.props.handleAttractionDisplayChange(e, journalId, 'left')}
+          onClick={e => this.props.handleJournalAttractionDisplayChange(e, journalId, 'left')}
         />);
     } else {
       displayArrowBack =
@@ -75,7 +75,7 @@ class Journal extends Component {
       displayArrowNext =
         (<ImageNavigateNext
           style={styles.arrowStyle}
-          onClick={e => this.props.handleAttractionDisplayChange(e, journalId, 'right')}
+          onClick={e => this.props.handleJournalAttractionDisplayChange(e, journalId, 'right')}
         />);
     } else {
       displayArrowNext =

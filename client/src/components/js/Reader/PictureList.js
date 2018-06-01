@@ -27,7 +27,7 @@ class PictureList extends Component {
     }
     const focus = [];
     for (let i = 0; i < place.popularAttractions.length; i += 1) {
-      if (i === this.props.focus) {
+      if (i === this.props.focus.attraction) {
         focus.push('pictureFocus');
       } else {
         focus.push('pictureNotFocus');
@@ -37,10 +37,10 @@ class PictureList extends Component {
     for (let i = 0; i < 8; i += 1){
       imgDisplay.push(place.popularAttractions[this.props.firstDisplay+i]);
     }
-    console.log(this.props.focus);
+    console.log(this.props.firstDisplay);
     return (
       <div
-        onKeyPress={e => {this.props.handleChangeAttractionDisplay(e, 4); }}
+        onKeyPress={e => {this.props.handlePopularAttractionDisplayChange(e, 4); }}
       >
         <ul className="PictureList">
             {imgDisplay.map(Attraction => (
@@ -50,7 +50,7 @@ class PictureList extends Component {
                   src={require(`../../img_attraction/img${place.placeId}_${Attraction.attractionId}.jpg`)}
                   width="120"
                   height="90"
-                  onClick={e => {this.props.handleChangeAttractionDisplay(e, Attraction.attractionId); }}
+                  onClick={e => {this.props.handlePopularAttractionDisplayChange(e, Attraction.attractionId); }}
                 />
               </div>))}
           </ul>

@@ -29,6 +29,7 @@ const TouristAttractionFull = (props) => {
     journalId,
     touristAttraction,
     handleFavoriteTouristAttractionClick,
+    handleAttractionClick,
   } = props;
   const imgUrl = require(`../../img_journal/img${journalId}_${touristAttraction.attractionId}.jpg`);
   let displayFavoriteAttraction;
@@ -62,7 +63,10 @@ const TouristAttractionFull = (props) => {
         width="320"
         height="240"
       />
-      <p className="touristAttractionFullName">{touristAttraction.attractionName}</p>
+      <p
+        className="touristAttractionFullName"
+        onClick={e => { handleAttractionClick(e, touristAttraction.attractionName); }}
+      >{touristAttraction.attractionName}</p>
       <div className="favoriteAttactionFullIcon">
         {displayFavoriteAttraction}
       </div>

@@ -24,8 +24,24 @@ class JournalReader extends Component {
     } else if (this.props.display === 'editor_reader') {
       displayMode = 'JournalReaderHalf';
     }
-    /*
-    if(this.props.displayId === -1) {
+    
+    console.log(this.props.focus);
+
+    if(this.props.focus.displayAttraction === true){
+      readerDisplay =
+        (<div className={displayMode}>
+          <SearchBar />
+          <PopularAttractionTable
+            journals={this.props.journals}
+            displayMode={this.props.display}
+            focus={this.props.focus}
+            attractionTable={this.props.attractionTable}
+            firstDisplay={this.props.popularListFirstDisplay}
+            handleBackJournal={this.props.handleBackJournal}
+            handlePopularAttractionDisplayChange={this.props.handlePopularAttractionDisplayChange}
+          />
+        </div>);
+      } else if(this.props.displayId === -1) {
       readerDisplay =
       <div className={displayMode}>
         <SearchBar />
@@ -38,7 +54,7 @@ class JournalReader extends Component {
                   displayMode={this.props.display}
                   handleFavoriteJournalClick = {this.props.handleFavoriteJournalClick}
                   handleFavoriteTouristAttractionClick = {this.props.handleFavoriteTouristAttractionClick}
-                  handleAttractionDisplayChange = {this.props.handleAttractionDisplayChange}
+                  handleJournalAttractionDisplayChange = {this.props.handleJournalAttractionDisplayChange}
                   handleSeeMoreClick = {this.props.handleSeeMoreClick}
                 />
               </div>))}
@@ -52,6 +68,7 @@ class JournalReader extends Component {
         <div>
           <JournalHalf
             journal={this.props.journals[this.props.displayId]}
+            handleAttractionClick={this.props.handleAttractionClick}
             handleFindJournalClick={this.props.handleFindJournalClick}
             handleFavoriteJournalClick = {this.props.handleFavoriteJournalClick}
             handleFavoriteTouristAttractionClick = {this.props.handleFavoriteTouristAttractionClick}            
@@ -60,16 +77,10 @@ class JournalReader extends Component {
         </div>
       </div>);
     }
-    */
     
-    readerDisplay =
-      (<div className={displayMode}>
-        <SearchBar />
-        <PopularAttractionTable
-          displayMode={this.props.display}
-        />
-      </div>);
     
+    
+      
     return <div>{readerDisplay}</div>;
   }
   

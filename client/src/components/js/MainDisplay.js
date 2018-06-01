@@ -10,6 +10,7 @@ class MainDisplay extends Component {
   }
 
   render() {
+  	console.log(this.props.popularListFirstDisplay);
     let mainDisplay;
     if(this.props.display === 'home') {
       mainDisplay =
@@ -27,8 +28,12 @@ class MainDisplay extends Component {
         <JournalTable
           handleSeeMoreClick={this.props.handleSeeMoreClick}
           handleFindJournalClick={this.props.handleFindJournalClick}
+          handleBackJournal={this.props.handleBackJournal}
           display={this.props.display}
           displayId={this.props.displayId}
+          keepAttractionFocus={this.props.keepAttractionFocus}
+          attractionFocus={this.props.attractionFocus}
+          popularListFirstDisplay={this.props.popularListFirstDisplay}
         />
       </div>)
     } else if(this.props.display === 'reader') {
@@ -37,8 +42,12 @@ class MainDisplay extends Component {
         <JournalTable
           handleSeeMoreClick={this.props.handleSeeMoreClick}
           handleFindJournalClick={this.props.handleFindJournalClick}
+          handleBackJournal={this.props.handleBackJournal}
           display={this.props.display}
           displayId={this.props.displayId}
+          keepAttractionFocus={this.props.keepAttractionFocus}
+          attractionFocus={this.props.attractionFocus}
+          popularListFirstDisplay={this.props.popularListFirstDisplay}
         />
       </div>)
     } else if(this.props.display === 'editor') {

@@ -20,7 +20,7 @@ class PopularAttraction extends Component {
     super();
   }
   render() {
-    const attraction = this.props.place.popularAttractions[this.props.focus];
+    const attraction = this.props.place.popularAttractions[this.props.focus.attraction];
     let position;
     if(this.props.displayMode === 'editor_reader') {
       position = 'PictureListHalf';
@@ -37,16 +37,14 @@ class PopularAttraction extends Component {
     }
 
     const commentDisplay = [];
-    commentDisplay.push(
+    const comments = this.props.comments;
+    for (let i = 0; i < comments.length; i += 1) {
+      commentDisplay.push(
       <Comment
-        authorName="還是當肥宅好了"
-        content="安平古堡是台南府城最重要的古蹟之一，歷史悠久橫跨了荷蘭.明朝.清朝.日治時代，旅多遊客只知道安平古堡是以前的荷蘭城，周氏蝦捲，安平老街。"
+        authorName={comments[i].authorName}
+        content={comments[i].content}
       />);
-    commentDisplay.push(
-      <Comment
-        authorName="還是當肥宅好了"
-        content="安平古堡是台南府城最重要的古蹟之一，歷史悠久橫跨了荷蘭.明朝.清朝.日治時代，旅多遊客只知道安平古堡是以前的荷蘭城，周氏蝦捲，安平老街。"
-      />);
+    }
     return (
       <div className="PopularAttraction">
         <p className="placeName">
