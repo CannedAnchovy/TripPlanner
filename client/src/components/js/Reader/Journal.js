@@ -89,7 +89,10 @@ class Journal extends Component {
         <p className="journalTitle">
           {title}
         </p>
-        <div className="journalAuthor">
+        <div
+          className="journalAuthor"
+          onClick={e => this.props.handleAuthorClick(e, authorName)}
+        >
           <Author
             authorName={authorName}
           />
@@ -121,7 +124,11 @@ class Journal extends Component {
         <div>
           <ul className="hashtagList">
             {hashtags.map(hashtag => (
-              <div className="displayTag" key={hashtag.tagId}>
+              <div
+                className="displayTag"
+                key={hashtag.tagId}
+                onClick={e => {this.props.handleHashtagClick(e, hashtag.tagName);}}
+              >
                 <Hashtag
                   hashtag={hashtag}
                 />

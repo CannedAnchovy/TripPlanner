@@ -43,6 +43,7 @@ class PopularAttraction extends Component {
       <Comment
         authorName={comments[i].authorName}
         content={comments[i].content}
+        handleAuthorClick={this.props.handleAuthorClick}
       />);
     }
     return (

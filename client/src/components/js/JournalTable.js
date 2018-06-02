@@ -15,6 +15,8 @@ class JournalTable extends Component {
     this.handleFavoriteTouristAttractionClick = this.handleFavoriteTouristAttractionClick.bind(this);
     this.handlePopularAttractionDisplayChange = this.handlePopularAttractionDisplayChange.bind(this);
     this.handleAttractionClick = this.handleAttractionClick.bind(this);
+    this.handleHashtagClick = this.handleHashtagClick.bind(this);
+    this.handleAuthorClick = this.handleAuthorClick.bind(this);
   }
 
   componentWillMount() {
@@ -72,7 +74,43 @@ class JournalTable extends Component {
     }
   }
 
+  handleHashtagClick(e, tagName) {
+    console.log('in handleHashtagClick~~');
+    const newJournals = this.state.journals;
+    for ( let i = 0; i < newJournals.length; i += 1) {
+      let check = 0;
+      for ( let j = 0; j < newJournals[i].hashtags.length; j += 1) {
+        if ( tagName === newJournals[i].hashtags[j].tagName) {
+          check = 1;
+          break;
+        }
+      }
+      if (check){
+        newJournals[i].journalDisplay = true;
+      } else {
+        newJournals[i].journalDisplay = false;
+      }
+    }
+    this.setState({
+      journals: newJournals,
+    });
+  }
 
+  handleAuthorClick(e, authorName) {
+    this.props.handleFindJournalClick(e);
+    console.log(authorName);
+    const newJournals = this.state.journals;
+    for ( let i = 0; i < newJournals.length; i += 1) {
+      if( authorName === newJournals[i].authorName) {
+        newJournals[i].journalDisplay = true;
+      } else {
+        newJournals[i].journalDisplay = false;
+      }
+    }
+    this.setState({
+      journals: newJournals,
+    });
+  }
   
 
   handlePopularAttractionDisplayChange(e, focusNum){
@@ -163,8 +201,8 @@ class JournalTable extends Component {
 
   render() {
     const journals = this.state.journals;
-    console.log(journals);
-    console.log(this.props.popularListFirstDisplay)
+    // console.log(journals);
+    // console.log(this.props.popularListFirstDisplay)
     return (
       <JournalReader
         journals = {journals}
@@ -173,6 +211,8 @@ class JournalTable extends Component {
         handleJournalAttractionDisplayChange={this.handleJournalAttractionDisplayChange}
         handlePopularAttractionDisplayChange={this.handlePopularAttractionDisplayChange}
         handleAttractionClick={this.handleAttractionClick}
+        handleHashtagClick={this.handleHashtagClick}
+        handleAuthorClick={this.handleAuthorClick}
         handleSeeMoreClick={this.props.handleSeeMoreClick}
         handleFindJournalClick={this.props.handleFindJournalClick}
         handleBackJournal={this.props.handleBackJournal}
