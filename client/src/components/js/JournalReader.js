@@ -39,15 +39,22 @@ class JournalReader extends Component {
             firstDisplay={this.props.popularListFirstDisplay}
             handleBackJournal={this.props.handleBackJournal}
             handlePopularAttractionDisplayChange={this.props.handlePopularAttractionDisplayChange}
+            handleAuthorClick={this.props.handleAuthorClick}
           />
         </div>);
       } else if(this.props.displayId === -1) {
+      let journalDisplay = [];
+      for (let i = 0; i < this.props.journals.length; i += 1) {
+        if(this.props.journals[i].journalDisplay === true) {
+          journalDisplay.push(this.props.journals[i]);
+        }
+      }
       readerDisplay =
       <div className={displayMode}>
         <SearchBar />
         <div>
           <ul className="journalList">
-            {this.props.journals.map(journal => (
+            {journalDisplay.map(journal => (
               <div className="displayJournal" key={journal.journalId}>
                 <Journal
                   journal={journal}
@@ -56,6 +63,8 @@ class JournalReader extends Component {
                   handleFavoriteTouristAttractionClick = {this.props.handleFavoriteTouristAttractionClick}
                   handleJournalAttractionDisplayChange = {this.props.handleJournalAttractionDisplayChange}
                   handleSeeMoreClick = {this.props.handleSeeMoreClick}
+                  handleHashtagClick={this.props.handleHashtagClick}
+                  handleAuthorClick={this.props.handleAuthorClick}
                 />
               </div>))}
           </ul>
@@ -73,6 +82,7 @@ class JournalReader extends Component {
             handleFavoriteJournalClick = {this.props.handleFavoriteJournalClick}
             handleFavoriteTouristAttractionClick = {this.props.handleFavoriteTouristAttractionClick}            
             handleAttractionDisplayChange = {this.props.handleAttractionDisplayChange}
+            handleAuthorClick={this.props.handleAuthorClick}
           />
         </div>
       </div>);

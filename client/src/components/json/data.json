@@ -5,7 +5,7 @@
       "journalDisplay": true,
       "favorite": true,
       "favoriteNum": 100,
-      "authorName": "台北小吃貨",
+      "authorName": "永和田馥甄",
       "title": "台南美食之旅",
       "touristAttractions": [
         {
@@ -101,7 +101,7 @@
       "journalDisplay": true,
       "favorite": true,
       "favoriteNum": 95,
-      "authorName": "台中健走哥",
+      "authorName": "新手碼農 QAQ",
       "title": "台南直直撞",
       "touristAttractions": [
         {
@@ -171,6 +171,10 @@
         {
           "tagName": "二日遊",
           "tagId": 2
+        },
+        {
+          "tagName": "台南",
+          "tagId": 3
         }
       ],
       "display": {
@@ -184,7 +188,7 @@
       "journalDisplay": true,
       "favorite": true,
       "favoriteNum": 289,
-      "authorName": "還是當肥宅好了",
+      "authorName": "新手碼農 QAQ",
       "title": "高雄網美之旅",
       "touristAttractions": [
         {
@@ -285,6 +289,10 @@
         {
           "tagName": "高雄",
           "tagId": 3
+        },
+        {
+          "tagName": "美食",
+          "tagId": 4
         }
       ],
       "display": {

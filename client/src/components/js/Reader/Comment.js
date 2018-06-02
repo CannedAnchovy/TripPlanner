@@ -12,7 +12,10 @@ class PictureList extends Component {
     
     return (
       <div className="Comment">
-        <div className="commentAuthor">
+        <div
+          className="commentAuthor"
+          onClick={e => this.props.handleAuthorClick(e, this.props.authorName)}
+        >
           <Author
             authorName={this.props.authorName}
           />

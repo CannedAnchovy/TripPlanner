@@ -50,7 +50,10 @@ class JournalHalf extends Component {
         <p className="journalTitleHalf">
           {title}
         </p>
-        <div className="journalAuthor">
+        <div
+          className="journalAuthor"
+          onClick={e => this.props.handleAuthorClick(e, authorName)}
+        >
           <Author
             authorName={authorName}
           />

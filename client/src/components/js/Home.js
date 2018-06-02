@@ -32,7 +32,7 @@ const Home = (props) => {
       </Button>
       </MuiThemeProvider>
       <div className="homeBottomBar">
-        <p>© 2018 by 還是當肥宅好了 with create React app</p>
+        <p>© 2018 by 新手碼農 with create React app</p>
       </div>
     </div>);
 };

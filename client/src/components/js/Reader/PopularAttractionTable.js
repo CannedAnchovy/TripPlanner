@@ -52,6 +52,7 @@ class PopularAttracitonTable extends Component {
           place={this.props.attractionTable[this.props.focus.place]}
           focus={this.props.focus}
           comments={comments}
+          handleAuthorClick={this.props.handleAuthorClick}
         />
       </div>
     );
