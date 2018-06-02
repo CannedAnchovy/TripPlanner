@@ -10,38 +10,37 @@ const EventList = (props) => {
       <EventItem
         id={1}
         time="08:00"
-        place="日月潭"
-        notes={new Array(5).fill("css好難人生好難")}
+        place="文章牛肉湯"
+        notes={["早上六點就要起床",  "先去火車站接爸媽"]}
       />
       <EventItem
         id={2}
-        time="12:35"
-        place="日月潭"
+        time="08:30"
+        place="安平豆花"
         notes={[]}
       />
       <EventItem
         id={3}
-        time="23:00"
-        place="日月潭"
-        notes={[]}
-        disableBar={false}
-      />
-      <EventItem
-        id={1}
-        time="08:00"
-        place="日月潭"
-        notes={new Array(5).fill("css好難人生好難")}
-      />
-      <EventItem
-        id={2}
-        time="12:35"
-        place="日月潭"
+        time="09:00"
+        place="安平老街"
         notes={[]}
       />
       <EventItem
-        id={3}
-        time="23:00"
-        place="日月潭"
+        id={4}
+        time="11:00"
+        place="四草隧道"
+        notes={[]}
+      />
+      <EventItem
+        id={5}
+        time="14:00"
+        place="億載金城"
+        notes={[]}
+      />
+      <EventItem
+        id={6}
+        time="17:30"
+        place="花園夜市"
         notes={[]}
         disableBar={true}
       />

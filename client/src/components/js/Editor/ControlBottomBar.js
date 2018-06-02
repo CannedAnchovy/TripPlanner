@@ -83,9 +83,9 @@ class ControlBottomBar extends Component {
             title="儲存變更！"
             placement="top"
             onClick={() => this.handleClick("saveTrip")}
-            style={styles.saveButton}
+            style={styles.button}
           >
-            <CheckCircle className="dark-green-button" style={styles.saveIcon} />
+            <CheckCircle className="dark-green-button" style={styles.icon} />
           </TooltipIconButton>
         </div>
         <div className="button-container finish">
