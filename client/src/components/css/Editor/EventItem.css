@@ -85,7 +85,8 @@ input[type="time"]::-webkit-inner-spin-button {
 .note {
     position: relative;
     width: 100%;
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .note-ul-container {
