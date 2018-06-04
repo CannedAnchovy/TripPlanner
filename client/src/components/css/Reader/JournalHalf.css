@@ -1,0 +1,45 @@
+.JournalHalf{
+	position: absolute;
+	width: 95%;
+	min-height: 350px;
+	background-color: #EEEEEE;
+	margin-top: 30px;
+	margin-bottom: 50px;
+	border-radius: 30px;
+	left: 2.5%;
+}
+
+ul.TouristAttractionFullList{
+	position: absolute;
+	padding-bottom: 50px;
+	display: block;
+}
+
+.displayTouristAttractionFull{
+	height: 300px;
+	display: block;
+	padding: 11px;
+}
+
+.divtouristAttractionFullList{
+	margin-top: 80px;
+}
+
+.journalTitleHalf{
+	float: left;
+	position: absolute;
+	left: 5%;
+	margin-top: 20px;
+	color: #616161;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.backtoJournalList{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	margin: 10px;
+	background-color: #444444;
+	color: white;
+}

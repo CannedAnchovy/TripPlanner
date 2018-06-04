@@ -1,0 +1,34 @@
+{
+	"teamMembers": [
+		{
+			"memberId": 0,
+			"name": "葉瑞綺",
+			"position": "產品規劃",
+			"slogan": "「好想耍廢一整天！」"
+		},
+		{
+			"memberId": 1,
+			"name": "葉思敏",
+			"position": "產品規劃",
+			"slogan": "「好想耍廢一整天！」"
+		},
+		{
+			"memberId": 2,
+			"name": "張軒綾",
+			"position": "介面設計",
+			"slogan": "「好想耍廢一整天！」"
+		},
+		{
+			"memberId": 3,
+			"name": "李易修",
+			"position": "網頁開發",
+			"slogan": "「CSS好難，人生好難」"
+		},
+		{
+			"memberId": 4,
+			"name": "新手碼農",
+			"position": "網頁開發",
+			"slogan": "「我覺得我的腦袋overflow了。」"
+		}
+	]
+}

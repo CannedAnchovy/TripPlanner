@@ -1,0 +1,24 @@
+.favoriteJournal{
+	position: absolute;
+	background-color: red;
+	float: left;
+}
+
+.favoriteIcon{
+	position: absolute;
+	float: left;
+	margin-top: 15px;
+	left: 85%;
+}
+
+
+.favoriteNum{
+	position: absolute;
+	float: left;
+	left: 90%;
+	color: #AED581;
+	font-family: arial;
+	font-size: 30px;
+	margin-top: 19px;
+}
+

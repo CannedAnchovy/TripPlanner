@@ -1,0 +1,143 @@
+.AboutUs{
+	position: absolute;
+	background-image: url("../img/home.jpg");
+	background-size: cover;
+	height: 100%;
+	float: left;
+	width: 100%;
+	overflow: auto;
+}
+
+.aboutUsTitle{
+	position: absolute;
+	width: 100%;
+	background-color: white;
+	height: 15%;
+}
+
+.productName{
+	font-family: arial;
+	font-size: 50px;
+	color: #757575;
+	font-weight: bold;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	top: 20%;
+}
+
+.aboutUsTop{
+	font-family: arial;
+	font-size: 50px;
+	color: #C5E1A5;
+	font-weight: bold;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	top: 55%;
+}
+
+.coreValue{
+	position: absolute;
+	top:15%;
+	width: 100%;
+	background-color: white;
+	height: 50%;
+}
+
+.coreValueContent{
+	position: absolute;
+	width: 50%;
+	top: 120px;
+	left: 25%;
+	font-size: 18px;
+	color: #757575;
+}
+
+.slogan{
+	position: absolute;
+	top: 65%;
+	width: 100%;
+	color: white;
+	text-align: center;
+	line-height: 50px;
+	font-size: 25px;
+	padding-top: 3%;
+	height: 30%;
+}
+
+.teamMembers{
+	position: absolute;
+	width: 100%;
+	top: 100%;
+	background-color: white;
+	height: 60%;
+}
+
+
+
+.specialThanks{
+	position: absolute;
+	width: 100%;
+	top: 160%;
+	height: 30%;
+	background-color: #EEEEEE;
+}
+
+.thanksPerson{
+	position: absolute;
+	width: 15%;
+	height: 40%;
+	border-color: #7CB342;
+	/*border-color: #999999;*/
+	border-width: 2px;
+	border-style: solid;
+	top: 35%;
+}
+
+#professor{
+	left: 25%;
+}
+
+#mentor{
+	right: 25%;
+}
+
+.thanksPersonTitle{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: 10%;
+	color: #7CB342;
+	font-size: 20px;
+}
+
+.thanksPersonName{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: 50%;
+	color: #757575;
+	font-size: 20px;
+}
+
+.aboutUsBottomBar{
+	position: absolute;
+	top: 190%;
+	color: #FFFFFF;
+	background-color: rgba(0, 0, 0, 50%);
+	height: 100px;
+	width: 100%;
+	text-align: center;
+	line-height: 100px;
+}
+
+.aboutUsSubtitle{
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	height: 100px;
+	line-height: 100px;
+	font-size: 25px;
+	color: #558B2F;
+}

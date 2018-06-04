@@ -1,0 +1,100 @@
+.eventItem-container {
+    position: relative;
+    width: 100%;
+}
+
+.eventItem {
+    position: relative;
+    width: 100%;
+}
+
+.time-container {
+    position: absolute;
+    width: 20%;
+    height: 35%;
+    top: 31%;
+    left: 3%;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+input[type="time"]::-webkit-clear-button {
+    display: none;
+}
+
+input[type="time"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+.index-circle {
+    position: absolute;
+    width: 9%;
+    height: 44%;
+    top: 24%;
+    left: 26%;
+    background-color: #FFFFFF;
+    border-radius: 40px;
+    display: inline-block;
+    border: 4px #8a8a8a solid;
+    text-align: center;
+    vertical-align: middle;
+    color: #6e6e6e;
+    font-weight: 600;
+}
+
+.index {
+    position: absolute;
+    top: 23%;
+    left: 35%;
+    font-size: 1.7em;
+}
+
+.place-container {
+    position: absolute;
+    width: 45%;
+    height: 70%;
+    top: 15%;
+    left: 40%;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.noteButton-container {
+    position: absolute;
+    width: 10%;
+    top: 25%;
+    left: 87%;
+}
+
+.verticalBarDiv {
+    position: absolute;
+    width: 1%;
+    height: 100%;
+    top: 30%;
+    left: 30.75%;
+    border-left:  4px #8a8a8a solid;
+    z-index: -1;
+}
+
+.nothing {
+    display: none;
+}
+
+.note {
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.note-ul-container {
+    position: absolute;
+    width: 55%;
+    height: 100%;
+    left: 40%;
+    font-size: 1.1em;
+    font-weight: 100;
+    color: #9b9b9b;
+}

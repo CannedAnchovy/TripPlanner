@@ -1,0 +1,25 @@
+.authorPicture{
+	position: absolute;
+	float: left;
+	left: 0;
+	
+}
+
+.authorName{
+	position: absolute;
+	color: #616161;
+	font-size: 20px;
+	width: 200px;
+	float: left;
+	left: 60px;
+	margin-top: 5px;
+}
+
+.Author:hover{
+	font-weight: bold;
+}
+
+.Author{
+	position: absolute;
+}
+

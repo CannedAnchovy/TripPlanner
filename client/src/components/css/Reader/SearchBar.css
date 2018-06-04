@@ -1,0 +1,38 @@
+.SearchBar{
+	margin: auto;
+	height: 70px;
+	line-height: 70px;
+}
+
+
+.searchIcon{
+	padding: 15px;
+	position: relative;
+	top: 10px;
+	left: 86%;
+	float: left;
+}
+
+.searchPlace{
+	float: left;
+	position: relative;
+	left: 8%;
+	top: 35px;
+	width: 20%;
+}
+
+.searchPurpose{
+	float: left;
+	position: relative;
+	top: 35px;
+	width: 20%;
+	left: 13%;
+}
+
+.searchDay{
+	float: left;
+	position: relative;
+	top: 35px;
+	width: 20%;
+	left: 18%;
+}

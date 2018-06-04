@@ -1,0 +1,10 @@
+.PictureList{
+	position: absolute;
+	left: 0;
+	top: 150px;
+	margin: auto;
+}
+
+img.pictureNotFocus{
+	opacity: 0.4;
+}

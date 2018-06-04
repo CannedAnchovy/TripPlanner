@@ -1,0 +1,17 @@
+.JournalEditorHalf{
+	position: relative;
+	width: 30%;
+	height: 100%;
+	float: left;
+	background-color: #EEEEEE;
+	z-index: -1;
+}
+
+.JournalEditorFull{
+	position: fixed;
+	top: 70px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #EEEEEE;
+}

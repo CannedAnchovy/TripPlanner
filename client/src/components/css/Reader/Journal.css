@@ -1,0 +1,84 @@
+.Journal{
+	position: absolute;
+	width: 95%;
+	height: 350px;
+	background-color: #EEEEEE;
+	margin-top: 30px;
+	border-radius: 30px;
+	left: 2.5%;
+}
+
+.journalTitle{
+	float: left;
+	position: absolute;
+	left: 5%;
+	margin-top: 20px;
+	color: #616161;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+.arrowBack{
+	position: absolute;
+	top:30%;
+	left: 0px;
+}
+
+.arrowBack:hover{
+	background-color: #E0E0E0;
+}
+
+.arrowNext{
+	position: absolute;
+	top:30%;
+	right: 0px;
+}
+
+.arrowNext:hover{
+	background-color: #E0E0E0;
+}
+
+
+.touristAttractionList{
+	position: absolute;
+	left: 5%;
+	top: 17%;
+    display: table;
+    list-style: none;
+    padding: 0;
+}
+
+.displayTouristAttraction{
+	display: inline-block;
+	padding: 11px;
+}
+
+.hashtagList{
+	position: absolute;
+	left: 4%;
+	bottom: 5%;
+    display: table;
+    list-style: none;
+    padding: 0;
+}
+
+.displayTag{
+	display: inline-block;
+	padding: 10px;
+}
+
+
+
+.seeMoreButton{
+	float: left;
+	position: absolute;
+	bottom: 5%;
+	right: 5%;
+	padding:5px;
+}
+
+.journalAuthor{
+	position: absolute;
+	left: 60%;
+	top: 15px;
+}
