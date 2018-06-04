@@ -1,0 +1,62 @@
+.TeamMembers{
+	position: absolute;
+	width: 15%;
+	border-style: solid;
+	border-color: #C5E1A5;
+	border-width: 2px;
+	height: 60%;
+	top: 25%;
+}
+
+.memberPicture{
+	position: absolute;
+	border-radius: 50%;
+	left: 27.5%;
+	top: 15%;
+}
+
+.memberPosition{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: 60%;
+	color: #424242;
+}
+
+.memberName{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: 70%;
+	color: #689F38;
+	font-size: 20px;
+}
+
+.memberSlogan{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: 85%;
+	color: #757575;
+}
+
+
+#member_0{
+	left: 6.5%;
+}
+
+#member_1{
+	left: 24.5%;
+}
+
+#member_2{
+	left: 42.5%;
+}
+
+#member_3{
+	right: 24.5%;
+}
+
+#member_4{
+	right: 6.5%;
+}

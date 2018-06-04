@@ -53,7 +53,12 @@ const Topbar = (props) => {
         onClick={e => { handleMainDisplayChange(e, 'home'); }}
       >首頁
       </div>
-      <div className="topButton" id="aboutUs">關於我們</div>
+      <div
+        className="topButton"
+        id="aboutUs"
+        onClick={e => { handleMainDisplayChange(e, 'aboutus'); }}
+      >關於我們
+      </div>
       <div className="topButton" id="expert">達人之旅</div>
       <div
         className="topButton"

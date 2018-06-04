@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Home from './Home';
+import AboutUs from './AboutUs';
 import JournalTable from './JournalTable';
 import JournalEditor from './JournalEditor';
 import '../css/MainDisplay.css';
@@ -10,8 +11,9 @@ class MainDisplay extends Component {
   }
 
   render() {
-  	console.log(this.props.popularListFirstDisplay);
+  	// console.log(this.props.popularListFirstDisplay);
     let mainDisplay;
+    
     if(this.props.display === 'home') {
       mainDisplay =
       (<div className="MainDisplay">
@@ -19,7 +21,13 @@ class MainDisplay extends Component {
           handleFindJournalClick={this.props.handleFindJournalClick}
         />
       </div>);
-    } else if(this.props.display === 'editor_reader') {
+    } else if(this.props.display === 'aboutus') {
+	  mainDisplay =
+      (<div className="MainDisplay">
+        <AboutUs />
+      </div>)
+    }
+    else if(this.props.display === 'editor_reader') {
       mainDisplay =
       (<div className="MainDisplay">
         <JournalEditor
@@ -58,7 +66,9 @@ class MainDisplay extends Component {
         />
       </div>)
     }
+    
     return <div>{mainDisplay}</div>;
+ 
   }
   
 }
