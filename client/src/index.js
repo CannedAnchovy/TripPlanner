@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import TripPlannerApp from './components/js/TripPlannerApp';
+import TripPlannerApp from './component/js/TripPlannerApp';
 
 const emptyReducer = (action, state) => {
   return state;
