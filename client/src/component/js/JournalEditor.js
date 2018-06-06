@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ControlTopBar from './Editor/ControlTopBar';
 import EventList from './Editor/EventList';
-import ControlBottomBar from './Editor/ControlBottomBar';
+import ControlBottomBar from '../../container/js/Editor/ControlBottomBar';
 import '../css/JournalEditor.css';
 
 // create test data

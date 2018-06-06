@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SelectMenu from './SelectMenu';
+import SelectMenu from './SelectMenu'
 import TooltipIconButton from './TooltipIconButton';
 import List from '@material-ui/icons/List';
 import '../../css/Editor/ControlTopBar.css';
