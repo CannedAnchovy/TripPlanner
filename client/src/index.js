@@ -1,22 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import lightGreen from '@material-ui/core/colors/lightGreen';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import combinedReducer from './reducers/combinedReducer';
 import TripPlannerApp from './component/js/TripPlannerApp';
 
-const emptyReducer = (action, state) => {
-  return state;
-};
+const store = createStore(combinedReducer);
 
-const store = createStore(emptyReducer);
+store.subscribe(() => {
+  console.log('current state in store:');
+  console.log(store.getState());
+  console.log('=============================================');
+});
+
+const theme = createMuiTheme({
+  palette: {
+    primary: lightGreen,
+  },
+});
+
 
 const App = () => (
-    <Provider store={store}>
-      <MuiThemeProvider>
-        <TripPlannerApp />
-      </MuiThemeProvider>
-    </Provider>
+  <Provider store={store}>
+    <MuiThemeProvider theme={theme}>
+      <TripPlannerApp />
+    </MuiThemeProvider>
+  </Provider>
 );
 
 

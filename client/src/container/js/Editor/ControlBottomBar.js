@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import TooltipIconButton from './TooltipIconButton';
+import TooltipIconButton from '../../../component/js/Editor/TooltipIconButton';
 import Add from '@material-ui/icons/Add';
 import Edit from '@material-ui/icons/Edit';
 import Delete from '@material-ui/icons/Delete';
