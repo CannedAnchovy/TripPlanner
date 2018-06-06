@@ -16,11 +16,11 @@ const styles = {
     fontWeight: 400,
   },
   place: {
-    fontSize: "2em",
+    fontSize: "1.8em",
     position: "absolute",
     width: "88%",
     left: "7%",
-    top: "20%",
+    top: "24%",
     color: "#6e6e6e",
     fontWeight: 400,
   },
@@ -88,7 +88,7 @@ class EventItem extends Component {
           <div className="note-ul-container">
             <ul className="note-ul">
               {notes.map(note => {
-                return <li className="note-li">{note}</li>;
+                return <li className="note-li" key={note}>{note}</li>;
               })}
             </ul>
           </div>

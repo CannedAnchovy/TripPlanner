@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import TooltipIconButton from '../../../component/js/Editor/TooltipIconButton';
-import Add from '@material-ui/icons/Add';
+import AddTripButton from '../../../component/js/Editor/AddTripButton';
 import Edit from '@material-ui/icons/Edit';
 import Delete from '@material-ui/icons/Delete';
 import FlightLand from '@material-ui/icons/FlightLand';
@@ -10,6 +10,8 @@ import ChildCare from '@material-ui/icons/ChildCare';
 import CloudDownload from '@material-ui/icons/CloudDownload';
 import Share from '@material-ui/icons/Share';
 import '../../css/Editor/ControlButtomBar.css';
+import { connect } from 'react-redux';
+import { addTrip } from '../../../actions/Editor/tripAction';
 
 const styles = {
   button: {
@@ -30,6 +32,10 @@ const styles = {
   }
 }
 
+const mapDispatchToProps = (dispatch) => ({
+  handleAddTrip: (...data) => dispatch(addTrip(...data)),
+})
+
 class ControlBottomBar extends Component {
   constructor() {
     super();
@@ -42,18 +48,14 @@ class ControlBottomBar extends Component {
   }
 
   render() {
+    const { handleAddTrip } = this.props;
     return (
       <div className="controlButtomBar">
         <div className="button-container add">
-          <TooltipIconButton 
-            id="tooltipIconButton-addTrip" 
-            title="新增旅行"
-            placement="top"
-            onClick={() => this.handleClick("addTrip")}
-            style={styles.button}
-          >
-            <Add className="grey-button" style={styles.icon} />
-          </TooltipIconButton>
+          <AddTripButton 
+            styles={styles} 
+            handleAddTrip={handleAddTrip}
+          />
         </div>
         <div className="button-container edit">
           <TooltipIconButton 
@@ -126,4 +128,4 @@ class ControlBottomBar extends Component {
   }
 }
 
-export default ControlBottomBar;
+export default connect(null, mapDispatchToProps)(ControlBottomBar);

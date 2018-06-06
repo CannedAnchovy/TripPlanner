@@ -17,3 +17,16 @@
 .dark-green-button {
     color: #abd37c;
 }
+
+.modal-title {
+    font-size: 1.7em;
+    margin: 2%;
+}
+
+.modal-content {
+    font-size: 1.5em;
+}
+
+.modal-action-button {
+    font-size: 1.6em;
+}

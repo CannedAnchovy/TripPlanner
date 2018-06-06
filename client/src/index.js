@@ -18,7 +18,7 @@ store.subscribe(() => {
 const theme = createMuiTheme({
   palette: {
     primary: lightGreen,
-  },
+  }
 });
 
 const App = () => (
