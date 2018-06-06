@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 // import ActionDelete from 'material-ui/svg-icons/action/delete';
 import ImageNavigateNext from '@material-ui/icons/NavigateNext';
 import ImageNavigateBefore from '@material-ui/icons/NavigateBefore';
@@ -124,15 +125,16 @@ class Journal extends Component {
         <div>
           <ul className="hashtagList">
             {hashtags.map(hashtag => (
-              <div
-                className="displayTag"
-                key={hashtag.tagId}
-                onClick={e => {this.props.handleHashtagClick(e, hashtag.tagName);}}
-              >
-                <Hashtag
-                  hashtag={hashtag}
-                />
-              </div>))}
+                <div
+                  className="displayTag"
+                  key={hashtag.tagId}
+                  onClick={e => {this.props.handleHashtagClick(e, hashtag.tagName);}}
+                >
+                  <Hashtag
+                    hashtag={hashtag}
+                  />
+                </div>
+              ))}
           </ul>
         </div>
         <div

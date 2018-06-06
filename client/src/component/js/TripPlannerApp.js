@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Topbar from './Topbar';
 import MainDisplay from './MainDisplay';
+import { BrowserRouter } from 'react-router-dom';
 import '../css/Common.css';
 
 
@@ -90,8 +91,9 @@ class TripPlannerApp extends Component {
   }
 
   render() {
-  	console.log(this.state.popularListFirstDisplay);
+  	console.log('in TripPlannerApp');
     return (
+      <BrowserRouter>
       <div>
         <Topbar
           handleMainDisplayChange={this.handleMainDisplayChange}
@@ -110,6 +112,7 @@ class TripPlannerApp extends Component {
 
         />
       </div>
+      </BrowserRouter>
     );
   }
 }
