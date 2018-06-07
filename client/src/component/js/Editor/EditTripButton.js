@@ -1,16 +1,37 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import TooltipIconButton from '../../../component/js/Editor/TooltipIconButton';
-import Add from '@material-ui/icons/Add';
+import Edit from '@material-ui/icons/Edit';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import DialogContent from '@material-ui/core/DialogContent';
 import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Table from '@material-ui/core/Table';
+import TableHead from '@material-ui/core/TableHead';
+import TableBody from '@material-ui/core/TableBody';
+import TableRow from '@material-ui/core/TableRow';
+import TableCell from '@material-ui/core/TableCell';
 import { getFormateDate } from '../../../utility/date';
+import { Tab } from '@material-ui/core';
 
-class AddTripButton extends Component {
+const getPlaces = (events) => {
+  let placeString = '';
+  if (events.length === 0)
+    placeString = '目前還沒有行程';
+  else {
+    let max = (events.length >= 3)? 3 : events.length;
+    for(let i=0; i<max; i++) {
+      placeString += events[i].place;
+      placeString += ' ';
+    }
+    return placeString;
+  }
+}
+
+class EditTripButton extends Component {
   constructor() {
     super();
     this.state = {
@@ -46,16 +67,17 @@ class AddTripButton extends Component {
   }
 
   render() {
+    const { trip } = this.props;
     return (
       <div>
         <TooltipIconButton 
-          id="addTripButton" 
-          title="新增旅行"
+          id="editTripButton" 
+          title="編輯旅行"
           placement="top"
           onClick={this.handleOpen}
           style={this.props.styles.button}
         >
-          <Add className="grey-button" style={this.props.styles.icon} />
+          <Edit className="grey-button" style={this.props.styles.icon} />
         </TooltipIconButton>
         <Dialog
           open={this.state.open}
@@ -64,7 +86,7 @@ class AddTripButton extends Component {
           fullWidth={true}
         >
           <DialogTitle>
-            <div className="modal-title">新增旅行</div>
+            <div className="modal-title">編輯旅行</div>
           </DialogTitle>
           <DialogContent>
             <div className="modal-content">
@@ -75,6 +97,7 @@ class AddTripButton extends Component {
                 fullWidth={true}
                 margin='normal'
                 inputRef={el => this.tripName = el}
+                defaultValue={trip.name}
                 error={this.state.tripNameError}
               />
               <TextField
@@ -87,16 +110,41 @@ class AddTripButton extends Component {
                 inputRef={el => {
                   this.tripDate = el;
                 }}
+                defaultValue={trip.startDate}
               />
-              <TextField
-                id="tripDateLength"
-                label="旅行天數"
-                type="number"
-                fullWidth={true}
-                margin='normal'
-                inputRef={el => this.tripDateLength = el}
-                error={this.state.tripDateLengthError}
-              />
+              <DialogContentText style={{marginTop: '20px', fontSize: '0.9em'}}>
+                拖曳行程以改變行程的順序
+              </DialogContentText>
+              <Table>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>第幾天</TableCell>
+                    <TableCell>目前行程</TableCell>
+                    <TableCell>操作按鈕</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {trip.dates.map((date, index) => {
+                    return (
+                      <TableRow>
+                        <TableCell>
+                          Day{index+1}
+                        </TableCell>
+                        <TableCell>
+                          {getPlaces(date.events)}
+                        </TableCell>
+                        <TableCell numeric>
+                          <Button
+                            color='primary'
+                          >
+                            -
+                          </Button>
+                        </TableCell>
+                      </TableRow>
+                    )
+                  })}
+                </TableBody>
+              </Table>
             </div>
           </DialogContent>
           <DialogActions >
@@ -116,7 +164,7 @@ class AddTripButton extends Component {
               }}
               color="primary"
             >
-              <div className="modal-action-button">新增旅行</div>
+              <div className="modal-action-button">儲存變更</div>
             </Button>
           </DialogActions>
         </Dialog>
@@ -125,9 +173,10 @@ class AddTripButton extends Component {
   }
 }
 
-export default AddTripButton;
+export default EditTripButton;
 
-AddTripButton.propTypes = {
+EditTripButton.propTypes = {
   styles: PropTypes.object.isRequired,
-  handleAddTrip: PropTypes.func.isRequired
+  trip: PropTypes.object.isRequired,
+  handleEditTrip: PropTypes.func.isRequired
 }

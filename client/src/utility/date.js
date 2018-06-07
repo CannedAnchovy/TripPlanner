@@ -14,3 +14,12 @@ export const getNextDate = (formateDate) => {
   return getFormateDate(nextDate);
 }
 
+export const getDateArray = (startDate, length) => {
+  let array = [];
+  array.push(startDate);
+  for(let i=1; i<length; i++) {
+    array.push(getNextDate(array[i-1]));
+  }
+  return array;
+}
+
