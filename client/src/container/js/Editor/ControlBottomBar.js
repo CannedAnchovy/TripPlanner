@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import TooltipIconButton from '../../../component/js/Editor/TooltipIconButton';
 import AddTripButton from '../../../component/js/Editor/AddTripButton';
 import EditTripButton from '../../../component/js/Editor/EditTripButton';
-import Delete from '@material-ui/icons/Delete';
+import DeleteTripButton from '../../../component/js/Editor/DeleteTripButton';
 import FlightLand from '@material-ui/icons/FlightLand';
 import CheckCircle from '@material-ui/icons/CheckCircle';
 import ChildCare from '@material-ui/icons/ChildCare';
@@ -11,7 +11,7 @@ import CloudDownload from '@material-ui/icons/CloudDownload';
 import Share from '@material-ui/icons/Share';
 import '../../css/Editor/ControlButtomBar.css';
 import { connect } from 'react-redux';
-import { addTrip } from '../../../actions/Editor/tripAction';
+import { addTrip, editTrip, deleteTrip } from '../../../actions/Editor/tripAction';
 
 const styles = {
   button: {
@@ -33,18 +33,28 @@ const styles = {
 }
 
 const mapStateToProps = (state) => ({
-  trip: state.trips[4]
+  trip: state.editor.trips[state.editor.currentIndex.tripIndex],
+  index: state.editor.currentIndex.tripIndex
 })
 
+
 const mapDispatchToProps = (dispatch) => ({
-  handleAddTrip: (...data) => dispatch(addTrip(...data)),
+  handleAddTrip: (...data) => { dispatch(addTrip(...data)) },
+  handleEditTrip: (index) => {
+    return (trip) => { 
+      dispatch(editTrip(index, trip)); 
+    };
+  },
+  handleDeleteTrip: (index) => {
+    return () => {
+      dispatch(deleteTrip(index));
+    };
+  }
 })
 
 class ControlBottomBar extends Component {
   constructor() {
     super();
-    this.state = {
-    }
   }
 
   handleClick(id) {
@@ -52,32 +62,34 @@ class ControlBottomBar extends Component {
   }
 
   render() {
-    const { trip, handleAddTrip } = this.props;
+    const { trip, index, handleAddTrip, handleEditTrip, handleDeleteTrip } = this.props;
+    const disableButton = (trip === undefined);
+    console.log('im controlBottomBar')
+    console.log(disableButton);
+
     return (
       <div className="controlButtomBar">
         <div className="button-container add">
           <AddTripButton 
             styles={styles} 
             handleAddTrip={handleAddTrip}
+            disabled={false}
           />
         </div>
         <div className="button-container edit">
           <EditTripButton
             styles={styles}
             trip={trip}
-            //handleEditTrip={handleEditTrip}
+            handleEditTrip={handleEditTrip(index)}
+            disabled={disableButton}
           />
         </div>
         <div className="button-container delete">
-          <TooltipIconButton 
-            id="tooltipIconButton-deleteTrip" 
-            title="刪除旅行"
-            placement="top"
-            onClick={() => this.handleClick("deleteTrip")}
-            style={styles.button}
-          >
-            <Delete className="grey-button" style={styles.icon} />
-          </TooltipIconButton>
+          <DeleteTripButton 
+            styles={styles} 
+            handleDeleteTrip={handleDeleteTrip(index)}
+            disabled={disableButton}
+          />
         </div>
         <div className="button-container save">
           <TooltipIconButton 
@@ -86,6 +98,7 @@ class ControlBottomBar extends Component {
             placement="top"
             onClick={() => this.handleClick("saveTrip")}
             style={styles.button}
+            disabled={disableButton}
           >
             <CheckCircle className="dark-green-button" style={styles.icon} />
           </TooltipIconButton>
@@ -97,6 +110,7 @@ class ControlBottomBar extends Component {
             placement="top"
             onClick={() => this.handleClick("finishTrip")}
             style={styles.button}
+            disabled={disableButton}
           >
             <FlightLand className="grey-button" style={styles.icon} />
           </TooltipIconButton>
@@ -108,6 +122,7 @@ class ControlBottomBar extends Component {
             placement="top"
             onClick={() => this.handleClick("downloadTrip")}
             style={styles.button}
+            disabled={disableButton}
           >
             <CloudDownload className="grey-button" style={styles.icon} />
           </TooltipIconButton>
@@ -119,6 +134,7 @@ class ControlBottomBar extends Component {
             placement="top"
             onClick={() => this.handleClick("shareTrip")}
             style={styles.button}
+            disabled={disableButton}
           >
             <Share className="grey-button" style={styles.icon} />
           </TooltipIconButton>

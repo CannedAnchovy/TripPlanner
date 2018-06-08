@@ -4,7 +4,7 @@ import lightGreen from '@material-ui/core/colors/lightGreen';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import combinedReducer from './reducers/combinedReducer';
+import { combinedReducer } from './reducers/combinedReducer';
 import TripPlannerApp from './component/js/TripPlannerApp';
 
 const store = createStore(combinedReducer);

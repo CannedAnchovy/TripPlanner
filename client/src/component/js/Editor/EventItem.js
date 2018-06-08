@@ -79,6 +79,7 @@ class EventItem extends Component {
                 placement="top"
                 onClick={() => console.log("addNote")}
                 style={styles.button}
+                disabled={false}
             >
               <ShortText className="grey-button" style={styles.icon} />
             </TooltipIconButton>

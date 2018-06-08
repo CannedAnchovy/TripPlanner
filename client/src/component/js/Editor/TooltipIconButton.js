@@ -4,11 +4,13 @@ import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 
 const TooltipIconButton = (props) => {
-  const { id, title, placement, style, onClick, children } = props;
+  const { id, title, placement, style, onClick, disabled, children } = props;
 
+  console.log('im ' + id);
+  console.log(disabled);
   return (
     <Tooltip id={id} title={title} placement={placement}>
-      <IconButton style={style} onClick={onClick}>
+      <IconButton style={style} onClick={onClick} disabled={disabled}>
         {children}
       </IconButton>
     </Tooltip>
@@ -22,6 +24,7 @@ TooltipIconButton.propTypes = {
   style: PropTypes.object,
   children: PropTypes.node.isRequired,
   onClick : PropTypes.func.isRequired,
+  disabled: PropTypes.bool.isRequired
 }
 
 export default TooltipIconButton;

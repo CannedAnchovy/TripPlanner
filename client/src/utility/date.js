@@ -16,10 +16,15 @@ export const getNextDate = (formateDate) => {
 
 export const getDateArray = (startDate, length) => {
   let array = [];
-  array.push(startDate);
+  let date = new Date(startDate);
+  array.push(date);
   for(let i=1; i<length; i++) {
-    array.push(getNextDate(array[i-1]));
+    let nextDate = new Date();
+    nextDate.setDate(array[i-1].getDate()+1);
+    array.push(nextDate);
   }
-  return array;
+  return array.map((date) => {
+    return date.getMonth() + 1 + '/' + date.getDate(); 
+  })
 }
 

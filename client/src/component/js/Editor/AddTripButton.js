@@ -16,6 +16,7 @@ class AddTripButton extends Component {
     this.state = {
       open: false,
       tripNameError: false,
+      tripDateError: false,
       tripDateLengthError: false
     }
 
@@ -37,9 +38,10 @@ class AddTripButton extends Component {
   }
 
   checkTripData() {
-    let pass = (this.tripName.value !== '' && this.tripDateLength.value > 0);
+    let pass = (this.tripName.value !== '' && this.tripDate.value !== '' && this.tripDateLength.value > 0);
     this.setState({
       tripNameError: this.tripName.value === '',
+      tripDateError: this.tripDate.value === '',
       tripDateLengthError: this.tripDateLength.value <= 0,
     });
     return pass;
@@ -54,6 +56,7 @@ class AddTripButton extends Component {
           placement="top"
           onClick={this.handleOpen}
           style={this.props.styles.button}
+          disabled={this.props.disabled}
         >
           <Add className="grey-button" style={this.props.styles.icon} />
         </TooltipIconButton>
@@ -87,6 +90,7 @@ class AddTripButton extends Component {
                 inputRef={el => {
                   this.tripDate = el;
                 }}
+                error={this.state.tripDateError}
               />
               <TextField
                 id="tripDateLength"
@@ -129,5 +133,6 @@ export default AddTripButton;
 
 AddTripButton.propTypes = {
   styles: PropTypes.object.isRequired,
-  handleAddTrip: PropTypes.func.isRequired
+  handleAddTrip: PropTypes.func.isRequired,
+  disabled: PropTypes.bool.isRequired,
 }

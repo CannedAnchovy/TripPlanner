@@ -5,14 +5,13 @@ export const addTrip = (tripName, tripDate, tripDateLength) => ({
   tripDateLength 
 })
 
-export const editTrip = (index, name, dates) => ({
+export const editTrip = (index, editedTrip) => ({
   type: 'EDIT_TRIP', 
-  tripIndex: index,
-  tripName: name,
-  tripDatesLength: dates
+  index, 
+  editedTrip
 })
 
 export const deleteTrip = (index) => ({
   type: 'DELETE_TRIP',
-  tripIndex: index
+  index
 })

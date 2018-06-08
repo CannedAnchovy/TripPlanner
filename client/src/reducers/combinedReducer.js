@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { tripsReducer } from './Editor/tripsReducer';
+import { editorReducer } from './Editor/editorReducer';
 
-export default combineReducers({
-  trips: tripsReducer
+export const combinedReducer = combineReducers({
+  editor: editorReducer
 });

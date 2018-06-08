@@ -29,7 +29,6 @@ class SelectMenu extends Component {
     super();
     this.state = {
       open: false,
-      value: ""
     }
 
     this.selectMenu = React.createRef();
@@ -37,16 +36,6 @@ class SelectMenu extends Component {
 
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
-  }
-
-  componentWillMount() {
-    if(this.props.menuItems.length === 0)
-      this.props.menuItems.push(this.props.defaultText);
-    
-    this.setState({
-      value: this.props.menuItems[0]
-    });
-
   }
 
   handleOpen() {
@@ -57,25 +46,25 @@ class SelectMenu extends Component {
 
   handleClose(value) {
     this.setState({
-      open: false,
-      value: value !== null? value : this.state.value
+      open: false
     });
   }
 
   render() {
-    const { menuItems, menuWidth, defaultText, className } = this.props;
+    const { menuItems, menuWidth, defaultText, className, index, onChange } = this.props;
 
     return (
       <div className={`selectMenu-container ${className}-selectMenu-container`} ref={this.container}>
         <div className={`selectMenu ${className}-selectMenu`} ref={this.selectMenu}>
           <div className={`text-container ${className}-text-container`}>
-            <div className={`text ${className}-text common-grey`}>{this.state.value}</div>
+            <div className={`text ${className}-text common-grey`}>{(menuItems.length === 0)? '' : menuItems[index]}</div>
           </div>
           <div className={`button-container ${className}-button-container`}>
             <IconButton 
               className={`button ${className}-button`}
               onClick={this.handleOpen}
               disableRipple={true}
+              disabled={menuItems.length === 0}
             >
               <ExpandIcon expanded={this.state.open}/>
             </IconButton>
@@ -86,7 +75,7 @@ class SelectMenu extends Component {
           style={styles.popover}
           open={this.state.open}
           anchorEl={this.selectMenu.current}
-          onClose={() => this.handleClose(null)}
+          onClose={() => this.handleClose()}
           anchorOrigin={{
             vertical: 'bottom',
             horizontal: 'center',
@@ -97,9 +86,12 @@ class SelectMenu extends Component {
           }}
         >
           <MenuList style={{width: this.props.menuWidth}}>
-            {this.props.menuItems.map(item => <MenuItem 
-                selected={item === this.state.value}
-                onClick={() => this.handleClose(item)}
+            {this.props.menuItems.map((item, itemIndex) => <MenuItem 
+                selected={itemIndex === index}
+                onClick={() => {
+                  this.handleClose();
+                  onChange(itemIndex);
+                }}
                 style={styles.menuItem}
                 key={item}
               >
@@ -117,7 +109,9 @@ SelectMenu.propTypes = {
   menuItems: PropTypes.arrayOf(String).isRequired,
   menuWidth: PropTypes.number.isRequired,
   defaultText: PropTypes.string.isRequired,
-  className: PropTypes.string.isRequired
+  className: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
+  onChange: PropTypes.func.isRequired
 };
 
 export default SelectMenu;
