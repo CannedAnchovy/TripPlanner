@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 import Input from '@material-ui/core/Input';
 import TooltipIconButton from './TooltipIconButton';
+import Remove from '@material-ui/icons/Remove';
 import ShortText from '@material-ui/icons/ShortText';
 import '../../css/Editor/EventItem.css';
 
@@ -31,16 +32,46 @@ const styles = {
   icon: {
     width: 50,
     height: 50,
+  },
+  removeButton: {
+    width: 55,
+    height: 55
+  },
+  removeIcon: {
+    width: 40,
+    height: 40
   }
 };
+
+const IndexButton = (props) => {
+  if(props.hover === true) {
+    return <TooltipIconButton
+      id='DeleteEventButton'
+      title='刪除行程'
+      placement='bottom'
+      style={styles.removeButton}
+      onClick={props.handleClick}
+      disabled={false}
+    >
+      <Remove className="index addIcon" style={styles.removeIcon} />
+    </TooltipIconButton>;
+  } else if (props.id < 10){
+    return <span className="index">{props.id}</span>;
+  } else {
+    return <span className="index doubleDigits">{props.id}</span>;
+  }
+}
 
 class EventItem extends Component {
   constructor() {
     super();
+    this.state = {
+      hover: false
+    }
   }
 
   render() {
-    const { id, time, place, notes, disableBar } = this.props;
+    const { id, time, place, notes, disableBar, handleDeleteEvent } = this.props;
     const bar = (disableBar)? <div className="nothing"></div> : <div className="verticalBarDiv"></div> ;
     const totalHeight = 15+notes.length*3;
     const itemHeight = 15/(totalHeight)*100;
@@ -60,8 +91,20 @@ class EventItem extends Component {
               value={time}
             />
           </div>
-          <div className="index-circle">
-            <span className="index">{id}</span>
+          <div 
+            className="index-circle" 
+            onMouseEnter={() => {
+              this.setState({ hover: true });
+            }}
+            onMouseLeave={() => {
+              this.setState({ hover: false });
+            }}
+          >
+            <IndexButton
+              hover={this.state.hover}
+              id={id}
+              handleClick={handleDeleteEvent}
+            />
           </div>
           <div className="place-container">
             <Input

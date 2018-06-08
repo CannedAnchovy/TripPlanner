@@ -23,7 +23,7 @@ const initialState = {
     tripIndex: 0,
     dateIndex: 0
   },
-  trips: []
+  trips: createRandomData()
 }
 
 export const editorReducer = (state = initialState, action) => {
@@ -58,6 +58,19 @@ export const editorReducer = (state = initialState, action) => {
           ...state.trips.slice(action.index+1)
         ]
       });
+    case 'ADD_EVENT':
+      let newEvent = { time: '12:00', place: '', notes: []};
+      let newTrips = state.trips;
+      newTrips[action.tripIndex].dates[action.dateIndex].events.push(newEvent);
+      return Object.assign({}, state, {
+        trips: newTrips
+      })
+    case 'DELETE_EVENT': 
+      let newTrips2 = state.trips;
+      newTrips2[action.tripIndex].dates[action.dateIndex].events.splice(action.eventIndex, 1);
+      return Object.assign({}, state, {
+        trips: newTrips2
+      })
     case 'SET_CURRENT_TRIP_INDEX':
       return Object.assign({}, state, {
         currentIndex: { 

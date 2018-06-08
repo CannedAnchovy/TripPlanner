@@ -50,6 +50,10 @@ input[type="time"]::-webkit-inner-spin-button {
     font-size: 1.7em;
 }
 
+.doubleDigits {
+    left: 20%;
+}
+
 .place-container {
     position: absolute;
     width: 45%;
