@@ -57,7 +57,7 @@ class SelectMenu extends Component {
       <div className={`selectMenu-container ${className}-selectMenu-container`} ref={this.container}>
         <div className={`selectMenu ${className}-selectMenu`} ref={this.selectMenu}>
           <div className={`text-container ${className}-text-container`}>
-            <div className={`text ${className}-text common-grey`}>{(menuItems.length === 0)? '' : menuItems[index]}</div>
+            <div className={`text ${className}-text common-grey`}>{(menuItems.length === 0)? defaultText : menuItems[index]}</div>
           </div>
           <div className={`button-container ${className}-button-container`}>
             <IconButton 

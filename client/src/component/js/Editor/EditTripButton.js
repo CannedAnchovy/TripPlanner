@@ -74,7 +74,7 @@ class EditTripButton extends Component {
   }
 
   checkTripData() {
-    let pass = this.tripName.value !== '' && this.tripDate.value !== '';
+    let pass = this.tripName.value !== '' && this.tripDate.value !== '' && this.state.trip.dates.length !== 0;
     this.setState({
       tripNameError: this.tripName.value === '',
       tripDateError: this.tripDate.value === ''

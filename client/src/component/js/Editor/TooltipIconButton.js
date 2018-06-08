@@ -10,9 +10,11 @@ const TooltipIconButton = (props) => {
   console.log(disabled);
   return (
     <Tooltip id={id} title={title} placement={placement}>
-      <IconButton style={style} onClick={onClick} disabled={disabled}>
-        {children}
-      </IconButton>
+      <div style={{display: 'invisible'}}>
+        <IconButton style={style} onClick={onClick} disabled={disabled}>
+          {children}
+        </IconButton>
+      </div>
     </Tooltip>
   );
 }

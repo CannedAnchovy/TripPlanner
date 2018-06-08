@@ -61,7 +61,7 @@ class ControlTopBar extends Component {
           className="tripSelect"
           menuItems={tripNameArray}
           menuWidth={260}
-          defaultText=""
+          defaultText="尚無旅行"
           index={tripIndex}
           onChange={handleSetCurrentTripIndex}
         />
@@ -69,7 +69,7 @@ class ControlTopBar extends Component {
           className="daySelect"
           menuItems={dateArray}
           menuWidth={180}
-          defaultText=""
+          defaultText="-------"
           index={dateIndex}
           onChange={handleSetCurrentDateIndex}
         />
@@ -77,7 +77,7 @@ class ControlTopBar extends Component {
           <TooltipIconButton 
             id="tooltipIconButton-attractionList" 
             title="景點清單"
-            placement="bottom"
+            placement="right"
             onClick={() => console.log("addTrip")}
             style={styles.button}
             disabled={false}
