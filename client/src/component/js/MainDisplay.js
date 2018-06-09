@@ -21,7 +21,10 @@ class MainDisplay extends Component {
       (<Home
         handleFindJournalClick={this.props.handleFindJournalClick}
       />);
-    const Reader =<JournalReaderContainer />;
+    const Reader =
+      (<JournalReaderContainer
+        handleFindJournalClick={this.props.handleFindJournalClick}
+      />);
     const Editor =<JournalEditor/>;
 
     mainDisplay =

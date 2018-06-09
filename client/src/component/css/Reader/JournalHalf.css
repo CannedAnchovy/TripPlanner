@@ -62,7 +62,7 @@ ul.TouristAttractionFullList{
 	position: absolute;
 	top: 160px;
 	left: 4%;
-	width: 60%;
+	width: 70%;
 	z-index: 10;
 }
 
@@ -88,3 +88,11 @@ ul.TouristAttractionFullList{
 	left: 2.5%;
 }
 
+.journalChooseDay{
+	position: absolute;
+	right: 5%;
+	width: 20%;
+	top: 150px;
+	font-size: 15px;
+	height: 60px;
+}

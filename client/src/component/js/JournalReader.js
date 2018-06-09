@@ -71,7 +71,10 @@ class JournalReader extends Component {
     if(this.props.readerDisplay.mode === 'attraction'){
       readerDisplay =
         (<div className={displayMode}>
-          <SearchBar />
+          <SearchBar
+            handleHashtagClick={this.handleHashtagClick}
+            handleFindJournalClick={this.props.handleFindJournalClick}
+          />
           <PopularAttractionContainer
             journals={this.props.journals}
             displayMode={this.props.display}
@@ -88,7 +91,10 @@ class JournalReader extends Component {
       }
       readerDisplay =
       <div className={displayMode}>
-        <SearchBar />
+        <SearchBar
+          handleHashtagClick={this.handleHashtagClick}
+          handleFindJournalClick={this.props.handleFindJournalClick}
+        />
         <div>
           <ul className="journalList">
             {journalDisplay.map(journal => (
@@ -113,15 +119,16 @@ class JournalReader extends Component {
       console.log(this.props.readerDisplay.id);
       readerDisplay =
       (<div className={displayMode}>
-        <SearchBar />
+        <SearchBar
+          handleHashtagClick={this.handleHashtagClick}
+          handleFindJournalClick={this.props.handleFindJournalClick}
+        />
         <div>
           <JournalHalf
             journal={this.props.journals[this.props.readerDisplay.id]}
             changeReaderDisplay={this.props.changeReaderDisplay}
             readerDisplay={this.props.readerDisplay}
-            //handleFavoriteJournalClick = {this.props.handleFavoriteJournalClick}
-            //handleFavoriteTouristAttractionClick = {this.props.handleFavoriteTouristAttractionClick}            
-            //handleAttractionDisplayChange = {this.props.handleAttractionDisplayChange}
+            handleHashtagClick={this.handleHashtagClick}
             handleAuthorClick={this.handleAuthorClick}
           />
         </div>

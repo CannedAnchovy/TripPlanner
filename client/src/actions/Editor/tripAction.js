@@ -1,17 +1,17 @@
-export const addTrip = (name, datesLength) => ({
+export const addTrip = (tripName, tripDate, tripDateLength) => ({
   type: 'ADD_TRIP',
-  tripName: name,
-  tripDatesLength: datesLength 
+  tripName,
+  tripDate,
+  tripDateLength 
 })
 
-export const editTrip = (index, name, dates) => ({
+export const editTrip = (index, editedTrip) => ({
   type: 'EDIT_TRIP', 
-  tripIndex: index,
-  tripName: name,
-  tripDatesLength: datesLength
+  index, 
+  editedTrip
 })
 
 export const deleteTrip = (index) => ({
   type: 'DELETE_TRIP',
-  tripIndex: index
+  index
 })

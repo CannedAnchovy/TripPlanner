@@ -1,15 +1,17 @@
 import { combineReducers } from 'redux';
-import { tripsReducer } from './Editor/tripsReducer';
+//import { tripsReducer } from './Editor/tripsReducer';
 import { journalsReducer, readingJournalReducer } from './Reader/JournalReducer';
 import { attractionsReducer, pictureListReducer } from './Reader/AttractionReducer';
 import { displayModeReducer, readerDisplayModeReducer } from './displayModeReducer';
+import { editorReducer } from './Editor/editorReducer';
 
 export default combineReducers({
-  trips: tripsReducer,
+  //trips: tripsReducer,
   displayMode: displayModeReducer,
   readerDisplayMode: readerDisplayModeReducer,
   journals: journalsReducer,
   attractions: attractionsReducer,
   firstListDisplay: pictureListReducer,
   readingJournal: readingJournalReducer,
+  editor: editorReducer,
 });

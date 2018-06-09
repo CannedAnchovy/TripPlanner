@@ -30,6 +30,7 @@ const JournalReaderContainer = (props) =>{
     journals,
     changeReadingJournal,
     changeJournalsDisplay,
+    handleFindJournalClick,
   } = props;
 
   let newJournals = journals;
@@ -69,6 +70,7 @@ const JournalReaderContainer = (props) =>{
       initJournals={initJournals}
       changeJournalsDisplay={changeJournalsDisplay}
       changeReadingJournal={changeReadingJournal}
+      handleFindJournalClick={handleFindJournalClick}
   	/>);
 };
 

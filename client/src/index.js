@@ -7,6 +7,7 @@ import { createStore } from 'redux';
 import combinedReducer from './reducers/combinedReducer';
 import TripPlannerAppContainer from './container/js/TripPlannerAppContainer';
 
+
 const store = createStore(combinedReducer);
 
 store.subscribe(() => {
@@ -18,7 +19,7 @@ store.subscribe(() => {
 const theme = createMuiTheme({
   palette: {
     primary: lightGreen,
-  },
+  }
 });
 
 

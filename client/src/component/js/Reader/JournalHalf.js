@@ -46,6 +46,13 @@ class JournalHalf extends Component {
     this.state ={
       displayDay: 0,
     }
+    this.handleDayDisplayChange = this.handleDayDisplayChange.bind(this);
+  }
+
+  handleDayDisplayChange(index){
+    this.setState({
+      displayDay: index,
+    });
   }
 
   render() {
@@ -140,14 +147,16 @@ class JournalHalf extends Component {
             </ExpansionPanelDetails>
           </ExpansionPanel>
         </div>
-        <SelectMenu
-          menuItems={menuItems}
-          menuWidth={300}
-          defaultText="Day 0"
-          className="journalChooseDay"
-          index={this.state.displayDay}
-          //onChange={}
-        />
+        <div className="journalChooseDay">
+          <SelectMenu
+            menuItems={menuItems}
+            menuWidth={200}
+            defaultText="Day 0"
+            className="journalDaySelect"
+            index={this.state.displayDay}
+            onChange={this.handleDayDisplayChange}
+          />
+        </div>
         <div className="hr" />
 
         <div className="divtouristAttractionFullList">

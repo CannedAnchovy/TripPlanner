@@ -6,3 +6,13 @@
     overflow-x: hidden;
     overflow-y: scroll;
 }
+
+.addButton {
+    position: absolute;
+    left: 100%;
+}
+.addIcon {
+    position: absolute;
+    left: 10.5%;
+    top: 15%;
+}
