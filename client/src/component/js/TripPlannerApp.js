@@ -9,22 +9,14 @@ class TripPlannerApp extends Component {
   constructor() {
     super();
     this.state = {
-      display: 'editor_reader',
       displayJournalId: -1,
       attractionFocus: { dispalyAttraction: false, place: 0, attraction: 0},
       popularListFirstDisplay: 0,
     };
-    this.handleMainDisplayChange = this.handleMainDisplayChange.bind(this);
     this.handleSeeMoreClick = this.handleSeeMoreClick.bind(this);
     this.handleFindJournalClick = this.handleFindJournalClick.bind(this);
     this.keepAttractionFocus = this.keepAttractionFocus.bind(this);
     this.handleBackJournal = this.handleBackJournal.bind(this);
-  }
-
-  handleMainDisplayChange(e, mode) {
-    this.setState({
-      display: mode,
-    });
   }
 
   handleSeeMoreClick(e, journalId) {
@@ -35,17 +27,14 @@ class TripPlannerApp extends Component {
 
   handleFindJournalClick(e) {
   	if(this.state.display !== 'editor_reader' && this.state.display !== 'reader'){
-      this.handleMainDisplayChange(e, 'editor_reader');
+      this.props.changeDisplay('editor_reader');
   	}
-    this.setState({
-      displayJournalId: -1,
-      attractionFocus:{
-  	  	displayAttraction: false,
-  	  	place: 0,
-  	  	attraction: 0,
-  	  },
-  	  popularListFirstDisplay: 0,
-    });
+    this.props.changeReaderDisplay('list', -1, -1);
+    const dataUrl = require('../json/data.json');
+    const init_journals = JSON.parse(JSON.stringify(dataUrl)).journals;
+    console.log(init_journals);
+    console.log(this.props.journals);
+    this.props.initJournals(init_journals);
   }
 
   handleBackJournal(e){
@@ -96,11 +85,11 @@ class TripPlannerApp extends Component {
       <BrowserRouter>
       <div>
         <Topbar
-          handleMainDisplayChange={this.handleMainDisplayChange}
+          handleMainDisplayChange={this.props.changeDisplay}
           handleFindJournalClick={this.handleFindJournalClick}
         />
         <MainDisplay
-          handleMainDisplayChange={this.handleMainDisplayChange}
+          handleMainDisplayChange={this.props.changeDisplay}
           display={this.state.display}
           displayId={this.state.displayJournalId}
           handleFindJournalClick={this.handleFindJournalClick}
@@ -109,7 +98,6 @@ class TripPlannerApp extends Component {
           keepAttractionFocus={this.keepAttractionFocus}
           attractionFocus={this.state.attractionFocus}
           popularListFirstDisplay={this.state.popularListFirstDisplay}
-
         />
       </div>
       </BrowserRouter>

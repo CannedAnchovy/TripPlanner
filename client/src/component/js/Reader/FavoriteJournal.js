@@ -19,21 +19,24 @@ const FavoriteJournal = (props) => {
     journalId,
     favorite,
     favoriteNum,
-    handleFavoriteJournalClick,
+    handleFavoriteJournalAdd,
+    handleFavoriteJournalMinus,
   } = props;
+
+  console.log({journalId, favorite, favoriteNum});
 
   let displayFavoriteIcon;
   if (favorite) {
     displayFavoriteIcon =
       (<ActionFavorite
         style={styles.favoriteIcon}
-        onClick={(e) => { handleFavoriteJournalClick(e, journalId); }}
+        onClick={(e) => { handleFavoriteJournalMinus(journalId); }}
       />);
   } else {
     displayFavoriteIcon =
       (<ActionFavoriteBorder
         style={styles.favoriteIcon}
-        onClick={(e) => { handleFavoriteJournalClick(e, journalId); }}
+        onClick={(e) => { handleFavoriteJournalAdd(journalId); }}
       />);
   }
 

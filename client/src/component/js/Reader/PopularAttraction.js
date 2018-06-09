@@ -20,7 +20,7 @@ class PopularAttraction extends Component {
     super();
   }
   render() {
-    const attraction = this.props.place.popularAttractions[this.props.focus.attraction];
+    const attraction = this.props.place.popularAttractions[this.props.readerDisplayMode.focus];
     let position;
     if(this.props.displayMode === 'editor_reader') {
       position = 'PictureListHalf';

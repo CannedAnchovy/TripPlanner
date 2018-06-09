@@ -10,6 +10,8 @@ import FavoriteJournal from './FavoriteJournal';
 import Author from './Author';
 import Hashtag from './Hashtag';
 import SeeMore from './SeeMore';
+import TouristAttractionContainer from '../../../container/js/Reader/TouristAttractionContainer';
+import FavoriteJournalContainer from '../../../container/js/Reader/FavoriteJournalContainer';
 import TouristAttraction from './TouristAttraction';
 
 import '../../css/Reader/Journal.css';
@@ -64,7 +66,7 @@ class Journal extends Component {
       displayArrowBack =
         (<ImageNavigateBefore
           style={styles.arrowStyle}
-          onClick={e => this.props.handleJournalAttractionDisplayChange(e, journalId, 'left')}
+          onClick={e => this.props.changeJournalsDisplay(journalId, 'left', displayAttractionNum)}
         />);
     } else {
       displayArrowBack =
@@ -76,7 +78,7 @@ class Journal extends Component {
       displayArrowNext =
         (<ImageNavigateNext
           style={styles.arrowStyle}
-          onClick={e => this.props.handleJournalAttractionDisplayChange(e, journalId, 'right')}
+          onClick={e => this.props.changeJournalsDisplay(journalId, 'right', displayAttractionNum)}
         />);
     } else {
       displayArrowNext =
@@ -84,7 +86,7 @@ class Journal extends Component {
           style={styles.donothingArrowStyle}
         />);
     }
-
+    console.log(favorite);
     return (
       <div className="Journal">
         <p className="journalTitle">
@@ -92,17 +94,16 @@ class Journal extends Component {
         </p>
         <div
           className="journalAuthor"
-          onClick={e => this.props.handleAuthorClick(e, authorName)}
+          onClick={e => this.props.handleAuthorClick(authorName)}
         >
           <Author
             authorName={authorName}
           />
         </div>
-        <FavoriteJournal
+        <FavoriteJournalContainer
           journalId={journalId}
           favorite={favorite}
           favoriteNum={favoriteNum}
-          handleFavoriteJournalClick={this.props.handleFavoriteJournalClick}
         />
         <div className="arrowBack">
           {displayArrowBack}
@@ -114,10 +115,10 @@ class Journal extends Component {
           <ul className="touristAttractionList">
             {displayAttractions.map(touristAttraction => (
               <div className="displayTouristAttraction" key={touristAttraction.attractionId}>
-                <TouristAttraction
+                <TouristAttractionContainer
                   journalId={journalId}
                   touristAttraction={touristAttraction}
-                  handleFavoriteTouristAttractionClick={this.props.handleFavoriteTouristAttractionClick}
+                  // handleFavoriteTouristAttractionClick={this.props.handleFavoriteTouristAttractionClick}
                 />
               </div>))}
           </ul>
@@ -128,7 +129,7 @@ class Journal extends Component {
                 <div
                   className="displayTag"
                   key={hashtag.tagId}
-                  onClick={e => {this.props.handleHashtagClick(e, hashtag.tagName);}}
+                  onClick={e => {this.props.handleHashtagClick(hashtag.tagName);}}
                 >
                   <Hashtag
                     hashtag={hashtag}
@@ -139,7 +140,7 @@ class Journal extends Component {
         </div>
         <div
           className="seeMoreButton"
-          onClick={e => this.props.handleSeeMoreClick(e, journalId)}
+          onClick={e => this.props.changeReaderDisplay('journal', journalId, 0)}
         >
           <SeeMore />
         </div>

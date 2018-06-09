@@ -32,18 +32,25 @@ const Topbar = (props) => {
       >TRIP PLANNER
       </div>
       <div className="changeMainDisplay">
-        <Link to="editor_reader">
+        <Link to="editor">
         <Create
           className="changeDisplayButton"
           style={styles.ActionCode}
-          onClick={e => { handleMainDisplayChange(e, 'editor_reader'); }}
+          onClick={() => { handleMainDisplayChange('editor'); }}
+        />
+        </Link>
+        <Link to="editor_reader">
+        <ChromeReaderMode
+          className="changeDisplayButton"
+          style={styles.ActionCode}
+          onClick={() => { handleMainDisplayChange('editor_reader'); }}
         />
         </Link>
         <Link to="reader">
         <Subject
           className="changeDisplayButton"
           style={styles.ActionCode}
-          onClick={e => { handleMainDisplayChange(e, 'reader'); }}
+          onClick={() => { handleMainDisplayChange('reader'); }}
         />
         </Link>
       </div>
@@ -51,7 +58,7 @@ const Topbar = (props) => {
       <div
         className="topButton"
         id="homePage"
-        onClick={e => { handleMainDisplayChange(e, 'home'); }}
+        onClick={() => { handleMainDisplayChange('home'); }}
       >首頁
       </div>
       </Link>
@@ -59,7 +66,7 @@ const Topbar = (props) => {
       <div
         className="topButton"
         id="aboutUs"
-        onClick={e => { handleMainDisplayChange(e, 'aboutus'); }}
+        onClick={() => { handleMainDisplayChange('aboutus'); }}
       >關於我們
       </div>
       </Link>
@@ -81,7 +88,7 @@ const Topbar = (props) => {
 
 Topbar.propTypes = {
   handleMainDisplayChange: PropTypes.func.isRequired,
-  handleFindJournalClick: PropTypes.func.isRequired,
+  // handleFindJournalClick: PropTypes.func.isRequired,
 };
 
 export default Topbar;

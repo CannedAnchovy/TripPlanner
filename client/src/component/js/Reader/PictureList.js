@@ -7,18 +7,10 @@ class PictureList extends Component {
   constructor() {
     super();
   }
-/*
-  componentWillMount() {
-    document.addEventListener("keydown", this.props.handleChangeAttractionDisplay);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener("keydown", this.props.handleChangeAttractionDisplay);
-  }
-*/
 
   render() {
     const place = this.props.place;
+    const attractionFocus = this.props.readerDisplayMode.focus;
     let position;
     if(this.props.displayMode === 'editor_reader') {
       position = 'PictureListHalf';
@@ -27,7 +19,7 @@ class PictureList extends Component {
     }
     const focus = [];
     for (let i = 0; i < place.popularAttractions.length; i += 1) {
-      if (i === this.props.focus.attraction) {
+      if (i === attractionFocus) {
         focus.push('pictureFocus');
       } else {
         focus.push('pictureNotFocus');

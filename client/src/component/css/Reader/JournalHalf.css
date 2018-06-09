@@ -22,7 +22,7 @@ ul.TouristAttractionFullList{
 }
 
 .divtouristAttractionFullList{
-	margin-top: 80px;
+	margin-top: 290px;
 }
 
 .journalTitleHalf{
@@ -43,3 +43,48 @@ ul.TouristAttractionFullList{
 	background-color: #444444;
 	color: white;
 }
+
+.hashtagFullList{
+	position: absolute;
+	top: 80px;
+	width: 65%;
+}
+
+.releaseDay{
+	position: absolute;
+	top: 110px;
+	right: 5%;
+	font-size: 20px;
+	color: #757575;
+}
+
+.information{
+	position: absolute;
+	top: 160px;
+	left: 4%;
+	width: 60%;
+	z-index: 10;
+}
+
+.informationContent{
+	color: #757575;
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.informationTitle{
+	color: #757575;
+	font-size: 20px;
+	line-height: 30px;
+	font-weight: bold;
+}
+
+.hr{
+	height: 1px;
+	width: 95%;
+	position: absolute;
+	top: 250px;
+	background-color: #9E9E9E;
+	left: 2.5%;
+}
+
