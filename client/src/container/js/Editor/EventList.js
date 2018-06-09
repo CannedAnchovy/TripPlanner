@@ -4,7 +4,7 @@ import EventItem from '../../../component/js/Editor/EventItem';
 import Add from '@material-ui/icons/Add';
 import TooltipIconButton from '../../../component/js/Editor/TooltipIconButton';
 import '../../css/Editor/EventList.css';
-import { addEvent, deleteEvent } from '../../../actions/Editor/eventAction';
+import { addEvent, editEvent, deleteEvent } from '../../../actions/Editor/eventAction';
 import { connect } from 'react-redux';
 
 const styles = {
@@ -26,6 +26,12 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   handleAddEvent: (tripIndex, dateIndex) => { dispatch(addEvent(tripIndex, dateIndex)); },
+  handleEditEvent: (tripIndex, dateIndex, eventIndex) => {
+    console.log('');
+    return (target, action, data) => {
+      return dispatch(editEvent(tripIndex, dateIndex, eventIndex, target, action, data));
+    };
+  },
   handleDeleteEvent: (tripIndex, dateIndex, eventIndex) => { dispatch(deleteEvent(tripIndex, dateIndex, eventIndex)); }
 });
 
@@ -34,8 +40,12 @@ class EventList extends Component {
     super();
   }
 
+  handleForceUpdate() {
+    this.forceUpdate();
+  }
+
   render() {
-    const { events, tripIndex, dateIndex, handleAddEvent, handleDeleteEvent } = this.props;
+    const { events, tripIndex, dateIndex, handleAddEvent, handleEditEvent, handleDeleteEvent } = this.props;
     if(events === undefined)
       return '';
     else {
@@ -50,10 +60,12 @@ class EventList extends Component {
                 place={event.place}
                 notes={event.notes}
                 disableBar={false}
+                handleEditEvent={handleEditEvent(tripIndex, dateIndex, eventIndex)}
                 handleDeleteEvent={() => {
                   handleDeleteEvent(tripIndex, dateIndex, eventIndex);
                   this.forceUpdate();
                 }}
+                handleForceUpdate={this.handleForceUpdate.bind(this)}
               />
             );})
           }

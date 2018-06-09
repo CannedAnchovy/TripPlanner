@@ -4,20 +4,14 @@ export const addEvent = (tripIndex, dateIndex) => ({
   dateIndex
 })
 
-export const editEventTime = (tripIndex, dateIndex, eventIndex, time) => ({
+export const editEvent = (tripIndex, dateIndex, eventIndex, target, action, data) => ({
   type: 'EDIT_EVENT',
   tripIndex, 
   dateIndex,
   eventIndex,
-  time
-})
-
-export const editEventPlace = (tripIndex, dateIndex, eventIndex, place) => ({
-  type: 'EDIT_EVENT',
-  tripIndex, 
-  dateIndex,
-  eventIndex,
-  place
+  target, 
+  action,
+  data
 })
 
 export const deleteEvent = (tripIndex, dateIndex, eventIndex) => ({

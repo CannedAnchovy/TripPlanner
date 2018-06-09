@@ -55,7 +55,7 @@ class DeleteTripButton extends Component {
           <DialogTitle>
             <div className="modal-title">刪除旅行</div>
           </DialogTitle>
-          <DialogContent>
+          <DialogContent style={{width: '85%'}}>
             <DialogContentText style={{textAlign: 'left', fontSize: '1.2em'}}>
               確定要刪除旅行嘛?
             </DialogContentText>

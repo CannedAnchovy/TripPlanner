@@ -65,11 +65,24 @@ export const editorReducer = (state = initialState, action) => {
       return Object.assign({}, state, {
         trips: newTrips
       })
-    case 'DELETE_EVENT': 
-      let newTrips2 = state.trips;
-      newTrips2[action.tripIndex].dates[action.dateIndex].events.splice(action.eventIndex, 1);
+    case 'EDIT_EVENT':
+      console.log(action);
+      newTrips = state.trips;
+      if(action.target === 'time' || action.target === 'place') {
+        newTrips[action.tripIndex].dates[action.dateIndex].events[action.eventIndex][action.target] = action.data;
+      } else if(action.action === 'add') {
+        newTrips[action.tripIndex].dates[action.dateIndex].events[action.eventIndex].notes.push(action.data);
+      } else {
+        newTrips[action.tripIndex].dates[action.dateIndex].events[action.eventIndex].notes.splice(action.noteIndex, 1);
+      }
       return Object.assign({}, state, {
-        trips: newTrips2
+        trips: newTrips
+      })
+    case 'DELETE_EVENT': 
+      newTrips = state.trips;
+      newTrips[action.tripIndex].dates[action.dateIndex].events.splice(action.eventIndex, 1);
+      return Object.assign({}, state, {
+        trips: newTrips
       })
     case 'SET_CURRENT_TRIP_INDEX':
       return Object.assign({}, state, {
