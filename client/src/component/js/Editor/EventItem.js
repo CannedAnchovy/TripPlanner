@@ -109,7 +109,14 @@ class EventItem extends Component {
     const noteHeight = 100 - itemHeight;
     return (
       <div className="eventItem-container" style={{height: totalHeight+"%"}}>
-        <div className="eventItem" style={{height: itemHeight+"%"}}>
+        <div 
+          className="eventItem" 
+          style={{height: itemHeight+"%"}}
+          draggable="true"
+          onDragStart={(e) => {
+            e.dataTransfer.setData("text", id);
+          }}
+        >
           <div className="time-container">
             <Input
               type="time"
