@@ -12,6 +12,10 @@
     width: 30%;
 }
 
+.journalDaySelect-selectMenu-container {
+    width: 100%;
+}
+
 .selectMenu {
     width: 100%;
     height: 100%;
@@ -28,6 +32,11 @@
 .daySelect-text-container {
     top: 28%;
 }
+
+.journalDaySelect-text-container {
+    top: 28%;
+}
+
 
 .text {
     position: relative;

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
 import Home from './Home';
 import AboutUs from './AboutUs';
 import JournalTable from './JournalTable';
+import JournalReaderContainer from '../../container/js/JournalReaderContainer';
 import JournalEditor from './JournalEditor';
 import '../css/MainDisplay.css';
 
@@ -12,8 +14,30 @@ class MainDisplay extends Component {
 
   render() {
   	// console.log(this.props.popularListFirstDisplay);
+
     let mainDisplay;
     
+    const HomePage =
+      (<Home
+        handleFindJournalClick={this.props.handleFindJournalClick}
+      />);
+    const Reader =
+      (<JournalReaderContainer
+        handleFindJournalClick={this.props.handleFindJournalClick}
+      />);
+    const Editor =<JournalEditor/>;
+
+    mainDisplay =
+    (<div className="MainDisplay">
+      <Switch>
+        <Route exact path="/" component={ () => (HomePage) } />
+        <Route path="/aboutus" component={ AboutUs } />
+        <Route path="/reader" component={() => (Reader) } />
+        <Route path="/editor" component={() => (Editor)} />
+        <Route path="/editor_reader" component={() =>(<div className="MainDisplay">{Editor}{Reader}</div>)} />
+      </Switch>
+    </div>);
+    /*
     if(this.props.display === 'home') {
       mainDisplay =
       (<div className="MainDisplay">
@@ -33,30 +57,12 @@ class MainDisplay extends Component {
         <JournalEditor
           display={this.props.display}
         />
-        <JournalTable
-          handleSeeMoreClick={this.props.handleSeeMoreClick}
-          handleFindJournalClick={this.props.handleFindJournalClick}
-          handleBackJournal={this.props.handleBackJournal}
-          display={this.props.display}
-          displayId={this.props.displayId}
-          keepAttractionFocus={this.props.keepAttractionFocus}
-          attractionFocus={this.props.attractionFocus}
-          popularListFirstDisplay={this.props.popularListFirstDisplay}
-        />
+        <JournalReaderContainer />;
       </div>)
     } else if(this.props.display === 'reader') {
       mainDisplay =
       (<div className="MainDisplay">
-        <JournalTable
-          handleSeeMoreClick={this.props.handleSeeMoreClick}
-          handleFindJournalClick={this.props.handleFindJournalClick}
-          handleBackJournal={this.props.handleBackJournal}
-          display={this.props.display}
-          displayId={this.props.displayId}
-          keepAttractionFocus={this.props.keepAttractionFocus}
-          attractionFocus={this.props.attractionFocus}
-          popularListFirstDisplay={this.props.popularListFirstDisplay}
-        />
+        <JournalReaderContainer />;
       </div>)
     } else if(this.props.display === 'editor') {
       mainDisplay =
@@ -66,7 +72,7 @@ class MainDisplay extends Component {
         />
       </div>)
     }
-    
+    */
     return <div>{mainDisplay}</div>;
  
   }

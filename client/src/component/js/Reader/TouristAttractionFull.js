@@ -24,12 +24,19 @@ const styles = {
   },
 };
 
+
+
+
 const TouristAttractionFull = (props) => {
   const {
     journalId,
+    attractions,
     touristAttraction,
-    handleFavoriteTouristAttractionClick,
+    //handleFavoriteTouristAttractionClick,
     handleAttractionClick,
+    //changeReaderDisplay,
+    handleFavoriteAttractionAdd,
+    handleFavoriteAttractionMinus,
   } = props;
   const imgUrl = require(`../../img_journal/img${journalId}_${touristAttraction.attractionId}.jpg`);
   let displayFavoriteAttraction;
@@ -37,13 +44,13 @@ const TouristAttractionFull = (props) => {
     displayFavoriteAttraction =
       (<ActionFavorite
         style={styles.favoriteIcon}
-        onClick={(e) => { handleFavoriteTouristAttractionClick(e, journalId, touristAttraction.attractionId); }}
+        onClick={(e) => { handleFavoriteAttractionMinus(touristAttraction.attractionName); }}
       />);
   } else {
     displayFavoriteAttraction =
       (<ActionFavoriteBorder
         style={styles.favoriteIcon}
-        onClick={(e) => { handleFavoriteTouristAttractionClick(e, journalId, touristAttraction.attractionId); }}
+        onClick={(e) => { handleFavoriteAttractionAdd(touristAttraction.attractionName); }}
       />);
   }
   const starsDisplay = [];
@@ -65,7 +72,7 @@ const TouristAttractionFull = (props) => {
       />
       <p
         className="touristAttractionFullName"
-        onClick={e => { handleAttractionClick(e, touristAttraction.attractionName); }}
+        onClick={e => { handleAttractionClick(touristAttraction.attractionName); }}
       >{touristAttraction.attractionName}</p>
       <div className="favoriteAttactionFullIcon">
         {displayFavoriteAttraction}

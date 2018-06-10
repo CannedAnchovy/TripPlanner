@@ -4,8 +4,9 @@ import lightGreen from '@material-ui/core/colors/lightGreen';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { combinedReducer } from './reducers/combinedReducer';
-import TripPlannerApp from './component/js/TripPlannerApp';
+import combinedReducer from './reducers/combinedReducer';
+import TripPlannerAppContainer from './container/js/TripPlannerAppContainer';
+
 
 const store = createStore(combinedReducer);
 
@@ -21,10 +22,11 @@ const theme = createMuiTheme({
   }
 });
 
+
 const App = () => (
   <Provider store={store}>
     <MuiThemeProvider theme={theme}>
-      <TripPlannerApp />
+      <TripPlannerAppContainer />
     </MuiThemeProvider>
   </Provider>
 );

@@ -4,6 +4,7 @@ import ChromeReaderMode from '@material-ui/icons/ChromeReaderMode';
 import Create from '@material-ui/icons/Create';
 import Subject from '@material-ui/icons/Subject';
 import ActionAccountCircle from '@material-ui/icons/AccountCircle';
+import { Link } from 'react-router-dom';
 import '../css/Topbar.css';
 
 const styles = {
@@ -27,38 +28,48 @@ const Topbar = (props) => {
     <div className="Topbar">
       <div
         className="topbarTitle"
-        onClick={(e) => { handleMainDisplayChange(e, 'home'); }}
+        // onClick={(e) => { handleMainDisplayChange(e, 'home'); }}
       >TRIP PLANNER
       </div>
       <div className="changeMainDisplay">
+        <Link to="editor">
         <Create
           className="changeDisplayButton"
           style={styles.ActionCode}
-          onClick={e => { handleMainDisplayChange(e, 'editor'); }}
+          onClick={() => { handleMainDisplayChange('editor'); }}
         />
+        </Link>
+        <Link to="editor_reader">
         <ChromeReaderMode
           className="changeDisplayButton"
           style={styles.ActionCode}
-          onClick={e => { handleMainDisplayChange(e, 'editor_reader'); }}
+          onClick={() => { handleMainDisplayChange('editor_reader'); }}
         />
+        </Link>
+        <Link to="reader">
         <Subject
           className="changeDisplayButton"
           style={styles.ActionCode}
-          onClick={e => { handleMainDisplayChange(e, 'reader'); }}
+          onClick={() => { handleMainDisplayChange('reader'); }}
         />
+        </Link>
       </div>
+      <Link to="/">
       <div
         className="topButton"
         id="homePage"
-        onClick={e => { handleMainDisplayChange(e, 'home'); }}
+        onClick={() => { handleMainDisplayChange('home'); }}
       >首頁
       </div>
+      </Link>
+      <Link to="aboutus">
       <div
         className="topButton"
         id="aboutUs"
-        onClick={e => { handleMainDisplayChange(e, 'aboutus'); }}
+        onClick={() => { handleMainDisplayChange('aboutus'); }}
       >關於我們
       </div>
+      </Link>
       <div className="topButton" id="expert">達人之旅</div>
       <div
         className="topButton"
@@ -77,7 +88,7 @@ const Topbar = (props) => {
 
 Topbar.propTypes = {
   handleMainDisplayChange: PropTypes.func.isRequired,
-  handleFindJournalClick: PropTypes.func.isRequired,
+  // handleFindJournalClick: PropTypes.func.isRequired,
 };
 
 export default Topbar;

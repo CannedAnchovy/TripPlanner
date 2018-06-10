@@ -7,10 +7,14 @@
       "favoriteNum": 100,
       "authorName": "永和田馥甄",
       "title": "台南美食之旅",
+      "releaseDay": "2018/05/08",
+      "days": 2,
+      "information": "旅行日期：2018/05/05~2018/05/06 \n 台南果然是美食之都！！！好吃好玩好棒棒！！！ \n 想知道更多好吃的地方記得要繼續關注我的遊記歐~ \n 我們下次見掰掰~",
       "touristAttractions": [
         {
-          "favoriteAttraction": true,
+          "favoriteAttraction": false,
           "attractionId": 0,
+          "day": 1,
           "attractionName": "文章牛肉湯",
           "stayTime": 120,
           "stars": 4,
@@ -18,8 +22,9 @@
           "comment": "好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃"
         },
         {
-          "favoriteAttraction": true,
+          "favoriteAttraction": false,
           "attractionId": 1,
+          "day": 1,
           "attractionName": "泰成水果冰",
           "stayTime": 120,
           "stars": 4,
@@ -29,6 +34,7 @@
         {
           "favoriteAttraction": false,
           "attractionId": 2,
+          "day": 1,
           "attractionName": "安平豆花",
           "stayTime": 120,
           "stars": 4,
@@ -38,6 +44,7 @@
         {
           "favoriteAttraction": false,
           "attractionId": 3,
+          "day": 2,
           "attractionName": "純薏仁",
           "stayTime": 120,
           "stars": 4,
@@ -45,8 +52,9 @@
           "comment": "Gooooood!!"
         },
         {
-          "favoriteAttraction": true,
+          "favoriteAttraction": false,
           "attractionId": 4,
+          "day": 2,
           "attractionName": "依蕾特布丁",
           "stayTime": 120,
           "stars": 4,
@@ -56,6 +64,7 @@
         {
           "favoriteAttraction": false,
           "attractionId": 5,
+          "day": 2,
           "attractionName": "鱔魚意麵",
           "stayTime": 120,
           "stars": 4,
@@ -63,8 +72,9 @@
           "comment": "Gooooood!!"
         },
         {
-          "favoriteAttraction": true,
+          "favoriteAttraction": false,
           "attractionId": 6,
+          "day":2,
           "attractionName": "抹茶戚風蛋糕",
           "stayTime": 120,
           "stars": 4,
@@ -86,7 +96,7 @@
           "tagId": 2
         },
         {
-          "tagName": "三日遊",
+          "tagName": "二日遊",
           "tagId": 3
         }
       ],
@@ -103,10 +113,14 @@
       "favoriteNum": 95,
       "authorName": "新手碼農 QAQ",
       "title": "台南直直撞",
+      "releaseDay": "2018/06/04",
+      "days": 2,
+      "information": "這是一封離別信\n寫下我該離開的原因\n我在你生命中扮演的角色太模糊了\n你對我常忽冷忽熱\n我到底是情人還是朋友\n愛你是否不該太認真",
       "touristAttractions": [
         {
-          "favoriteAttraction": true,
+          "favoriteAttraction": false,
           "attractionId": 0,
+          "day": 1,
           "attractionName": "赤崁樓",
           "stayTime": 120,
           "stars": 4,
@@ -114,8 +128,9 @@
           "comment": "Gooooood!!"
         },
         {
-          "favoriteAttraction": true,
+          "favoriteAttraction": false,
           "attractionId": 1,
+          "day": 1,
           "attractionName": "四草隧道",
           "stayTime": 120,
           "stars": 4,
@@ -125,6 +140,7 @@
         {
           "favoriteAttraction": false,
           "attractionId": 2,
+          "day": 1,
           "attractionName": "泰成水果冰",
           "stayTime": 120,
           "stars": 4,
@@ -134,6 +150,7 @@
         {
           "favoriteAttraction": false,
           "attractionId": 3,
+          "day":2,
           "attractionName": "十鼓文創園區",
           "stayTime": 120,
           "stars": 4,
@@ -141,8 +158,9 @@
           "comment": "Gooooood!!"
         },
         {
-          "favoriteAttraction": true,
+          "favoriteAttraction": false,
           "attractionId": 4,
+          "day": 2,
           "attractionName": "成功大學",
           "stayTime": 120,
           "stars": 4,
@@ -150,8 +168,9 @@
           "comment": "Gooooood!!"
         },
         {
-          "favoriteAttraction": true,
+          "favoriteAttraction": false,
           "attractionId": 5,
+          "day": 2,
           "attractionName": "文章牛肉湯",
           "stayTime": 120,
           "stars": 4,
@@ -189,11 +208,15 @@
       "favorite": true,
       "favoriteNum": 289,
       "authorName": "新手碼農 QAQ",
+      "releaseDay": "2018/04/20",
       "title": "高雄網美之旅",
+      "days": 3,
+      "information": "這是一封離別信\n寫下我該離開的原因\n我在你生命中扮演的角色太模糊了\n你對我常忽冷忽熱\n我到底是情人還是朋友\n愛你是否不該太認真",
       "touristAttractions": [
         {
-          "favoriteAttraction": true,
+          "favoriteAttraction": false,
           "attractionId": 0,
+          "day": 1,
           "attractionName": "集盒貨櫃聚落",
           "stayTime": 120,
           "stars": 4,
@@ -201,8 +224,9 @@
           "comment": "當天去的時候有小市集，賣可愛但有點貴的甜點和小飾品之類的。那時候剛好遇到活動，可以玩遊戲抽獎的樣子。橘色貨櫃屋推荐給不會拍照但想體驗網美的人，有很多鮮艷的背景適合拍照。"
         },
         {
-          "favoriteAttraction": true,
+          "favoriteAttraction": false,
           "attractionId": 1,
+          "day": 1,
           "attractionName": "旗津彩虹教堂",
           "stayTime": 120,
           "stars": 4,
@@ -210,8 +234,9 @@
           "comment": "要坐船去旗津，可以用走的過去也可以租車，好像有人固定會去那邊拍婚紗，這也是一個教堂本人看起來很還好但拍起來畫面莫名好看的地方。"
         },
         {
-          "favoriteAttraction": true,
+          "favoriteAttraction": false,
           "attractionId": 2,
+          "day": 1,
           "attractionName": "駁二藝術特區",
           "stayTime": 150,
           "stars": 5,
@@ -221,6 +246,7 @@
         {
           "favoriteAttraction": false,
           "attractionId": 3,
+          "day": 2,
           "attractionName": "美麗島車站",
           "stayTime": 120,
           "stars": 3,
@@ -228,8 +254,9 @@
           "comment": "附近商圈可以去逛逛，但跟台北比起來還是台北稍微熱鬧一點。"
         },
         {
-          "favoriteAttraction": true,
+          "favoriteAttraction": false,
           "attractionId": 4,
+          "day": 2,
           "attractionName": "東門茶樓",
           "stayTime": 30,
           "stars": 5,
@@ -237,8 +264,9 @@
           "comment": "在瑞峰夜市附近的冰，超好吃超好吃超好吃超好吃！！"
         },
         {
-          "favoriteAttraction": true,
+          "favoriteAttraction": false,
           "attractionId": 5,
+          "day": 2,
           "attractionName": "西子灣",
           "stayTime": 120,
           "stars": 4,
@@ -246,8 +274,9 @@
           "comment": "夕陽很漂亮，但是很熱......"
         },
         {
-          "favoriteAttraction": true,
+          "favoriteAttraction": false,
           "attractionId": 6,
+          "day": 2,
           "attractionName": "高雄草衙道",
           "stayTime": 120,
           "stars": 4,
@@ -257,6 +286,7 @@
         {
           "favoriteAttraction": false,
           "attractionId": 7,
+          "day": 3,
           "attractionName": "義大世界",
           "stayTime": 120,
           "stars": 2,
@@ -264,8 +294,9 @@
           "comment": "遊樂設施不太好玩，而且要排隊排超級久，不建議尖峰時刻來。"
         },
         {
-          "favoriteAttraction": true,
+          "favoriteAttraction": false,
           "attractionId": 8,
+          "day": 3,
           "attractionName": "瑞峰夜市",
           "stayTime": 120,
           "stars": 3,
@@ -283,7 +314,7 @@
           "tagId": 1
         },
         {
-          "tagName": "二日遊",
+          "tagName": "三日遊",
           "tagId": 2
         },
         {
@@ -310,6 +341,7 @@
         {
           "attractionId": 0,
           "attractionName": "赤崁樓",
+          "favorite": false,
           "stars": 4,
           "money": 50,
           "stayTime": 120,
@@ -320,6 +352,7 @@
         {
           "attractionId": 1,
           "attractionName": "文章牛肉湯",
+          "favorite":false,
           "stars": 4,
           "money": 50,
           "stayTime": 120,
@@ -330,6 +363,7 @@
         {
           "attractionId": 2,
           "attractionName": "四草隧道",
+          "favorite": false,
           "stars": 4,
           "money": 50,
           "stayTime": 120,
@@ -340,6 +374,7 @@
         {
           "attractionId": 3,
           "attractionName": "十鼓文創園區",
+          "favorite": false,
           "stars": 4,
           "money": 50,
           "stayTime": 120,
@@ -350,6 +385,7 @@
         {
           "attractionId": 4,
           "attractionName": "泰成水果冰",
+          "favorite": false,
           "stars": 4,
           "money": 50,
           "stayTime": 120,
@@ -360,6 +396,7 @@
         {
           "attractionId": 5,
           "attractionName": "成功大學",
+          "favorite": false,
           "stars": 4,
           "money": 50,
           "stayTime": 120,
@@ -370,6 +407,7 @@
         {
           "attractionId": 6,
           "attractionName": "依蕾特布丁",
+          "favorite": false,
           "stars": 4,
           "money": 50,
           "stayTime": 120,
@@ -380,6 +418,7 @@
         {
           "attractionId": 7,
           "attractionName": "安平豆花",
+          "favorite": false,
           "stars": 4,
           "money": 50,
           "stayTime": 120,
@@ -390,6 +429,7 @@
         {
           "attractionId": 8,
           "attractionName": "抹茶戚風蛋糕",
+          "favorite": false,
           "stars": 4,
           "money": 50,
           "stayTime": 120,
@@ -400,6 +440,7 @@
         {
           "attractionId": 9,
           "attractionName": "鱔魚意麵",
+          "favorite": false,
           "stars": 4,
           "money": 50,
           "stayTime": 120,
@@ -410,6 +451,7 @@
         {
           "attractionId": 10,
           "attractionName": "純薏仁",
+          "favorite": false,
           "stars": 4,
           "money": 50,
           "stayTime": 120,
@@ -426,6 +468,7 @@
         {
           "attractionId": 0,
           "attractionName": "集盒貨櫃聚落",
+          "favorite": false,
           "stars": 4,
           "money": 50,
           "stayTime": 120,
@@ -436,6 +479,7 @@
         {
           "attractionId": 1,
           "attractionName": "旗津彩虹教堂",
+          "favorite": false,
           "stars": 4,
           "money": 50,
           "stayTime": 120,
@@ -446,6 +490,7 @@
         {
           "attractionId": 2,
           "attractionName": "駁二藝術特區",
+          "favorite": false,
           "stars": 4,
           "money": 50,
           "stayTime": 120,
@@ -456,6 +501,7 @@
         {
           "attractionId": 3,
           "attractionName": "美麗島車站",
+          "favorite": false,
           "stars": 4,
           "money": 50,
           "stayTime": 120,
@@ -466,6 +512,7 @@
         {
           "attractionId": 4,
           "attractionName": "東門茶樓",
+          "favorite": false,
           "stars": 4,
           "money": 50,
           "stayTime": 120,
@@ -476,6 +523,7 @@
         {
           "attractionId": 5,
           "attractionName": "西子灣",
+          "favorite": false,
           "stars": 4,
           "money": 50,
           "stayTime": 120,
@@ -486,6 +534,7 @@
         {
           "attractionId": 6,
           "attractionName": "高雄草衙道",
+          "favorite": false,
           "stars": 4,
           "money": 50,
           "stayTime": 120,
@@ -496,6 +545,7 @@
         {
           "attractionId": 7,
           "attractionName": "義大世界",
+          "favorite": false,
           "stars": 4,
           "money": 50,
           "stayTime": 120,
@@ -506,6 +556,7 @@
         {
           "attractionId": 8,
           "attractionName": "瑞峰夜市",
+          "favorite": false,
           "stars": 4,
           "money": 50,
           "stayTime": 120,

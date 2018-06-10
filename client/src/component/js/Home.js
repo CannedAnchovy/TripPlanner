@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import '../css/Home.css';
 import  { withStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import lightGreen from '@material-ui/core/colors/lightGreen';
@@ -21,6 +22,10 @@ const Home = (props) => {
       <p className="homeTitle">TRIP PLANNER</p>
       <p className="homeSubtitle">就算只想當一塊會呼吸的肉，也要出門走走</p>
       <MuiThemeProvider theme={theme}>
+      <Link
+        to="/editor_reader"
+        className="Link"
+      >
       <Button 
         variant="raised"
         color="primary"
@@ -30,6 +35,7 @@ const Home = (props) => {
         className="startPlanButton">
         開始我的旅程
       </Button>
+      </Link>
       </MuiThemeProvider>
       <div className="homeBottomBar">
         <p>© 2018 by 新手碼農 with create React app</p>

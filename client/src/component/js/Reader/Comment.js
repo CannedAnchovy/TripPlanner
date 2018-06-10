@@ -14,7 +14,7 @@ class PictureList extends Component {
       <div className="Comment">
         <div
           className="commentAuthor"
-          onClick={e => this.props.handleAuthorClick(e, this.props.authorName)}
+          onClick={e => this.props.handleAuthorClick(this.props.authorName)}
         >
           <Author
             authorName={this.props.authorName}

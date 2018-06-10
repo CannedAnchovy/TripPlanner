@@ -8,6 +8,8 @@ class JournalTable extends Component {
     this.state = {
       journals: [],
       attractionTable: [],
+      // hashtagSelect: '',
+      // authorSelect: '',
     };
 
     this.handleJournalAttractionDisplayChange = this.handleJournalAttractionDisplayChange.bind(this);
@@ -58,15 +60,6 @@ class JournalTable extends Component {
       for(let j = 0; j < this.state.attractionTable[i].popularAttractions.length; j += 1){
         if (name === this.state.attractionTable[i].popularAttractions[j].attractionName){
           console.log(this.state.attractionTable[i].popularAttractions[j].attractionName);
-          /*
-          this.setState({
-            attractionFocus: {
-              attraction: j,
-              place: i,
-              displayAttraction: true,
-            }
-          });
-          */
           let mode = 'firstClick';
           this.props.keepAttractionFocus(true, i, j, mode);
         }
@@ -93,13 +86,16 @@ class JournalTable extends Component {
     }
     this.setState({
       journals: newJournals,
+      // hashtagSelect: tagName,
     });
   }
 
   handleAuthorClick(e, authorName) {
     this.props.handleFindJournalClick(e);
-    console.log(authorName);
+    console.log('!!!><><><><');
+    
     const newJournals = this.state.journals;
+    console.log(newJournals);
     for ( let i = 0; i < newJournals.length; i += 1) {
       if( authorName === newJournals[i].authorName) {
         newJournals[i].journalDisplay = true;
@@ -107,9 +103,13 @@ class JournalTable extends Component {
         newJournals[i].journalDisplay = false;
       }
     }
+    console.log(newJournals);
+
     this.setState({
       journals: newJournals,
     });
+    console.log(newJournals);
+    
   }
   
 
@@ -221,6 +221,8 @@ class JournalTable extends Component {
         focus={this.props.attractionFocus}
         attractionTable={this.state.attractionTable}
         popularListFirstDisplay={this.props.popularListFirstDisplay}
+        hashtagSelect={this.state.hashtagSelect}
+        authorSelect={this.state.authorSelect}
       />
       
     );
