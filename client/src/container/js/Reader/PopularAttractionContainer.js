@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 // import { initJournals, journalFavoriteAdd, journalFavoriteMinus } from '../../../actions/Reader/JournalAction';
+import { addFavorite, deleteFavorite } from '../../../actions/favoriteListAction';
 import { changeReadingJournal } from '../../../actions/Reader/JournalAction';
 import { changeFirstListDisplay } from '../../../actions/Reader/attractionAction';
 import { changeDisplayMode, changeReaderDisplayMode } from '../../../actions/displayModeAction';
@@ -16,14 +17,15 @@ const mapStateToProps = state => ({
   attractions: state.attractions,
   firstListDisplay: state.firstListDisplay,
   readingJournal: state.readingJournal,
+  favoriteList: state.favoriteList,
 });
 
 const mapDispatchToProps = dispatch => ({
   changeFirstListDisplay: (id) => { dispatch(changeFirstListDisplay(id)) },
   changeReaderDisplay: (mode, id, focus) => { dispatch(changeReaderDisplayMode(mode, id, focus))},
   changeReadingJournal: (id) => { dispatch(changeReadingJournal(id)) },
-  //journalFavoriteAdd: (id) => { dispatch(journalFavoriteAdd(id)) },
-  //journalFavoriteMinus: (id) => { dispatch(journalFavoriteMinus(id)) },
+  addFavorite: (place, name) => { dispatch(addFavorite(place, name)) },
+  deleteFavorite: (name) => { dispatch(deleteFavorite(name)) },
 });
 class PopularAttractionContainer extends Component {
   constructor(){
@@ -43,20 +45,20 @@ class PopularAttractionContainer extends Component {
   handlePopularAttractionDisplayChange(e, focusNum){
     const place = this.props.readerDisplayMode.id;
     const focus = this.props.readerDisplayMode.focus;
-    console.log('attraction display change');
+    // console.log('attraction display change');
     let newFocus;
-    console.log(focusNum);
+    // console.log(focusNum);
     if ( e.key === 'ArrowUp' && focus !== 0 ) {
-      console.log('arrowup');
+      // console.log('arrowup');
       newFocus = focus - 1;
     } else if ( e.key === 'ArrowDown' && focus !== this.props.attractions[place].popularAttractions.length - 1){
-      console.log('arrowdown');
+      // console.log('arrowdown');
       newFocus = focus + 1;
     } else if ( focusNum !== undefined ) {
-      console.log('onclick');
+      // console.log('onclick');
       newFocus = focusNum;
     } else {
-      console.log('else');
+      // console.log('else');
       newFocus = focus;
     }
     if (newFocus<this.props.firstListDisplay) {
@@ -75,8 +77,11 @@ class PopularAttractionContainer extends Component {
       attractions,
       journals,
       firstListDisplay,
+      favoriteList,
+      addFavorite,
+      deleteFavorite,
     } = this.props;
-    console.log(readerDisplayMode);
+    //console.log(readerDisplayMode);
     const place = readerDisplayMode.id;
     const attraction = readerDisplayMode.focus;
 
@@ -92,8 +97,10 @@ class PopularAttractionContainer extends Component {
       }
     }
 
+    //console.log(addFavorite);
+
     return(
-        <div className="PopularAttracitonTable">
+        <div className="PopularAttractionContainer">
           <div className="backJournal">
             <IconButton
               onClick={e => { this.props.changeReaderDisplay('journal', this.props.readingJournal, -1); }}
@@ -114,9 +121,11 @@ class PopularAttractionContainer extends Component {
             displayMode={displayMode}
             place={attractions[readerDisplayMode.id]}
             readerDisplayMode={readerDisplayMode}
-            //focus={this.props.focus}
             comments={comments}
-            // handleAuthorClick={this.props.handleAuthorClick}
+            favoriteList={favoriteList}
+            handleAuthorClick={this.props.handleAuthorClick}
+            handleFavoriteAttractionAdd={addFavorite}
+            handleFavoriteAttractionMinus={deleteFavorite}
           />
         </div>
       );

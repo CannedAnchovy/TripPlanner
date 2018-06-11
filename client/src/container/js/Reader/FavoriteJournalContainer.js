@@ -24,7 +24,6 @@ const FavoriteJournalContainer = (props) =>{
     journalFavoriteAdd,
     journalFavoriteMinus,
   } = props;
-  console.log('inFavoriteJournalContainer');
   return(
   	<FavoriteJournal
       journalId={journalId}

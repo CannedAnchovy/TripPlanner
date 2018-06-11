@@ -29,7 +29,6 @@ class PictureList extends Component {
     for (let i = 0; i < 8; i += 1){
       imgDisplay.push(place.popularAttractions[this.props.firstDisplay+i]);
     }
-    console.log(this.props.firstDisplay);
     return (
       <div
         onKeyPress={e => {this.props.handlePopularAttractionDisplayChange(e, 4); }}

@@ -6,16 +6,6 @@ export const initAttractions = () => ({
   attractions: init_attractions ,
 });
 
-export const attractionFavoriteAdd = (name) => ({
-  type: 'ATTRACTION_FAVORITE_ADD',
-  name: name,
-});
-
-export const attractionFavoriteMinus = (name) => ({
-  type: 'ATTRACTION_FAVORITE_MINUS',
-  name: name,
-});
-
 export const changeFirstListDisplay = (id) => ({
 	type: 'CHANGE_FIRSTLIST_DISPLAY',
 	id: id,

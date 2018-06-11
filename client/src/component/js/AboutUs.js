@@ -22,19 +22,17 @@ const AboutUs = (props) => {
       <div className="coreValue">
         <p className="aboutUsSubtitle">核心價值</p>
         <div className="coreValueContent">
-          這一夜，我享受著雨聲，我等不及閱讀 關於我和你的故事，剛才真心的，替你許了願，
-          唱著Falling Slowly走出電影院 ，我睡不著果然是懲罰，我騎著車，風順著吹著，右邊是田，
-          想像的你在左邊，等待似乎，變成催促著睡眠，我會不會又睡到下午了！
+          我們是一群愛好旅遊的大學生，雖然現在的旅遊工具各式各樣，但是在旅行安排的過程中，
+          仍經常遇到種種麻煩，我們希望能歸納出自由行旅行者尚未被解決的痛點，並找到相應的解決方式。
           <br /><br />
-          愛上你的日子總是過得特別快，心跳加速從來也不會變緩慢，時間就停止現在，
-          我不要再說晚安，妳還記得 那天下雨下得多浪漫，陪妳逛街怎麼逛腳都不會痠，
-          踩著妳腳印沙灘，生日號碼的航班，什麼都願意為妳，為妳為妳為妳而，
-          放下恐懼，直到失去力氣，直到我有了妳，我不寂寞孤寂，需要妳的聲音，
-          需要妳的呼吸，我只想，像化學反應一樣慢慢的散播在我的心裡，
-          你就像迷宮一樣讓我鑽進鑽出卻很開心，你的唇印，你的神情，
-          我想帶妳，一起旅行，喜歡你明明生氣卻假裝絲毫都不會在意，
-          喜歡和妳從晚上月亮聊到太陽全都升起，慢慢靠近妳，偷偷想起妳，
-          說到現在妳是不是有點動心！
+          「別讓規畫行程壞了旅遊的興致。」
+          <br /><br />
+          我們希望結合「行程編輯器」與「遊記查詢與瀏覽」在同一個介面，達到跨平台整合，並提供簡易的
+          遊記撰寫模板，提升遊記介面的易讀性，使用者也能更容易搜尋到與自己偏好相符的遊記。
+          <br /><br />
+          在我們的網站上，使用者除了可以蒐尋遊記，也可以即時複製遊記裡的行程，直接編輯到自己的行程當中。
+          在使用者的旅行結束後，我們會提供簡易的遊記撰寫模板與誘因，吸引更多使用者編輯並分享自己的遊記。
+
         </div>
       </div>
       <div className="slogan">
@@ -60,13 +58,16 @@ const AboutUs = (props) => {
           <p className="thanksPersonTitle">專題教授</p>
           <p className="thanksPersonName">郭瑞祥 教授</p>
         </div>
+        <div className="thanksPerson" id="interviewPeople">
+          <p className="thanksPersonName" id="interviewPeopleName">接受訪談的<br />各路親朋好友陌生人</p>
+        </div>
         <div className="thanksPerson" id="mentor">
           <p className="thanksPersonTitle">指導業師</p>
           <p className="thanksPersonName">翁必揚 業師</p>
         </div>
       </div>
       <div className="aboutUsBottomBar">
-        <p>© 2018 by 新手碼農 with create React app</p>
+        <p>© 2018 by 新手碼農與她的崩潰夥伴 with create React app</p>
       </div>
     </div>);
     

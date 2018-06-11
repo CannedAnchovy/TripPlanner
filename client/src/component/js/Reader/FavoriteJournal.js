@@ -23,8 +23,6 @@ const FavoriteJournal = (props) => {
     handleFavoriteJournalMinus,
   } = props;
 
-  console.log({journalId, favorite, favoriteNum});
-
   let displayFavoriteIcon;
   if (favorite) {
     displayFavoriteIcon =
@@ -56,7 +54,8 @@ FavoriteJournal.propTypes = {
   journalId: PropTypes.number.isRequired,
   favorite: PropTypes.bool.isRequired,
   favoriteNum: PropTypes.number.isRequired,
-  handleFavoriteJournalClick: PropTypes.func.isRequired,
+  handleFavoriteJournalAdd: PropTypes.func.isRequired,
+  handleFavoriteJournalMinus: PropTypes.func.isRequired,
 };
 
 export default FavoriteJournal;

@@ -21,7 +21,7 @@ class JournalReader extends Component {
     // console.log(name);
     
     const newJournals = this.props.journals;
-    console.log(newJournals);
+    // console.log(newJournals);
     for ( let i = 0; i < newJournals.length; i += 1) {
       if( name === newJournals[i].authorName) {
         newJournals[i].journalDisplay = true;
@@ -29,14 +29,14 @@ class JournalReader extends Component {
         newJournals[i].journalDisplay = false;
       }
     }
-    console.log(newJournals);
+    // console.log(newJournals);
 
     this.props.initJournals(newJournals);
     // console.log(newJournals);
   }
 
   handleHashtagClick(tagName) {
-    console.log('in handleHashtagClick~~');
+    // console.log('in handleHashtagClick~~');
     this.props.changeReaderDisplay('list', -1, -1);
     const newJournals = this.props.journals;
     for ( let i = 0; i < newJournals.length; i += 1) {
@@ -115,8 +115,8 @@ class JournalReader extends Component {
     </div>
     } else {
       this.props.changeReadingJournal(this.props.readerDisplay.id);
-      console.log('changeReadingJournal!!!!!!!!!!!!!!');
-      console.log(this.props.readerDisplay.id);
+      // console.log('changeReadingJournal!!!!!!!!!!!!!!');
+      // console.log(this.props.readerDisplay.id);
       readerDisplay =
       (<div className={displayMode}>
         <SearchBar

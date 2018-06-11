@@ -6,10 +6,18 @@ import yellow from '@material-ui/core/colors/yellow';
 import ActionAccountCircle from '@material-ui/icons/AccountCircle';
 import '../../css/Reader/PopularAttraction.css';
 import Comment from './Comment';
+import ActionFavorite from '@material-ui/icons/Favorite';
+import ActionFavoriteBorder from '@material-ui/icons/FavoriteBorder';
+import lightGreen from '@material-ui/core/colors/lightGreen';
 
 const styles = {
   stars: {
     color: yellow[700],
+    width: 35,
+    height: 35,
+  },
+  favoriteIcon: {
+    color: lightGreen[300],
     width: 35,
     height: 35,
   },
@@ -36,6 +44,32 @@ class PopularAttraction extends Component {
       }
     }
 
+    // console.log(this.props.handleFavoriteAttractionAdd);
+
+    const favoriteList = this.props.favoriteList;
+    let displayFavoriteAttraction;
+    let favorite = false;
+    // console.log(favoriteList);
+    for( let i = 0; i < favoriteList.length; i += 1) {
+      if(favoriteList[i].name === attraction.attractionName) {
+        favorite = true;
+      }
+    }
+
+    if (favorite === true) {
+      displayFavoriteAttraction =
+        (<ActionFavorite
+          style={styles.favoriteIcon}
+          onClick={(e) => { this.props.handleFavoriteAttractionMinus(attraction.attractionName); }}
+        />);
+    } else {
+      displayFavoriteAttraction =
+        (<ActionFavoriteBorder
+          style={styles.favoriteIcon}
+          onClick={(e) => { this.props.handleFavoriteAttractionAdd(this.props.place.placeName, attraction.attractionName); }}
+        />);
+    }
+
     const commentDisplay = [];
     const comments = this.props.comments;
     for (let i = 0; i < comments.length; i += 1) {
@@ -51,6 +85,9 @@ class PopularAttraction extends Component {
         <p className="placeName">
           {`${this.props.place.placeName} 大家還去了......`}
         </p>
+        <div className="popularAttractionFavoriteIcon">
+          {displayFavoriteAttraction}
+        </div>
         <div className="popularAttractionInfo">
           <p className="popularAttractionName">
             {attraction.attractionName}

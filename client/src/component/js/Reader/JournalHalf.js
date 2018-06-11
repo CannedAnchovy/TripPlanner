@@ -78,12 +78,10 @@ class JournalHalf extends Component {
     }
     const displayAttractions = [];
     for( let i = 0; i < touristAttractions.length; i += 1) {
-      console.log(touristAttractions[i]);
       if (touristAttractions[i].day === this.state.displayDay + 1){
         displayAttractions.push(touristAttractions[i]);
       }
     }
-    // console.log(displayAttractions);
     return (
       <div className="JournalHalf">
         <p className="journalTitleHalf">
@@ -166,8 +164,6 @@ class JournalHalf extends Component {
                 <TouristAttractionFullContainer
                   journalId={journalId}
                   touristAttraction={touristAttraction}
-                  // handleFavoriteTouristAttractionClick={this.props.handleFavoriteTouristAttractionClick}
-                  // handleAttractionClick={this.props.handleAttractionClick}
                 />
               </div>))}
           </ul>
@@ -188,9 +184,14 @@ JournalHalf.propTypes = {
     touristAttractions: PropTypes.array.isRequired,
     hashtags: PropTypes.array.isRequired,
   }).isRequired,
-  handleFavoriteJournalClick: PropTypes.func.isRequired,
-  handleFindJournalClick: PropTypes.func.isRequired,
-  handleFavoriteTouristAttractionClick: PropTypes.func.isRequired,
+  readerDisplay: PropTypes.shape({
+    mode: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    focus: PropTypes.number.isRequired,
+  }),
+  changeReaderDisplay: PropTypes.func.isRequired,
+  handleHashtagClick: PropTypes.func.isRequired,
+  handleAuthorClick: PropTypes.func.isRequired,
 };
 
 export default JournalHalf;

@@ -13,7 +13,7 @@ class JournalTable extends Component {
     };
 
     this.handleJournalAttractionDisplayChange = this.handleJournalAttractionDisplayChange.bind(this);
-    this.handleFavoriteJournalClick = this.handleFavoriteJournalClick.bind(this);
+    // this.handleFavoriteJournalClick = this.handleFavoriteJournalClick.bind(this);
     this.handleFavoriteTouristAttractionClick = this.handleFavoriteTouristAttractionClick.bind(this);
     this.handlePopularAttractionDisplayChange = this.handlePopularAttractionDisplayChange.bind(this);
     this.handleAttractionClick = this.handleAttractionClick.bind(this);

@@ -86,7 +86,6 @@ class Journal extends Component {
           style={styles.donothingArrowStyle}
         />);
     }
-    console.log(favorite);
     return (
       <div className="Journal">
         <p className="journalTitle">
@@ -165,10 +164,17 @@ Journal.propTypes = {
       firstDisplay: PropTypes.number.isRequired,
     }),
   }).isRequired,
-  handleFavoriteJournalClick: PropTypes.func.isRequired,
-  handleAttractionDisplayChange: PropTypes.func.isRequired,
-  handleFavoriteTouristAttractionClick: PropTypes.func.isRequired,
-  handleSeeMoreClick: PropTypes.func.isRequired,
+  displayMode: PropTypes.string.isRequired,
+  changeReaderDisplay: PropTypes.func.isRequired,
+  readerDisplay: PropTypes.shape({
+    mode: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    focus: PropTypes.number.isRequired,
+  }),
+  changeReadingJournal: PropTypes.func.isRequired,
+  changeJournalsDisplay: PropTypes.func.isRequired,
+  handleHashtagClick: PropTypes.func.isRequired,
+  handleAuthorClick: PropTypes.func.isRequired,
 };
 
 export default Journal;

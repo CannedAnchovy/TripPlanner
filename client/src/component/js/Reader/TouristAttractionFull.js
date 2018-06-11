@@ -37,10 +37,26 @@ const TouristAttractionFull = (props) => {
     //changeReaderDisplay,
     handleFavoriteAttractionAdd,
     handleFavoriteAttractionMinus,
+    favoriteList,
   } = props;
   const imgUrl = require(`../../img_journal/img${journalId}_${touristAttraction.attractionId}.jpg`);
   let displayFavoriteAttraction;
-  if (touristAttraction.favoriteAttraction) {
+  let favorite = false;
+  for( let i = 0; i < favoriteList.length; i += 1) {
+    if(favoriteList[i].name === touristAttraction.attractionName) {
+      favorite = true;
+    }
+  }
+  let place = '';
+  for( let i = 0; i < attractions.length; i += 1) {
+    for( let j = 0; j < attractions[i].popularAttractions.length; j += 1){
+      if(attractions[i].popularAttractions[j].attractionName === touristAttraction.attractionName) {
+        place = attractions[i].placeName;
+      }
+    }
+  }
+
+  if (favorite) {
     displayFavoriteAttraction =
       (<ActionFavorite
         style={styles.favoriteIcon}
@@ -50,7 +66,7 @@ const TouristAttractionFull = (props) => {
     displayFavoriteAttraction =
       (<ActionFavoriteBorder
         style={styles.favoriteIcon}
-        onClick={(e) => { handleFavoriteAttractionAdd(touristAttraction.attractionName); }}
+        onClick={(e) => { handleFavoriteAttractionAdd(place, touristAttraction.attractionName); }}
       />);
   }
   const starsDisplay = [];

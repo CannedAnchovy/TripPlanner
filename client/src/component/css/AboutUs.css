@@ -103,6 +103,14 @@
 	right: 25%;
 }
 
+#interviewPeople{
+	left: 42.5%;
+}
+
+#interviewPeopleName{
+	top: 25%;
+}
+
 .thanksPersonTitle{
 	position: absolute;
 	width: 100%;

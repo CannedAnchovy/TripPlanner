@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { attractionFavoriteAdd, attractionFavoriteMinus } from '../../../actions/Reader/attractionAction';
+import { addFavorite, deleteFavorite } from '../../../actions/favoriteListAction';
+// import { attractionFavoriteAdd, attractionFavoriteMinus } from '../../../actions/Reader/attractionAction';
 import { connect } from 'react-redux';
 import TouristAttraction from '../../../component/js/Reader/TouristAttraction';
 
@@ -8,28 +9,33 @@ const mapStateToProps = state => ({
   // displayMode: state.displayMode,
   // readerDisplayMode: state.readerDisplayMode,
   attractions: state.attractions,
+  favoriteList: state.favoriteList,
   journals: state.journals,
+  favoriteList: state.favoriteList,
 });
 
 const mapDispatchToProps = dispatch => ({
-  attractionFavoriteAdd: (name) => { dispatch(attractionFavoriteAdd(name)) },
-  attractionFavoriteMinus: (name) => { dispatch(attractionFavoriteMinus(name)) },
+  addFavorite: (place, name) => { dispatch(addFavorite(place, name)) },
+  deleteFavorite: (name) => { dispatch(deleteFavorite(name)) },
 });
 
 const TouristAttractionContainer = (props) =>{
   const {
     journalId,
     touristAttraction,
-    attractionFavoriteAdd,
-    attractionFavoriteMinus,
+    addFavorite,
+    deleteFavorite,
+    attractions,
+    favoriteList,
   } = props;
-  console.log('inFavoriteJournalContainer');
   return(
     <TouristAttraction
+      attractions={attractions}
       journalId={journalId}
+      favoriteList={favoriteList}
       touristAttraction={touristAttraction}
-      handleFavoriteAttractionAdd={attractionFavoriteAdd}
-      handleFavoriteAttractionMinus={attractionFavoriteMinus}
+      handleFavoriteAttractionAdd={addFavorite}
+      handleFavoriteAttractionMinus={deleteFavorite}
     />);
 };
 

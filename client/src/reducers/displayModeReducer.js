@@ -16,7 +16,7 @@ const init_readerDisplayMode = {
 export const readerDisplayModeReducer = (state = init_readerDisplayMode, action) => {
   switch(action.type) {
     case 'CHANGE_READER_DISPLAY':
-      console.log('in change reader display!');
+      // console.log('in change reader display!');
       const newMode = {
         mode: action.mode,
         id: action.id,

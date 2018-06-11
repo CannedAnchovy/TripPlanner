@@ -59,3 +59,16 @@ ul.allComments{
 	display: block;
 	padding: 11px;
 }
+
+.popularAttractionFavoriteIcon{
+	position: absolute;
+	right: 5%;
+	top: 150px;
+	z-index: 10;
+}
+
+.backJournal{
+	position: absolute;
+	left:4%;
+	top: 8%;
+}
