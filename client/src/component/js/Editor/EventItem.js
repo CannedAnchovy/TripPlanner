@@ -54,6 +54,10 @@ const styles = {
   }
 };
 
+function isLetter(str) {
+  return str.length === 1 && str.match(/[a-zA-Z0-9]/i);
+}
+
 const IndexButton = (props) => {
   if(props.hover === true) {
     return <TooltipIconButton
@@ -104,7 +108,7 @@ class EventItem extends Component {
   render() {
     const { id, time, place, notes, disableBar, handleEditEvent, handleDeleteEvent, handleForceUpdate } = this.props;
     const bar = (disableBar)? <div className="nothing"></div> : <div className="verticalBarDiv"></div> ;
-    const totalHeight = 15+notes.length*2.5;
+    const totalHeight = 15+notes.length*3;
     const itemHeight = 15/(totalHeight)*100;
     const noteHeight = 100 - itemHeight;
     return (
@@ -112,7 +116,7 @@ class EventItem extends Component {
         <div 
           className="eventItem" 
           style={{height: itemHeight+"%"}}
-          draggable="true"
+          draggable="false"
           onDragStart={(e) => {
             e.dataTransfer.setData("text", id);
           }}
@@ -155,12 +159,23 @@ class EventItem extends Component {
               autoFocus={this.state.focus}
               disableUnderline={true}
               fullWidth={true}
-              value={place}
-              onChange={(e) => {
+              defaultValue={place}
+              onCompositionEndCapture={(e) => {
+                console.log('end');
                 handleEditEvent('place', 'edit', e.target.value);
                 handleForceUpdate();
-                this.setState({ focus: true})
+                this.setState({ focus: true });
               }}
+              onChange={(e) => {
+                if(e.target.value.length > place.length && !isLetter(e.target.value[e.target.value.length-1])) {
+                  console.log('是注音')
+                } else {
+                  handleEditEvent('place', 'edit', e.target.value);
+                  handleForceUpdate();
+                  this.setState({ focus: true });
+                }
+              }}
+              onCompositionEnd={this.logEventType}
             />
           </div>
           <div className="noteButton-container">

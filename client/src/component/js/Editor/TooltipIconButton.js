@@ -5,9 +5,6 @@ import Tooltip from '@material-ui/core/Tooltip';
 
 const TooltipIconButton = (props) => {
   const { id, title, placement, style, onClick, disabled, children } = props;
-
-  console.log('im ' + id);
-  console.log(disabled);
   return (
     <Tooltip id={id} title={title} placement={placement}>
       <div style={{display: 'invisible'}}>

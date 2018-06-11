@@ -19,8 +19,8 @@ export const getDateArray = (startDate, length) => {
   let date = new Date(startDate);
   array.push(date);
   for(let i=1; i<length; i++) {
-    let nextDate = new Date();
-    nextDate.setDate(array[i-1].getDate()+1);
+    let nextDate = new Date(JSON.parse(JSON.stringify(array[i-1])));
+    nextDate.setDate(nextDate.getDate()+1);
     array.push(nextDate);
   }
   return array.map((date) => {
