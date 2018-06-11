@@ -59,7 +59,7 @@ export const editorReducer = (state = initialState, action) => {
         ]
       });
     case 'ADD_EVENT':
-      let newEvent = { time: '12:00', place: '', notes: []};
+      let newEvent = action.data;
       let newTrips = JSON.parse(JSON.stringify(state.trips));
       newTrips[action.tripIndex].dates[action.dateIndex].events.push(newEvent);
       return Object.assign({}, state, {

@@ -108,7 +108,7 @@ class EventItem extends Component {
   render() {
     const { id, time, place, notes, disableBar, handleEditEvent, handleDeleteEvent, handleForceUpdate } = this.props;
     const bar = (disableBar)? <div className="nothing"></div> : <div className="verticalBarDiv"></div> ;
-    const totalHeight = 15+notes.length*3;
+    const totalHeight = 15+notes.length*2.5;
     const itemHeight = 15/(totalHeight)*100;
     const noteHeight = 100 - itemHeight;
     return (
@@ -251,6 +251,11 @@ class EventItem extends Component {
                   </TableBody>
                 </Table>
               </DialogContent>
+              <DialogActions>
+                <Button onClick={this.handleClose} color="primary">
+                  <div className="modal-action-button">關閉</div>
+                </Button>
+              </DialogActions>
             </Dialog>
           </div>
         </div>

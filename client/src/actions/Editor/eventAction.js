@@ -1,7 +1,8 @@
-export const addEvent = (tripIndex, dateIndex) => ({
+export const addEvent = (tripIndex, dateIndex, data) => ({
   type: 'ADD_EVENT',
   tripIndex, 
-  dateIndex
+  dateIndex,
+  data
 })
 
 export const editEvent = (tripIndex, dateIndex, eventIndex, target, action, data) => ({
