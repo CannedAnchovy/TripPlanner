@@ -53,20 +53,20 @@ class EventList extends Component {
         <div className="eventList">
           {events.map((event, eventIndex) => {
             return (
-              <EventItem
-                key={eventIndex + event.place}
-                id={eventIndex+1}
-                time={event.time}
-                place={event.place}
-                notes={event.notes}
-                disableBar={false}
-                handleEditEvent={handleEditEvent(tripIndex, dateIndex, eventIndex)}
-                handleDeleteEvent={() => {
-                  handleDeleteEvent(tripIndex, dateIndex, eventIndex);
-                  this.forceUpdate();
-                }}
-                handleForceUpdate={this.handleForceUpdate.bind(this)}
-              />
+                <EventItem
+                  key={eventIndex + event.place}
+                  id={eventIndex+1}
+                  time={event.time}
+                  place={event.place}
+                  notes={event.notes}
+                  disableBar={false}
+                  handleEditEvent={handleEditEvent(tripIndex, dateIndex, eventIndex)}
+                  handleDeleteEvent={() => {
+                    handleDeleteEvent(tripIndex, dateIndex, eventIndex);
+                    this.forceUpdate();
+                  }}
+                  handleForceUpdate={this.handleForceUpdate.bind(this)}
+                />
             );})
           }
           <div className="eventItem-container" style={{height: "15%"}}>
