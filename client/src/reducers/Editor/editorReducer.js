@@ -23,7 +23,7 @@ const initialState = {
     tripIndex: 0,
     dateIndex: 0
   },
-  trips: createRandomData()
+  trips: []
 }
 
 export const editorReducer = (state = initialState, action) => {
@@ -59,6 +59,7 @@ export const editorReducer = (state = initialState, action) => {
         ]
       });
     case 'ADD_EVENT':
+      if(state.trips.length === 0) return state;
       let newEvent = action.data;
       let newTrips = JSON.parse(JSON.stringify(state.trips));
       newTrips[action.tripIndex].dates[action.dateIndex].events.push(newEvent);

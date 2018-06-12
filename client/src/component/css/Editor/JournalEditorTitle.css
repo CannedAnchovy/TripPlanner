@@ -1,0 +1,41 @@
+.journalEditor-title {
+    position: relative;
+    width: 97%;
+    height: 20%;
+    top: 2%;
+    /*border: black solid 1px;*/
+}
+
+.joutnalEditor-name {
+	position: absolute;
+    width: 40%;
+    height: 100%;
+	font-size: 3em;
+	color: #535353;
+    font-weight: 400;
+    /*border: white solid 1px*/
+}
+
+.joutnalEditor-rateMax {
+	position: absolute;
+    width: 40%;
+    height: 20%;
+    top: 7%;
+    left: 40%;
+	font-size: 2em;
+	color: #535353;
+    font-weight: 400;
+    /*border: gold solid 1px*/
+}
+
+.joutnalEditor-rateMin {
+	position: absolute;
+    width: 40%;
+    height: 20%;
+    top: 30%;
+    left: 40%;
+	font-size: 2em;
+	color: #535353;
+    font-weight: 400;
+    /*border: gold solid 1px*/
+}
