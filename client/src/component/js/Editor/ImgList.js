@@ -18,8 +18,13 @@ const ImgList = (props) => {
           src={url}
           width="220"
           height="144"
-        />}
-      )}
+        />})}
+      <img
+        className="imgList-img"
+        src={require(`../../img_journal/img1_1.jpg`)}
+        width="220"
+        height="144"
+      />
     </div>
   );
 }
