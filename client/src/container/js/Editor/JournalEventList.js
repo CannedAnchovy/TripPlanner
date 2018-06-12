@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import JournalEventItem from '../../../component/js/Editor/JournalEventItem';
+import TextField from '@material-ui/core/TextField';
 import '../../css/Editor/JournalEventList.css';
 
 const events = [{

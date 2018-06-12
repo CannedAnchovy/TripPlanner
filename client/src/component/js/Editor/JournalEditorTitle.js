@@ -11,7 +11,7 @@ const JournalEditorTitle = (props) => {
         評價最高：&nbsp;&nbsp;&nbsp;&nbsp; 純薏仁
       </div>
       <div className="joutnalEditor-rateMin">
-        評價最高：&nbsp;&nbsp;&nbsp;&nbsp; 鱔魚意麵
+        評價最低：&nbsp;&nbsp;&nbsp;&nbsp; 鱔魚意麵
       </div>
     </div>
   )
