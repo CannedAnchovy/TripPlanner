@@ -1,10 +1,12 @@
 import React, { Component} from 'react';
 import PropTypes from 'prop-types';
 import SelectMenu from '../../../component/js/Editor/SelectMenu'
-import TooltipIconButton from '../../../component/js/Editor/TooltipIconButton';
+import FavoriteListButton from '../../../component/js/Editor/FavoriteListButton';
 import List from '@material-ui/icons/List';
 import { getDateArray } from '../../../utility/date';
 import { setCurrentTripIndex, setCurrentDateIndex } from '../../../actions/Editor/currentIndexAction';
+import { addEvent } from '../../../actions/Editor/eventAction';
+import { deleteFavorite } from '../../../actions/favoriteListAction';
 import { connect } from 'react-redux';
 import '../../css/Editor/ControlTopBar.css';
 
@@ -23,11 +25,18 @@ const mapStateToProps = (state) => ({
   trips: state.editor.trips,
   tripIndex: state.editor.currentIndex.tripIndex,
   dateIndex: state.editor.currentIndex.dateIndex,
+  favoriteList: state.favoriteList
 })
 
 const mapDispatchToProps = (dispatch) => ({
   handleSetCurrentTripIndex: (index) => { dispatch(setCurrentTripIndex(index)); },
-  handleSetCurrentDateIndex: (index) => { dispatch(setCurrentDateIndex(index)); }
+  handleSetCurrentDateIndex: (index) => { dispatch(setCurrentDateIndex(index)); },
+  handleAddEvent: (tripIndex, dateIndex) => {
+    return (data) => {
+      return dispatch(addEvent(tripIndex, dateIndex, data));
+    };
+  },
+  handleDeleteAttraction: (name) => { dispatch(deleteFavorite(name)); }
 })
 
 const getTripNameArray = (trips) => {
@@ -44,7 +53,7 @@ class ControlTopBar extends Component {
   }
 
   render() {
-    const { trips, tripIndex, dateIndex, handleSetCurrentTripIndex, handleSetCurrentDateIndex } = this.props;
+    const { trips, tripIndex, dateIndex, favoriteList, handleSetCurrentTripIndex, handleSetCurrentDateIndex, handleAddEvent, handleDeleteAttraction } = this.props;
     const trip = trips[tripIndex];
 
     let tripNameArray, dateArray;
@@ -74,16 +83,12 @@ class ControlTopBar extends Component {
           onChange={handleSetCurrentDateIndex}
         />
         <div className="attractionList-button-container">
-          <TooltipIconButton 
-            id="tooltipIconButton-attractionList" 
-            title="景點清單"
-            placement="right"
-            onClick={() => console.log("addTrip")}
-            style={styles.button}
-            disabled={false}
-          >
-            <List className="grey-button" style={styles.icon} />
-          </TooltipIconButton>
+          <FavoriteListButton
+            styles={styles}
+            favoriteList={favoriteList}
+            handleAddEvent={handleAddEvent(tripIndex, dateIndex)}
+            handleDeleteAttraction={handleDeleteAttraction}
+          />
         </div>
       </div>
     );

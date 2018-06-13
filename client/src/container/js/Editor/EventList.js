@@ -25,7 +25,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  handleAddEvent: (tripIndex, dateIndex) => { dispatch(addEvent(tripIndex, dateIndex)); },
+  handleAddEvent: (tripIndex, dateIndex, data) => { dispatch(addEvent(tripIndex, dateIndex, data)); },
   handleEditEvent: (tripIndex, dateIndex, eventIndex) => {
     console.log('');
     return (target, action, data) => {
@@ -78,7 +78,11 @@ class EventList extends Component {
                   placement='bottom'
                   style={styles.button}
                   onClick={() => { 
-                    handleAddEvent(tripIndex, dateIndex); 
+                    handleAddEvent(tripIndex, dateIndex, {
+                      time: '12:00',
+                      place: '',
+                      notes: []
+                    }); 
                     this.forceUpdate()
                   }}
                   disabled={false}

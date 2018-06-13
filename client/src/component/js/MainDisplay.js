@@ -26,7 +26,7 @@ class MainDisplay extends Component {
       (<JournalReaderContainer
         handleFindJournalClick={this.props.handleFindJournalClick}
       />);
-    const Editor =<JournalEditor/>;
+    const Editor =<JournalEditor />;
 
     mainDisplay =
     (<div className="MainDisplay">
@@ -34,9 +34,8 @@ class MainDisplay extends Component {
         <Route exact path="/" component={ () => (HomePage) } />
         <Route path="/aboutus" component={ AboutUs } />
         <Route path="/reader" component={() => (Reader) } />
-        <Route path="/editor" component={() => (Editor)} />
-        <Route path="/editor_reader" component={() =>(<div className="MainDisplay">{Editor}{Reader}</div>)} />
-        <Route path="/myaccount" component={ MyAccount } />
+        <Route path="/editor" component={() => (<JournalEditor display="editor"/>)} />
+        <Route path="/editor_reader" component={() =>(<div className="MainDisplay">{<JournalEditor display="editor_reader"/>}{Reader}</div>)} />
       </Switch>
     </div>);
     /*

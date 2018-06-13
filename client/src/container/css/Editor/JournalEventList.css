@@ -1,0 +1,33 @@
+.journalEventList-container {
+    position: absolute;
+    width: 100%;
+    height: 55%;
+    top: 45%;
+    border-top: grey 0.5px solid;
+    /*border: black solid 1px;*/
+}
+
+.journalEventList {
+    position: relative;
+    width: 100%;
+    height: 95%;
+    top: 2.5%;
+    /*border: red solid 1px*/
+}
+
+.journalEventList-left {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    /*background-color: green;*/
+}
+
+.journalEventList-right {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 50%;
+    display: inline-block;
+    /*background-color: blue;*/
+}

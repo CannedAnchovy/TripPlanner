@@ -1,0 +1,63 @@
+.journalEventItem-container {
+    position: relative;
+    width: 100%;
+    height: 33%;
+    /*border: black solid 1px;*/
+}
+
+.journalEventItem {
+    position: relative;
+    width: 95%;
+    height: 90%;
+    top: 5%;
+    /*border: red solid 1px;*/
+}
+
+.journalEventItem-img-container {
+    position: absolute;
+    display: inline-block;
+    width: 32%;
+    height: 100%;
+    /*border: blue solid 1px;*/
+}
+
+.journalEventItem-title {
+    position: absolute;
+    display: inline-block;
+    width: 66%;
+    height: 35%;
+    top: 8%;
+    left: 32%;
+    /*border: green solid 1px;*/
+}
+
+.journalEventItem-name {
+    position: absolute;
+    height: 70%;
+    width: 60%;
+    top: 10%;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #777777
+}
+
+.journalEventItem-rating {
+    position: absolute;
+    height: 70%;
+    width: 35%;
+    top: 15%;
+    left: 65%;
+}
+
+.journalEventItem-info {
+    position: absolute;
+    display: inline-block;
+    width: 66%;
+    height: 45%;
+    top: 50%;
+    left: 32%;
+    font-size: 1.8em;
+    font-weight: 50;
+    color: #777777;
+    /*border: grey solid 1px;*/
+}
