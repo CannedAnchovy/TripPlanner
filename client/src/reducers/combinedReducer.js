@@ -4,7 +4,7 @@ import { journalsReducer, readingJournalReducer } from './Reader/JournalReducer'
 import { attractionsReducer, pictureListReducer } from './Reader/AttractionReducer';
 import { displayModeReducer, readerDisplayModeReducer } from './displayModeReducer';
 import { editorReducer } from './Editor/editorReducer';
-import { favoriteListReducer } from './favoriteListReducer';
+import { favoriteListReducer, journalFavoriteListReducer } from './favoriteListReducer';
 
 export default combineReducers({
   //trips: tripsReducer,
@@ -15,5 +15,6 @@ export default combineReducers({
   firstListDisplay: pictureListReducer,
   readingJournal: readingJournalReducer,
   favoriteList: favoriteListReducer,
+  journalFavoriteList: journalFavoriteListReducer,
   editor: editorReducer,
 });

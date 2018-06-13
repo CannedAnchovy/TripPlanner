@@ -16,14 +16,22 @@ const styles = {
 
 const FavoriteJournal = (props) => {
   const {
+    journal,
     journalId,
-    favorite,
     favoriteNum,
     handleFavoriteJournalAdd,
     handleFavoriteJournalMinus,
+    journalFavoriteList,
   } = props;
-
+  // console.log(journalFavoriteList);
   let displayFavoriteIcon;
+  let favorite = false;
+  for ( let i = 0; i < journalFavoriteList.length; i += 1) {
+    if (journalFavoriteList[i].id === journalId) {
+      favorite = true;
+      break;
+    }
+  }
   if (favorite) {
     displayFavoriteIcon =
       (<ActionFavorite

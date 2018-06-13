@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from './Home';
 import AboutUs from './AboutUs';
+import MyAccount from './MyAccount';
 import JournalTable from './JournalTable';
 import JournalReaderContainer from '../../container/js/JournalReaderContainer';
 import JournalEditor from './JournalEditor';
@@ -35,6 +36,7 @@ class MainDisplay extends Component {
         <Route path="/reader" component={() => (Reader) } />
         <Route path="/editor" component={() => (Editor)} />
         <Route path="/editor_reader" component={() =>(<div className="MainDisplay">{Editor}{Reader}</div>)} />
+        <Route path="/myaccount" component={ MyAccount } />
       </Switch>
     </div>);
     /*

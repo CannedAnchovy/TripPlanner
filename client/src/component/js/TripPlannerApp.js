@@ -12,7 +12,7 @@ class TripPlannerApp extends Component {
   }
 
   handleFindJournalClick(e) {
-  	if(this.state.display !== 'editor_reader' && this.state.display !== 'reader'){
+  	if(this.props.displayMode !== 'editor_reader' && this.props.displayMode !== 'reader'){
       this.props.changeDisplay('editor_reader');
   	}
     this.props.changeReaderDisplay('list', -1, -1);

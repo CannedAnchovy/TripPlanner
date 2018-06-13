@@ -9,6 +9,7 @@ const mapStateToProps = state => ({
   // displayMode: state.displayMode,
   // readerDisplayMode: state.readerDisplayMode,
   journals: state.journals,
+  journalFavoriteList: state.journalFavoriteList,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -18,19 +19,24 @@ const mapDispatchToProps = dispatch => ({
 
 const FavoriteJournalContainer = (props) =>{
   const {
+    journals,
     journalId,
     favorite,
     favoriteNum,
     journalFavoriteAdd,
     journalFavoriteMinus,
+    journalFavoriteList,
   } = props;
+  // console.log(journals[journalId]);
   return(
   	<FavoriteJournal
+      journal={journals[journalId]}
       journalId={journalId}
       favorite={favorite}
       favoriteNum={favoriteNum}
       handleFavoriteJournalAdd={journalFavoriteAdd}
       handleFavoriteJournalMinus={journalFavoriteMinus}
+      journalFavoriteList={journalFavoriteList}
   	/>);
 };
 
